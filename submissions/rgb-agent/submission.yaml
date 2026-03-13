@@ -1,14 +1,5 @@
-# ============================================================
-# ARC Prize Community Leaderboard — Submission Template
-# ============================================================
-# Copy this directory into /submissions/<your-submission-id>/
-# and fill in the fields below. See CONTRIBUTING.md for details.
-# ============================================================
-
-# Display name for your method (must be unique across all submissions)
 name: "Read-Grep-Bash Agent"
 
-# Authors — at least one is required
 authors:
   - name: "Alexis Fox"
     affiliation: "DukeNLP"
@@ -26,7 +17,6 @@ authors:
     url: "https://users.cs.duke.edu/~bdhingra/"
     twitter: "https://x.com/bhuwandhingra"
 
-# Citation (optional) — how to reference this work
 citation: >
   @misc{fox2026hillclimbing_arcagi3,
     author = {Fox, Alexis and Wang, Junlin and Rosu, Paul and Dhingra, Bhuwan},
@@ -35,33 +25,17 @@ citation: >
     year   = {2026}
   }
 
-# Brief description of the method (1-3 sentences)
 description: >
   We built RGB-Agent on an OpenCode harness running Opus 4.6. Our agent (1) plans in-context by
   continuously appending its strategy to a running log and (2) analyzes raw, uncompressed game logs
   using a minimal set of CLI tools (READ, GREP, and BASH with Python) to infer game dynamics and
   plan actions.
 
-
-# Link to a public repository with the source code (required)
 code_url: "https://github.com/alexisfox7/RGB-Agent"
 
-# Links (optional — but if provided, they must resolve)
 paper_url: "https://blog.alexisfox.dev/arcagi3"
 twitter_url: "https://x.com/alexisxfox/status/2030745750330642502?s=20"
 
-# Version history — at least one version is required
-# Add new versions to the bottom of the list when you update your method
-#
-# scores — a list of score objects
-#   valid benchmarks: arc-agi-1, arc-agi-2, arc-agi-3
-#
-#   Every score entry must be an object with:
-#     benchmark (required)    — one of arc-agi-1, arc-agi-2, arc-agi-3
-#     score (required)        — number 0-100
-#     set   (required)        — e.g. "public", "preview", "semi-private", "private"
-#     cost (optional)         — USD cost to achieve score
-#     scorecard_url (optional) — link to scorecard (required for arc-agi-3)
 versions:
   - version: "1.0"
     date: 2026-03-13
