@@ -144,7 +144,7 @@ def validate_submission(filepath):
                 continue
 
             # Required version fields
-            for vfield in ["version", "date", "models", "scores"]:
+            for vfield in ["version", "date", "scores"]:
                 if vfield not in ver or ver[vfield] is None:
                     errors.append(ValidationError(f"{prefix}.{vfield}", f"Required field '{vfield}' is missing"))
 
@@ -216,11 +216,11 @@ def validate_submission(filepath):
                         if not set_val or not isinstance(set_val, str):
                             errors.append(ValidationError(f"{bprefix}.set", "Required field 'set' is missing or empty"))
 
-                        # cost (optional, must be positive)
+                        # cost (optional, must be non-negative)
                         cost = score_val.get("cost")
                         if cost is not None:
-                            if not isinstance(cost, (int, float)) or cost <= 0:
-                                errors.append(ValidationError(f"{bprefix}.cost", "Must be a positive number"))
+                            if not isinstance(cost, (int, float)) or cost < 0:
+                                errors.append(ValidationError(f"{bprefix}.cost", "Must be a non-negative number"))
 
             # date
             date_val = ver.get("date")
