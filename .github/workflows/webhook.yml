@@ -1,0 +1,23 @@
+name: Zapier Webhook
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send webhook
+        env:
+          ZAPIER_WEBHOOK_URL: ${{ secrets.ZAPIER_WEBHOOK_URL }}
+        run: |
+          curl -s -o /dev/null -w "%{http_code}" -X POST "$ZAPIER_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "pr_title": "${{ github.event.pull_request.title }}",
+              "pr_url": "${{ github.event.pull_request.html_url }}",
+              "pr_number": "${{ github.event.pull_request.number }}",
+              "author": "${{ github.event.pull_request.user.login }}",
+              "repo": "${{ github.repository }}"
+            }'
