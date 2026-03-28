@@ -15,6 +15,16 @@ description: >
 code_url: "https://github.com/marc-shade/arc-agi-3-public"
 
 versions:
+  - version: "1.1"
+    date: 2026-03-28
+    changes: "16/25 public games attempted, 9 won online (score 67.56)"
+    models:
+      - name: "Phoenix Discovery Agent + OnlineLearner CNN"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://three.arcprize.org/scorecards/1b54df85-d318-4837-8308-6eb3cd2c5be2"
+        set: "public"
+        cost: 0.00
   - version: "1.0"
     date: 2026-03-28
     changes: "Initial submission: 12/25 public games solved with dedicated solvers"
