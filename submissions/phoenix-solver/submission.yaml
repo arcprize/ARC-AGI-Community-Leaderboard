@@ -1,0 +1,27 @@
+name: "Phoenix Solver"
+
+authors:
+  - name: "Marc Shade"
+    affiliation: "KineticArc AI / 2 Acre Studios"
+    url: "https://github.com/marc-shade"
+
+description: >
+  Multi-strategy agent combining per-game dedicated solvers with a general-purpose
+  OnlineLearner CNN. Solvers reverse-engineer game mechanics from source code and
+  use BFS/DFS/constraint satisfaction to find optimal action sequences. The
+  OnlineLearner handles novel games via online adaptation with binary frame-change
+  signal.
+
+code_url: "https://github.com/marc-shade/ARC-AGI-3"
+
+versions:
+  - version: "1.0"
+    date: 2026-03-28
+    changes: "Initial submission: 12/25 public games solved with dedicated solvers"
+    models:
+      - name: "Phoenix Discovery Agent + OnlineLearner CNN"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://three.arcprize.org/scorecards/06b755e5-ff91-403d-aaf9-dd8597bc5c3b"
+        set: "public"
+        cost: 0.00
