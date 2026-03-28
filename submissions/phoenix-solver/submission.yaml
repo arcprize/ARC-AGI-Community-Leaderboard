@@ -12,7 +12,7 @@ description: >
   OnlineLearner handles novel games via online adaptation with binary frame-change
   signal.
 
-code_url: "https://github.com/marc-shade/ARC-AGI-3"
+code_url: "https://github.com/marc-shade/arc-agi-3-public"
 
 versions:
   - version: "1.0"
