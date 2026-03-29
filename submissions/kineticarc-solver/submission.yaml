@@ -1,0 +1,27 @@
+name: "KineticArc Solver"
+
+authors:
+  - name: "Marc Shade"
+    affiliation: "KineticArc.ai"
+    url: "https://kineticarc.ai"
+
+description: >
+  Code-generation ARC-AGI-2 solver using Claude Opus 4.6. For each task,
+  an agent analyzes training input/output pairs, writes a Python transform()
+  function, validates it against all training examples, then applies it to
+  test inputs. Achieves 12.8% on the public evaluation set (22/172 correct
+  outputs, 14 tasks fully solved out of 32 attempted).
+
+code_url: "https://github.com/marc-shade/arc-agi-2-solver"
+
+versions:
+  - version: "1.0"
+    date: 2026-03-29
+    changes: "Code-generation solver with Claude Opus 4.6 — 12.8% on eval set"
+    models:
+      - name: "Claude Opus 4.6"
+    scores:
+      - benchmark: "arc-agi-2"
+        score: 12.8
+        set: "public"
+        cost: 0.00
