@@ -1,0 +1,36 @@
+name: "edmonddantesj ClaudeAgent LS20"
+
+authors:
+  - name: "edmonddantesj"
+    affiliation: "Independent"
+    url: "https://github.com/edmonddantesj"
+    twitter: ""
+
+citation: >
+  edmonddantesj. 2026. edmonddantesj ClaudeAgent LS20.
+
+description: >
+  A custom Claude-based ARC-AGI-3 LS20 agent built through iterative debugging,
+  source inspection, and repeated online experimentation on top of the
+  ARC-AGI-3-Agents base. The current implementation includes source-aware level
+  parsing, compound-state A* presolve, enemy push handling, energy/reset logic,
+  and live fallback heuristics for dynamic levels.
+
+code_url: "https://github.com/edmonddantesj/arc-agi-3-claudeagent"
+
+paper_url: ""
+twitter_url: ""
+
+versions:
+  - version: "0.1"
+    date: 2026-04-01
+    changes: "Initial community leaderboard submission with official ARC-AGI-3 scorecard and custom ClaudeAgent LS20 solver notes."
+    models:
+      - name: "ClaudeAgent"
+    scores:
+      - benchmark: "arc-agi-3"
+        score: 53.57
+        set: "public"
+        scorecard_url:
+          - "https://three.arcprize.org/scorecards/6d4fc6dd-bc19-4a16-9357-13b7b9789970"
+        cost: 0.00
