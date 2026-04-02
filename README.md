@@ -15,7 +15,7 @@ A community-driven showcase of ARC-AGI methods, harnesses, and approaches for [A
 
 A maintainer reviews and merges submissions on a weekly basis.
 
-Submissions must link to a publicly accessible code repository and report a score on the **public** set of each benchmark. For ARC-AGI-3, submissions must use [Competition Mode](https://docs.arcprize.org/toolkit/competition_mode) and provide a `scorecard_url`. See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
+Submissions must link to a publicly accessible code repository and report a score on the **public** set of one or more benchmarks. For ARC-AGI-3, submissions must use [Competition Mode](https://docs.arcprize.org/toolkit/competition_mode) and provide a `scorecard_url`. See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
 
 ## Links
 
