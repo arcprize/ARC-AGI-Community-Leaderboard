@@ -15,15 +15,7 @@ A community-driven showcase of ARC-AGI methods, harnesses, and approaches for [A
 
 A maintainer reviews and merges submissions on a weekly basis.
 
-Submissions must report a score on the **public** set of each benchmark. For ARC-AGI-3, submissions must use [Competition Mode](https://docs.arcprize.org/toolkit/competition_mode) and provide a `scorecard_url`. See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
-
-## What Belongs Here
-
-This leaderboard is for methods that score on ARC-AGI (v1, v2, or v3). Submissions should include:
-
-- A link to a reproducible solution held within a public code repository
-- A description of the approach
-- Self-reported scores with version history
+Submissions must link to a publicly accessible code repository and report a score on the **public** set of each benchmark. For ARC-AGI-3, submissions must use [Competition Mode](https://docs.arcprize.org/toolkit/competition_mode) and provide a `scorecard_url`. See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
 
 ## Links
 
