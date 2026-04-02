@@ -47,7 +47,7 @@ versions:
         score: 82.43
         set: "public"
         scorecard_url:
-          - "https://three.arcprize.org/scorecards/35d7852f-bb5c-4d40-b0e0-df501c27ef6f"
-          - "https://three.arcprize.org/scorecards/4bded786-ba8f-4dd6-a264-357b9c6ad28d"
-          - "https://three.arcprize.org/scorecards/8ffdceed-e57a-499c-8525-72e1c7ecc4ba"
+          - "https://arcprize.org/scorecards/35d7852f-bb5c-4d40-b0e0-df501c27ef6f"
+          - "https://arcprize.org/scorecards/4bded786-ba8f-4dd6-a264-357b9c6ad28d"
+          - "https://arcprize.org/scorecards/8ffdceed-e57a-499c-8525-72e1c7ecc4ba"
         cost: 178.60

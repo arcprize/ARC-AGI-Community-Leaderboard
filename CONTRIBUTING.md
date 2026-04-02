@@ -51,7 +51,7 @@ Do **not** create a new directory for updates — keep everything in your origin
 
     **arc-agi-3:**
     - `benchmark` — `"arc-agi-3"`
-    - `scorecard_url` — **required**; link to your scorecard on `three.arcprize.org`. arc-agi-3 scores are pulled automatically from the scorecard and should not be self-reported.
+    - `scorecard_url` — **required**; link to your scorecard on `arcprize.org`. arc-agi-3 scores are pulled automatically from the scorecard and should not be self-reported. Your scorecard must be generated using **Competition Mode** (`OperationMode.COMPETITION`) — see the [ARC docs](https://docs.arcprize.org/toolkit/competition_mode) for details.
     - `set` — **required**; eval set used (e.g. `"public"`, `"preview"`)
     - `cost` — optional; USD cost to achieve score (positive number)
     - `score` — **not allowed**; do not include a numeric score for arc-agi-3 entries
@@ -68,7 +68,7 @@ Do **not** create a new directory for updates — keep everything in your origin
       set: "semi-private"
       cost: 1.50
     - benchmark: "arc-agi-3"
-      scorecard_url: "https://three.arcprize.org/scorecards/abc123"
+      scorecard_url: "https://arcprize.org/scorecards/your-scorecard-id"
       set: "preview"
       cost: 8.50
   ```
@@ -83,7 +83,7 @@ Do **not** create a new directory for updates — keep everything in your origin
 
 - Your `code_url` must point to a **public** repository at the time of submission.
 - You may include additional files in your submission directory (READMEs, diagrams, etc.) but please keep it lightweight — no binaries, model weights, or large data files. Link to those instead.
-- arc-agi-1/arc-agi-2 scores are self-reported. Misrepresenting results undermines the community and may result in your entry being removed.
+- arc-agi-1/arc-agi-2 scores are self-reported. Misrepresenting results may result in your entry being removed.
 - arc-agi-3 scores are pulled automatically from your scorecard — do not self-report a numeric score.
 - Be respectful in discussions and PR comments.
 
@@ -105,7 +105,7 @@ submissions/
 Submissions are merged if they:
 
 1. Pass all automated checks
-2. Look like a genuine submission (not spam, not obviously fake)
+2. Are a genuine, reproducible submission
 3. Have a working link to a public code repository
 4. Include a reasonable description of the method
 
@@ -113,4 +113,4 @@ We do **not** verify scores or run your code. ARC Prize may choose to verify sub
 
 ## Questions?
 
-Open an issue or ask in the [ARC Prize Discord](https://discord.gg/arcprize).
+Ask in the [ARC Prize Discord](https://discord.com/invite/9b77dPAmcA).

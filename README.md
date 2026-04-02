@@ -12,23 +12,22 @@ A community-driven showcase of ARC-AGI methods, harnesses, and approaches for [A
 3. Fill in `submission.yaml` following the template
 4. Open a Pull Request
 
-Automated checks will validate your YAML. A maintainer reviews and merges submissions on a weekly basis.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
+A maintainer reviews and merges submissions on a weekly basis.
+
+Submissions must report a score on the **public** set of each benchmark. For ARC-AGI-3, submissions must use [Competition Mode](https://docs.arcprize.org/toolkit/competition_mode) and provide a `scorecard_url`. See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
 
 ## What Belongs Here
 
-This leaderboard is for **public** methods that score on ARC-AGI (v1, v2, or v3). Submissions should include:
+This leaderboard is for methods that score on ARC-AGI (v1, v2, or v3). Submissions should include:
 
 - A link to a reproducible solution held within a public code repository
 - A description of the approach
 - Self-reported scores with version history
 
-This is a community showcase — not a competition. The goal is to give researchers and builders a central place to share their work.
-
 ## Links
 
 - [ARC Prize](https://arcprize.org)
 - [ARC-AGI Benchmark](https://arcprize.org/arc-agi)
-- [Official Verified Leaderboard](https://arcprize.org/leaderboard)
-- [Discord](https://discord.gg/arcprize)
+- [Community Leaderboard](https://arcprize.org/leaderboard/community)
+- [Discord](https://discord.com/invite/9b77dPAmcA)

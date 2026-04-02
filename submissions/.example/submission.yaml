@@ -44,7 +44,7 @@ twitter_url: ""
 #
 #   arc-agi-3 entries require:
 #     benchmark     (required) — "arc-agi-3"
-#     scorecard_url (required) — link to your scorecard on three.arcprize.org
+#     scorecard_url (required) — link to your scorecard on arcprize.org
 #     set           (required) — e.g. "public", "preview"
 #     cost          (optional) — USD cost to achieve score
 #     NOTE: do NOT include a "score" field for arc-agi-3; scores are
@@ -61,6 +61,6 @@ versions:
         set: "private"
         cost: 0.00
       - benchmark: "arc-agi-3"
-        scorecard_url: "https://three.arcprize.org/scorecards/your-scorecard-id"
+        scorecard_url: "https://arcprize.org/scorecards/your-scorecard-id"
         set: "public"
         cost: 0.00
