@@ -1,0 +1,42 @@
+name: "Hierarchical Reasoning Model (HRM)"
+
+authors:
+  - name: "Sapient Intelligence"
+    affiliation: "Sapient Intelligence"
+    url: "https://sapient.inc/"
+
+description: >
+  A brain-inspired 27M parameter architecture using two interdependent recurrent
+  neural networks — a slower "Controller" for abstract reasoning and a faster
+  "Worker" for detailed computation — with an outer-loop iterative refinement
+  process. Trained from scratch on ~1,000 examples with no pretraining. ARC Prize
+  analysis found the outer loop refinement, not the hierarchical architecture,
+  was the primary performance driver.
+
+code_url: "https://github.com/sapientinc/HRM"
+
+paper_url: "https://arxiv.org/abs/2506.21734"
+
+citation: >
+  @misc{wang2025hierarchicalreasoningmodel,
+    author = {Wang, Guan and Li, Jin and Sun, Yuhao and Chen, Xing and Liu, Changling and Wu, Yue and Lu, Meng and Song, Sen and Abbasi Yadkori, Yasin},
+    title  = {Hierarchical Reasoning Model},
+    url    = {https://arxiv.org/abs/2506.21734},
+    year   = {2025}
+  }
+
+versions:
+  - version: "1.0"
+    date: 2025-06-08
+    changes: "Initial submission"
+    models:
+      - name: "HRM (27M params)"
+    scores:
+      - benchmark: "arc-agi-1"
+        score: 32
+        set: "semi-private"
+        cost: 148.50
+      - benchmark: "arc-agi-2"
+        score: 2
+        set: "semi-private"
+        cost: 201

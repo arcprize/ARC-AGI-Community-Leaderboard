@@ -1,0 +1,43 @@
+name: "Tiny Recursive Model (TRM)"
+
+authors:
+  - name: "Alexia Jolicoeur-Martineau"
+    affiliation: "Samsung SAIL Montreal"
+    url: "https://ajolicoeur.wordpress.com"
+    twitter: "https://x.com/jm_alexia"
+
+description: >
+  A simplified successor to HRM that uses a single 7M parameter network with
+  2 Transformer layers, recursively refining predictions through alternating
+  "think" (update latent state) and "act" (refine answer) steps for up to 16
+  iterations. Replaces HRM's dual-module architecture with a unified network
+  where roles are defined by inputs rather than separate modules. Uses test-time
+  augmentation and 1000-sample majority-vote ensembling.
+
+code_url: "https://github.com/SamsungSAILMontreal/TinyRecursiveModels"
+
+paper_url: "https://arxiv.org/abs/2510.04871"
+
+citation: >
+  @misc{jolicoeurmartineau2025tinyrecursivemodels,
+    author = {Jolicoeur-Martineau, Alexia},
+    title  = {Less is More: Recursive Reasoning with Tiny Networks},
+    url    = {https://arxiv.org/abs/2510.04871},
+    year   = {2025}
+  }
+
+versions:
+  - version: "1.0"
+    date: 2025-07-01
+    changes: "Initial submission"
+    models:
+      - name: "TRM (7M params)"
+    scores:
+      - benchmark: "arc-agi-1"
+        score: 44.6
+        set: "public"
+        cost: 176.00
+      - benchmark: "arc-agi-2"
+        score: 7.8
+        set: "public"
+        cost: 252.00

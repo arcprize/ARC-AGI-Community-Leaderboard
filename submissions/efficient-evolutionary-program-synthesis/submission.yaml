@@ -1,0 +1,31 @@
+name: "Efficient Evolutionary Program Synthesis"
+
+authors:
+  - name: "Eric Pang"
+    twitter: "https://x.com/_eric_pang_"
+
+description: >
+  Inspired by DreamCoder, uses an LLM (Grok-4) to generate Python programs that
+  solve ARC tasks while maintaining an expanding library of previously successful
+  programs. The LLM evolves increasingly sophisticated programs by building on
+  prior solutions.
+
+code_url: "https://github.com/epang080516/arc_agi"
+
+paper_url: "https://ctpang.substack.com/p/arc-agi-2-sota-efficient-evolutionary"
+
+versions:
+  - version: "1.0"
+    date: 2025-09-01
+    changes: "Initial submission"
+    models:
+      - name: "Grok-4"
+    scores:
+      - benchmark: "arc-agi-1"
+        score: 77.1
+        set: "semi-private"
+        cost: 256.00
+      - benchmark: "arc-agi-2"
+        score: 26.0
+        set: "semi-private"
+        cost: 476.40

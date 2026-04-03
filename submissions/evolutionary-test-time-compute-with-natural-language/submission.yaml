@@ -1,0 +1,35 @@
+name: "Evolutionary Test-Time Compute with Natural Language Instructions"
+
+authors:
+  - name: "Jeremy Berman"
+    affiliation: "Params"
+    url: "https://substack.com/@jeremyberman"
+
+citation: ""
+
+description: >
+  Uses Grok-4 to evolve natural language instructions for solving ARC tasks.
+  Sub-agents test instructions against training examples, scoring by cell-level
+  accuracy. Top instructions are refined through individual and pooled revision
+  strategies across multiple evolutionary cycles, producing up to 40 candidate
+  instructions per task.
+
+code_url: "https://github.com/jerber/arc-lang-public"
+
+paper_url: "https://jeremyberman.substack.com/p/how-i-got-the-highest-score-on-arc-agi-again"
+
+versions:
+  - version: "2.0"
+    date: 2025-09-16
+    changes: "Initial submission"
+    models:
+      - name: "Grok-4"
+    scores:
+      - benchmark: "arc-agi-1"
+        score: 79.6
+        set: "semi-private"
+        cost: 842.00
+      - benchmark: "arc-agi-2"
+        score: 29.4
+        set: "semi-private"
+        cost: 3648.00

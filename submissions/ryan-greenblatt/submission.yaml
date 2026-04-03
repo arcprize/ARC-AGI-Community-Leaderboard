@@ -1,0 +1,28 @@
+name: "Ryan Greenblatt"
+
+authors:
+  - name: "Ryan Greenblatt"
+    twitter: "https://x.com/RyanPGreenblatt"
+
+description: >
+  Uses an LLM to generate and revise thousands of candidate programs per task, selecting answers by majority vote.
+
+code_url: "https://github.com/rgreenblatt/arc_draw_more_samples_pub"
+
+paper_url: "https://blog.redwoodresearch.org/p/getting-50-sota-on-arc-agi-with-gpt"
+
+versions:
+  - version: "1.0"
+    date: 2024-06-17
+    changes: "Initial submission"
+    models:
+      - name: "GPT-4o"
+    scores:
+      - benchmark: "arc-agi-1"
+        score: 42
+        set: "public"
+        cost: 40000 # estimated ~$400/task, not officially verified
+      - benchmark: "arc-agi-1"
+        score: 43
+        set: "semi-private"
+        cost: 40000 # estimated ~$400/task, not officially verified

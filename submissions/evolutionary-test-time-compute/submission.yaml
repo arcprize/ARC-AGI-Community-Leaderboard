@@ -1,0 +1,30 @@
+name: "Evolutionary Test-time Compute"
+
+authors:
+  - name: "Jeremy Berman"
+    affiliation: "Params"
+    url: "https://substack.com/@jeremyberman"
+
+description: >
+  A genetic algorithm-inspired approach that uses Claude Sonnet 3.5 to generate
+  large pools of Python transform functions, tests them against ARC-AGI task
+  examples, and iteratively refines the fittest candidates through selection,
+  variation, and retesting. Generates up to 500 functions and 31 dynamic prompts
+  per task, with diversity-preserving mechanisms to avoid local maxima.
+
+code_url: "https://www.kaggle.com/code/jerber/jeremy-arc"
+
+paper_url: "https://jeremyberman.substack.com/p/how-i-got-a-record-536-on-arc-agi"
+
+# Version history
+versions:
+  - version: "1.0"
+    date: 2024-12-18
+    changes: "Initial submission"
+    models:
+      - name: "Claude Sonnet 3.5"
+    scores:
+      - benchmark: "arc-agi-1"
+        score: 53.6
+        set: "semi-private"
+        cost: 2900 # estimated ~$29/task, not officially verified
