@@ -1,0 +1,42 @@
+name: "Marvin"
+
+authors:
+  - name: "Leo Guinan"
+    affiliation: "Independent / MetaSPN"
+    url: "https://github.com/leo-guinan"
+    twitter: "https://x.com/leo_guinan"
+  - name: "Walter Henrique Alves da Silva"
+    affiliation: "Open Research Institute"
+    url: "https://github.com/faltz009"
+
+description: >
+  Marvin is a paranoid conviction agent (Claude Sonnet 4.6 via Hermes harness) that
+  solves ARC-AGI-3 games through source-code reverse-engineering, game-engine BFS,
+  and per-level analytical solvers. Each game's mechanics are decoded at the source
+  level, then solved via deepcopy BFS with compact state keys, pure-Python analytical
+  approaches (reflection+bitmask for ar25, integer arm-state model for re86, lockstep
+  crane choreography for dc22), and ghost-timing analysis for recording/replay levels.
+  Walter da Silva's Closure-SDK (quaternion S3 architecture) informs the world-model
+  and state-encoding framework.
+
+code_url: "https://github.com/leo-guinan/marvin-arc-agi"
+
+versions:
+  - version: "1.0"
+    date: 2026-04-08
+    changes: "Initial submission — competition scorecard"
+    models:
+      - name: "Claude Sonnet 4.6"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/bc966d06-33c6-4695-a2d5-f6661fa366d7"
+        set: "preview"
+  - version: "1.1"
+    date: 2026-04-07
+    changes: "Updated scorecard — fixed data-format bugs, 74 levels banked (9 complete games)"
+    models:
+      - name: "Claude Sonnet 4.6"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/294ad8b6-fe2d-47d1-9a5d-e80736c086b9"
+        set: "preview"
