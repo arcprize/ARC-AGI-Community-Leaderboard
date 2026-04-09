@@ -1,0 +1,39 @@
+# ============================================================
+# a-evolve MAS — Multi-Agent System for ARC-AGI-3
+# ============================================================
+
+name: "a-evolve-mas-baseline"
+
+authors:
+  - name: "Zhan Shi"
+    affiliation: "Amazon"
+  - name: "Hanqing Lu"
+    affiliation: "Amazon"
+  - name: "Bing He"
+    affiliation: "Amazon"
+  - name: "Yisi Sang"
+    affiliation: "Amazon"
+  - name: "Minhua Lin"
+    affiliation: "The Pennsylvania State University"
+
+description: >
+  Hierarchical multi-agent orchestrator with wiki-style structured knowledge.
+  An orchestrator spawns specialist subagents (explorer, theorist, solver),
+  each with fresh context windows, bounded action budgets, and shared
+  append-only wiki pages for cross-agent knowledge transfer. Built on
+  a-evolve, a universal infrastructure for evolving AI agents through
+  self-improvement. Pure LLM approach — no RL, no CNN, no fine-tuning.
+
+code_url: "https://github.com/A-EVO-Lab/a-evolve"
+
+versions:
+  - version: "1.0"
+    date: 2026-04-08
+    changes: "Initial submission — wiki_v2 knowledge design with append-only critical pages"
+    models:
+      - name: "Claude Opus 4.6 high reasoning effort"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://three.arcprize.org/scorecards/48e27770-d2c3-4d33-b382-cbb69a540ba3"
+        set: "public"
+        cost: 5316.88
