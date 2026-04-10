@@ -6,8 +6,6 @@ authors:
     url: "https://noemon.com"
     twitter: "https://x.com/noemon_ai"
 
-citation: ""
-
 description: >
   Noemon's agentic ARC solver using Gemini 3.1 Pro Preview.
   A Reasoner agent learns the transformation rule from the training pairs as natural-language instructions.
