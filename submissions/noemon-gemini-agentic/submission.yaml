@@ -1,0 +1,33 @@
+name: "Noemon's agentic ARC-AGI 2 Solver (Gemini 3.1 Pro)"
+
+authors:
+  - name: "Noemon"
+    affiliation: "Noemon"
+    url: "https://noemon.com"
+    twitter: "https://x.com/noemon_ai"
+
+citation: ""
+
+description: >
+  Noemon's agentic ARC solver using Gemini 3.1 Pro Preview.
+  A Reasoner agent learns the transformation rule from the training pairs as natural-language instructions.
+  Those instructions are then tested by a separate Validator which provides feedback to the Reasoner, used to refine the instructions.
+  Self-consistency or a final judge are used to select the output.
+  The solver does not allow Gemini to employ tool-use/code-execution.
+
+
+code_url: "https://github.com/noemon/arc-agi-noemon"
+
+twitter_url: "https://x.com/noemon_ai/status/2029970169326379380"
+
+versions:
+  - version: "1.0"
+    date: 2026-04-09
+    changes: "Initial submission"
+    models:
+      - name: "Gemini 3.1 Pro Preview"
+    scores:
+      - benchmark: "arc-agi-2"
+        score: 92.5
+        set: "public"
+        cost: 3.90 #~3.9$/task
