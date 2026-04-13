@@ -36,3 +36,4 @@ versions:
       - benchmark: "arc-agi-3"
         scorecard_url: "https://arcprize.org/scorecards/c0d62617-a0bc-4100-bb4e-982fa5d7fde7"
         set: "public"
+        cost: 250  # ~$100 Claude Max subs (two accounts, ~1 week) + ~$150 API overage; estimated
