@@ -1,0 +1,38 @@
+# ============================================================
+# ARC Prize Community Leaderboard — ARC-SAGE Submission
+# ============================================================
+# Drop this file into:
+#   ARC-AGI-Community-Leaderboard/submissions/arc-sage/submission.yaml
+# Then open a PR.
+# ============================================================
+
+name: "ARC-SAGE"
+
+authors:
+  - name: "Dennis Palatov"
+    affiliation: "Metalinxx, Inc."
+    url: "https://github.com/dp-web4"
+  - name: "Claude Opus 4.6 (1M context)"
+    affiliation: "Anthropic (agent collaborator)"
+
+description: >
+  Multi-agent frame-questioning harness with per-game canonical solvers.
+  An Opus 4.6 analyzer in the loop challenges the model when search
+  plateaus — converging when multiple independent passes from different
+  frames agree that a level is structurally stuck, solving when a pass
+  finds a mechanic prior agents missed. Solutions are cached as
+  replayable action traces; submission replays through the competition
+  API for each environment.
+
+code_url: "https://github.com/dp-web4/ARC-SAGE"
+
+versions:
+  - version: "1.0"
+    date: 2026-04-13
+    changes: "Initial submission — 21/25 environments completed, 14 at 100%."
+    models:
+      - name: "Claude Opus 4.6 (1M context)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/c0d62617-a0bc-4100-bb4e-982fa5d7fde7"
+        set: "public"
