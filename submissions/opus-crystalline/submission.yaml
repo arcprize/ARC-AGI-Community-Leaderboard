@@ -1,0 +1,28 @@
+name: "Opus 4.6 + Crystalline"
+
+authors:
+  - name: "Paolo C"
+    affiliation: "Independent"
+    url: "https://github.com/synchopate"
+
+description: >
+  Multi-agent system using Claude Opus 4.6 with Crystalline cognitive memory
+  (5-level ACT-R inspired: episodic, semantic, procedural, analogical, principle).
+  Agents reverse-engineer game source code, build per-game pure-simulation solvers
+  (100K states/s), and use BFS/A*/algebraic methods. Crystalline enables cross-game
+  knowledge transfer and retry-with-lessons.
+
+code_url: "https://github.com/synchopate/arc-agi-crystalline"
+
+versions:
+  - version: "1.0"
+    date: 2026-04-24
+    changes: "Initial submission — 19/25 WIN, 164/183 levels"
+    models:
+      - name: "Claude Opus 4.6"
+    scores:
+      - benchmark: "arc-agi-3"
+        score: 89.62
+        scorecard_url: "https://arcprize.org/scorecards/faeb9912-b09e-43a3-a6c4-019462820725"
+        set: "public"
+        cost: 75.00
