@@ -26,3 +26,14 @@ versions:
         scorecard_url: "https://arcprize.org/scorecards/faeb9912-b09e-43a3-a6c4-019462820725"
         set: "public"
         cost: 75.00
+  - version: "1.2"
+    date: 2026-04-25
+    changes: "Recovery round — 21/25 WIN, 171/183 levels, RHAE ~102.3%"
+    models:
+      - name: "Claude Opus 4.6"
+    scores:
+      - benchmark: "arc-agi-3"
+        score: 102.32
+        scorecard_url: "https://arcprize.org/scorecards/a29ef74d-3a9b-4836-8832-70c4063de4df"
+        set: "public"
+        cost: 90.00
