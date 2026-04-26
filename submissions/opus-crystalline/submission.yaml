@@ -44,7 +44,7 @@ versions:
       - name: "Claude Opus 4.6"
     scores:
       - benchmark: "arc-agi-3"
-        score: 94.49
+        score: 97.69
         scorecard_url: "https://arcprize.org/scorecards/9e767cda-5cdb-4efd-9656-43513e10a693"
         set: "public"
         cost: 120.00
