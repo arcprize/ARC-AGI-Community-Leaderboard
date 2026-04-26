@@ -37,3 +37,14 @@ versions:
         scorecard_url: "https://arcprize.org/scorecards/475f22f2-0f48-475f-a4f6-12b554b6ca73"
         set: "public"
         cost: 95.00
+  - version: "2.0"
+    date: 2026-04-26
+    changes: "Above human — 23/25 WIN, 180/183 levels, dc22 6/6 (first AI to solve), lf52 10/10 viewport fix"
+    models:
+      - name: "Claude Opus 4.6"
+    scores:
+      - benchmark: "arc-agi-3"
+        score: 96.24
+        scorecard_url: "https://arcprize.org/scorecards/9e767cda-5cdb-4efd-9656-43513e10a693"
+        set: "public"
+        cost: 120.00
