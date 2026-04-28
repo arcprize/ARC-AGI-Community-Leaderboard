@@ -13,7 +13,7 @@ date: 2026-04-28
 links:
   code: https://github.com/Kuonirad/KullAILABS-MCOP-Framework-2.0
   paper: https://github.com/Kuonirad/KullAILABS-MCOP-Framework-2.0/blob/main/ARCHITECTURE.md
-  provenance_sample: https://github.com/YOUR-GITHUB-USERNAME/ARC-AGI-Community-Leaderboard/tree/main/submissions/mcop-framework-2.0-optimized/provenance
+  provenance_sample: https://github.com/kuonirad/ARC-AGI-Community-Leaderboard/tree/main/submissions/mcop-framework-2.0-optimized/provenance
 tags:
   - cognitive-os
   - deterministic
