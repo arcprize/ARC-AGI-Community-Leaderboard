@@ -1,0 +1,23 @@
+﻿name: MCOP-Framework-2.0 + Grok (Real API)
+authors:
+  - Kevin Kull (Kuonirad)
+description: |
+  MCOP-Framework-2.0 is a source-available deterministic Cognitive Operating System.
+  It features the full triad (NOVA-NEO Encoder, Stigmergy v5, Holographic Etch) with
+  real Grok reasoning via the xAI API and full Merkle-rooted provenance on every run.
+  This submission demonstrates real NOVA-NEO tensor encoding + Grok-powered actions.
+benchmark: ARC-AGI-3 (public set - mock evaluation with real MCOP + Grok)
+score: 0.00   # Will be updated after full multi-game runs
+cost: "$0.00 - $0.15"   # Grok API usage
+date: 2026-04-28
+links:
+  code: https://github.com/Kuonirad/KullAILABS-MCOP-Framework-2.0
+  paper: https://github.com/Kuonirad/KullAILABS-MCOP-Framework-2.0/blob/main/ARCHITECTURE.md
+  provenance_sample: https://github.com/YOUR-GITHUB-USERNAME/ARC-AGI-Community-Leaderboard/tree/main/submissions/mcop-framework-2.0-optimized/provenance
+tags:
+  - cognitive-os
+  - deterministic
+  - provenance
+  - human-in-the-loop
+  - grok
+  - real-api

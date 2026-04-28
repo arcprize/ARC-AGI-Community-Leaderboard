@@ -1,0 +1,25 @@
+{
+  "framework": "MCOP-Framework-2.0 (minimal test)",
+  "events": [
+    {
+      "step": 0,
+      "tensor_length": 64,
+      "observation": "grid with red object at (2,3), blue at (5,1)"
+    },
+    {
+      "step": 1,
+      "tensor_length": 64,
+      "observation": "pattern: rotate 90 degrees clockwise"
+    },
+    {
+      "step": 2,
+      "tensor_length": 64,
+      "observation": "object transformation: fill empty cells with color 4"
+    },
+    {
+      "step": 3,
+      "tensor_length": 64,
+      "observation": "rule: move object toward nearest border"
+    }
+  ]
+}

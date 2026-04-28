@@ -1,0 +1,185 @@
+{
+  "framework": "MCOP-Framework-2.0 + Real Grok",
+  "task_id": "ls20",
+  "events": [
+    {
+      "step": 0,
+      "observation": "Mock ARC-AGI-3 observation step 0",
+      "tensor_length": 64,
+      "action": {
+        "action": "observe"
+      }
+    },
+    {
+      "step": 1,
+      "observation": "Mock ARC-AGI-3 observation step 1",
+      "tensor_length": 64,
+      "action": {
+        "action": "mock_observation_step_1"
+      }
+    },
+    {
+      "step": 2,
+      "observation": "Mock ARC-AGI-3 observation step 2",
+      "tensor_length": 64,
+      "action": {
+        "action": "analyze"
+      }
+    },
+    {
+      "step": 3,
+      "observation": "Mock ARC-AGI-3 observation step 3",
+      "tensor_length": 64,
+      "action": {
+        "action": "predict_transformation",
+        "description": "Mock prediction for ARC-AGI-3 step 3: Assuming a simple pattern, output a transformed grid."
+      }
+    },
+    {
+      "step": 4,
+      "observation": "Mock ARC-AGI-3 observation step 4",
+      "tensor_length": 64,
+      "action": {
+        "action": "look"
+      }
+    },
+    {
+      "step": 5,
+      "observation": "Mock ARC-AGI-3 observation step 5",
+      "tensor_length": 64,
+      "action": {
+        "action": "observe"
+      }
+    },
+    {
+      "step": 6,
+      "observation": "Mock ARC-AGI-3 observation step 6",
+      "tensor_length": 64,
+      "action": {
+        "action": "mock_observation"
+      }
+    },
+    {
+      "step": 7,
+      "observation": "Mock ARC-AGI-3 observation step 7",
+      "tensor_length": 64,
+      "action": {
+        "action": "look"
+      }
+    },
+    {
+      "step": 8,
+      "observation": "Mock ARC-AGI-3 observation step 8",
+      "tensor_length": 64,
+      "action": {
+        "action": "output",
+        "grid": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "observation": "Mock ARC-AGI-3 observation step 9",
+      "tensor_length": 64,
+      "action": {
+        "action": "mock_arc_agi_3_step_9"
+      }
+    },
+    {
+      "step": 10,
+      "observation": "Mock ARC-AGI-3 observation step 10",
+      "tensor_length": 64,
+      "action": {
+        "action": "perform_observation_step_10"
+      }
+    },
+    {
+      "step": 11,
+      "observation": "Mock ARC-AGI-3 observation step 11",
+      "tensor_length": 64,
+      "action": {
+        "action": "Mock ARC-AGI-3 observation for step 11 completed"
+      }
+    },
+    {
+      "step": 12,
+      "observation": "Mock ARC-AGI-3 observation step 12",
+      "tensor_length": 64,
+      "action": {
+        "action": "mock_observation_step_12"
+      }
+    },
+    {
+      "step": 13,
+      "observation": "Mock ARC-AGI-3 observation step 13",
+      "tensor_length": 64,
+      "action": {
+        "action": "[\"0\", \"0\", \"0\", \"0\", \"1\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\"]"
+      }
+    },
+    {
+      "step": 14,
+      "observation": "Mock ARC-AGI-3 observation step 14",
+      "tensor_length": 64,
+      "action": {
+        "action": "Mock observation for ARC-AGI-3 step 14"
+      }
+    },
+    {
+      "step": 15,
+      "observation": "Mock ARC-AGI-3 observation step 15",
+      "tensor_length": 64,
+      "action": {
+        "action": "mock_observation_step_15"
+      }
+    },
+    {
+      "step": 16,
+      "observation": "Mock ARC-AGI-3 observation step 16",
+      "tensor_length": 64,
+      "action": {
+        "action": "observe",
+        "step": 16
+      }
+    },
+    {
+      "step": 17,
+      "observation": "Mock ARC-AGI-3 observation step 17",
+      "tensor_length": 64,
+      "action": {
+        "action": "mock_observation_for_step_17"
+      }
+    },
+    {
+      "step": 18,
+      "observation": "Mock ARC-AGI-3 observation step 18",
+      "tensor_length": 64,
+      "action": {
+        "action": "pass"
+      }
+    },
+    {
+      "step": 19,
+      "observation": "Mock ARC-AGI-3 observation step 19",
+      "tensor_length": 64,
+      "action": {
+        "action": "mock_observation_step_19"
+      }
+    }
+  ]
+}
