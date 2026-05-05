@@ -13,7 +13,7 @@ description: >
   A customized ARC-AGI-3 ClaudeAgent harness built through iterative debugging,
   source inspection, replay validation, and environment-specific solver modules
   on top of the ARC-AGI-3-Agents base. The current public evidence bundle solves
-  seven ARC-AGI-3 public environments end-to-end, with scorecard proof and notes
+  eight ARC-AGI-3 public environments end-to-end, with scorecard proof and notes
   in the submission README.
 
 code_url: "https://github.com/edmonddantesj/arc-agi-3-claudeagent"
@@ -35,11 +35,11 @@ versions:
 
   - version: "0.2"
     date: 2026-05-06
-    changes: "Updated evidence bundle: seven ARC-AGI-3 public environments solved end-to-end in a single Competition Mode scorecard."
+    changes: "Updated evidence bundle: eight ARC-AGI-3 public environments solved end-to-end in a single Competition Mode scorecard."
     models:
       - name: "ClaudeAgent"
     scores:
       - benchmark: "arc-agi-3"
         set: "public"
-        scorecard_url: "https://arcprize.org/scorecards/b22d1072-fd79-48ef-a352-2452f70f3d21"
+        scorecard_url: "https://arcprize.org/scorecards/5fb31d6d-c970-4cce-995a-eec1efcde3f2"
         cost: 0.00
