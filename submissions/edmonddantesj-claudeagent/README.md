@@ -6,17 +6,18 @@ This is a customized ARC-AGI-3 ClaudeAgent harness built on top of the ARC Prize
 
 ## Current public evidence bundle
 
-Version `0.4` reports a single Competition Mode scorecard covering ten solved ARC-AGI-3 public environments:
+Version `0.5` reports a single Competition Mode scorecard covering eleven solved ARC-AGI-3 public environments:
 
-- Scorecard: https://arcprize.org/scorecards/68eed0e4-7438-4ef3-9e15-a1d66cf82613
-- Raw scorecard host equivalent: https://three.arcprize.org/scorecards/68eed0e4-7438-4ef3-9e15-a1d66cf82613
-- Environments completed: 10 / 10 in the submitted bundle
-- Levels completed: 72 / 72 in the submitted bundle
-- Total actions: 2238
+- Scorecard: https://arcprize.org/scorecards/19ebc8d2-4106-48cb-b8fa-eca690b574d8
+- Raw scorecard host equivalent: https://three.arcprize.org/scorecards/19ebc8d2-4106-48cb-b8fa-eca690b574d8
+- Environments completed: 11 / 11 in the submitted bundle
+- Levels completed: 81 / 81 in the submitted bundle
+- Total actions: 2641
 - Resets: 0
 
 Solved environments in this bundle:
 
+- `bp35-0a0ad940`
 - `sb26-7fbdac44`
 - `ft09-0d8bbf25`
 - `cd82-fb555c5d`
@@ -46,7 +47,7 @@ The customized `agents/claude_agent.py` implementation includes a mix of targete
 - energy tile consumption / reset handling
 - dynamic transform-zone detection
 - verified per-level replay slices for WA30 without `ACTION0`/RESET emission
-- deterministic solvers or replay plans for the ten solved public environments listed above
+- deterministic solvers or replay plans for the eleven solved public environments listed above
 
 ## Reproducibility notes
 
