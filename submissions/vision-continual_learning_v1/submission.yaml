@@ -66,6 +66,6 @@ versions:
       - name: "Vision-CLv1"
     scores:
       - benchmark: "arc-agi-3"
-        scorecard_url: "https://arcprize.org/scorecards/your-scorecard-id"
+        scorecard_url: "https://arcprize.org/scorecards/73aaed94-060a-44c6-b851-9997366eb89d"
         set: "public"
         cost: 4788.00
