@@ -1,0 +1,64 @@
+# ============================================================
+# ARC Prize Community Leaderboard — Submission Template
+# ============================================================
+# Copy this directory into /submissions/<your-submission-id>/
+# and fill in the fields below. See CONTRIBUTING.md for details.
+# ============================================================
+
+# Display name for your method (must be unique across all submissions)
+name: "baseline1"
+
+# Authors — at least one is required
+authors:
+  - name: "Sergey Rodionov"
+    affiliation: "SingularityNET" # or "Independent"
+
+# Citation (optional) — how to reference this work
+citation: "Rodionov, Sergey. \"Executable World Models for ARC-AGI-3 in the Era of Coding Agents.\" arXiv:2605.05138, 2026. https://arxiv.org/abs/2605.05138"
+
+# Brief description of the method (1-3 sentences)
+description: >
+  An LLM-based coding agent that maintains an executable Python world model, verifies it against
+  previous observations, refactors it toward simpler abstractions as a practical proxy for an
+  MDL-like simplicity bias, and plans through the model before acting. The results suggest that
+  such agents can build and use executable world models in complex but low-dimensional deterministic
+  environments. Full runs are released for inspection, including the generated artifacts and learned
+  world models; links are available in the GitHub repository.
+
+# Link to a public repository with the source code (required)
+code_url: "https://github.com/astroseger/arc-3-agents-baseline1"
+
+# Links (optional — but if provided, they must resolve)
+paper_url: "https://arxiv.org/abs/2605.05138"
+
+# Version history — at least one version is required
+# Add new versions to the bottom of the list when you update your method
+#
+# scores — a list of score objects
+#   valid benchmarks: arc-agi-1, arc-agi-2, arc-agi-3
+#
+#   arc-agi-1 / arc-agi-2 entries require:
+#     benchmark (required)    — "arc-agi-1" or "arc-agi-2"
+#     score     (required)    — number 0-100
+#     set       (required)    — e.g. "public", "semi-private", "private"
+#     cost      (optional)    — USD cost to achieve score
+#     NOTE: scorecard_url is NOT valid for arc-agi-1/arc-agi-2
+#
+#   arc-agi-3 entries require:
+#     benchmark     (required) — "arc-agi-3"
+#     scorecard_url (required) — link to your scorecard on arcprize.org
+#     set           (required) — e.g. "public", "preview"
+#     cost          (optional) — USD cost to achieve score
+#     NOTE: do NOT include a "score" field for arc-agi-3; scores are
+#           pulled automatically from your scorecard
+versions:
+  - version: "1.0"
+    date: 2026-05-20
+    changes: "baseline1 GPT-5.5 high run1"
+    models:
+      - name: "baseline1_gpt-5.5_high_run1"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/a08b9324-fd82-415d-9640-4527fd2a7fba"
+        set: "public"
+        cost: 350.00
