@@ -18,12 +18,13 @@ citation: "Rodionov, Sergey. \"Executable World Models for ARC-AGI-3 in the Era 
 
 # Brief description of the method (1-3 sentences)
 description: >
-  An LLM-based coding agent that maintains an executable Python world model, verifies it against
-  previous observations, refactors it toward simpler abstractions as a practical proxy for an
-  MDL-like simplicity bias, and plans through the model before acting. The results suggest that
-  such agents can build and use executable world models in complex but low-dimensional deterministic
-  environments. Full runs are released for inspection, including the generated artifacts and learned
-  world models; links are available in the GitHub repository.
+  An LLM-based coding agent that builds and verifies an executable Python world model from
+  observations, then plans through that model before acting. The agent contains no game-specific
+  code, prompts, heuristics, or hidden information, and is evaluated in a single playthrough per
+  game. It sees each game only once, starts from a fresh workspace, cannot return to solved levels,
+  and cannot restart the game to obtain a better trajectory. Full run artifacts, including generated
+  workspaces and world models, are released for inspection; links are available in the GitHub
+  repository together with the source code.
 
 # Link to a public repository with the source code (required)
 code_url: "https://github.com/astroseger/arc-3-agents-baseline1"
