@@ -1,0 +1,36 @@
+# ARC Prize Community Leaderboard — Intuition Labs / Terminals OS submission (DRAFT, not yet pushed)
+# Method: the tissue-foundry — per-game (per-tissue) bounded deepcopy world-model search with a
+# composable library of [techs] (directors + decompositions), coherence-R gated. Source-coupled
+# (deepcopies the game's own env.step), like the per-game simulators the board already permits.
+name: "Terminals OS — Tissue Foundry (Kuramoto-1)"
+
+authors:
+  - name: "Tej Desai"
+    affiliation: "Intuition Labs LLC"
+    url: "https://intuitionlabs.tech"
+
+citation: ""
+
+description: >
+  A per-tissue foundry: each ARC-AGI-3 game is treated as a bounded "tissue" solved by best-first
+  search over the game's own deepcopy world-model, composed from a reusable library of directors
+  (grid-distance, win-phi, independent-subproblem decomposition) and gated by a coherence-R lock-in
+  signal. Deterministic, bounded (8 GiB / node-cap / wall-clock), no LLM in the loop.
+
+# REQUIRED: public repo with the source (the harness + the 4 source-coupled winning solvers, AGPL).
+code_url: "https://github.com/Intuition-Labs-LLC/terminals-os-arc3"
+
+paper_url: ""
+twitter_url: ""
+
+versions:
+  - version: "1.0"
+    date: 2026-06-04
+    changes: "Initial submission — per-tissue foundry, Competition-mode scorecard."
+    models:
+      - name: "Tissue Foundry (deepcopy-BFS + [techs], no LLM)"
+    scores:
+      # arc-agi-3: NO score field — pulled from the scorecard. Competition-Mode sealed card.
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/5197b710-9600-4ebd-83ff-bd93f5ae5fc2"
+        set: "public"
