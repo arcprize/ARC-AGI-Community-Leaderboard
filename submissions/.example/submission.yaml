@@ -9,11 +9,15 @@
 name: "Your Method Name"
 
 # Authors — at least one is required
+# Each author must include at least one link (url, twitter, linkedin, scholar, or github)
 authors:
   - name: "Your Name"
     affiliation: "Your Organization" # or "Independent"
-    url: "" # optional
+    url: "https://your-website.com" # personal site or homepage
     twitter: "" # optional
+    linkedin: "" # optional
+    scholar: "" # optional — Google Scholar profile
+    github: "" # optional
 
 # Citation (optional) — how to reference this work
 citation: ""
