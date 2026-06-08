@@ -23,6 +23,7 @@ import requests
 # ──────────────────────────────────────────────────────────────
 
 REQUIRED_TOP_LEVEL = ["name", "authors", "description", "code_url", "versions"]
+AUTHOR_LINK_FIELDS = ["url", "twitter", "linkedin", "scholar", "github"]
 VALID_ARC_VERSIONS = {"arc-agi-1", "arc-agi-2", "arc-agi-3"}
 OPTIONAL_URL_FIELDS = ["paper_url", "twitter_url"]
 DIR_NAME_PATTERN = re.compile(r"^[a-z0-9][a-z0-9\-]*[a-z0-9]$")
@@ -115,6 +116,24 @@ def validate_submission(filepath):
                 continue
             if "name" not in author or not author["name"]:
                 errors.append(ValidationError(f"authors[{i}].name", "Author name is required"))
+            # Each author must provide at least one link
+            author_links = [
+                author[f] for f in AUTHOR_LINK_FIELDS
+                if isinstance(author.get(f), str) and author[f].strip()
+            ]
+            if not author_links:
+                errors.append(ValidationError(
+                    f"authors[{i}]",
+                    f"Each author must include at least one link ({', '.join(AUTHOR_LINK_FIELDS)})"
+                ))
+            else:
+                for f in AUTHOR_LINK_FIELDS:
+                    val = author.get(f)
+                    if isinstance(val, str) and val.strip():
+                        if not val.startswith("http"):
+                            errors.append(ValidationError(
+                                f"authors[{i}].{f}", "Must be a valid URL starting with http(s)"
+                            ))
 
     # ── code_url ────────────────────────────────────────────
     code_url = data.get("code_url", "")
