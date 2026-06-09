@@ -45,6 +45,15 @@ Describe the submission with respect to each. State what you observe — not a g
 3. **Novel contribution.** Is there an identifiable new idea (harness, search, training,
    prompting/memory/tool-use), or is it a thin wrapper / per-task engineering?
 
+In addition, note one factual descriptor (not a criterion, not a grade):
+
+- **Model provenance.** Where does the core intelligence run? Is it an open-weight or local
+  model, or a closed third-party hosted API (game state sent off to a black box)? Name the
+  provider/endpoint if identifiable. Also flag when a key artifact the method depends on is
+  opaque or API-bound (e.g. an un-inspectable "weights"/memory blob that only the vendor's
+  servers can interpret), since that bears on whether the result is independently
+  reproducible. This is descriptive only — closed APIs are common and not disqualifying.
+
 ## Cardinal rule: read the repo, not just the PR
 
 **The PR description is the submitter's framing. The truth is in the code.** Submissions
@@ -67,6 +76,9 @@ summarize. Never summarize from the PR body or a scorecard link alone.
    - Hardcoded environment-specific identifiers; long `if id == ...` branches.
    - A general single loop/policy/search that handles unseen tasks at run time (a positive
      tell for general-purpose).
+   - Calls to a hosted model API (e.g. an HTTP client + API key/endpoint) vs. loading a
+     local/open-weight model; opaque vendor-returned blobs (`weights`, memory state) that
+     are stored but only meaningful to the vendor's servers.
 4. **Write the summary** (see format). Keep it short and factual. Cite a few concrete file
    paths as evidence so a reader can verify.
 
@@ -86,6 +98,8 @@ _Advisory and automated — a description, not a decision. A maintainer makes th
 - **General-purpose:** <one factual line: general method vs. per-task/replay>
 - **Open system (not just output):** <one line: system present vs. mainly outputs>
 - **Novel contribution:** <one line: identifiable new idea vs. per-task engineering>
+
+**Model provenance:** <one factual line: open-weight/local vs. closed third-party hosted API (name provider/endpoint); note any opaque/API-bound artifact>
 
 **Notable files:** `path/one`, `path/two`, `path/three`
 ```
