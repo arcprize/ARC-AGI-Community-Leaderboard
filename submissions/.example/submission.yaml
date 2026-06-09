@@ -12,7 +12,7 @@ name: "Your Method Name"
 # Each author must include at least one link (url, twitter, linkedin, scholar, or github)
 authors:
   - name: "Your Name"
-    affiliation: "Your Organization" # or "Independent"
+    affiliation: "Your Organization" # optional — organization, university, or "Independent"
     url: "https://your-website.com" # personal site or homepage
     twitter: "" # optional
     linkedin: "" # optional

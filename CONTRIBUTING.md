@@ -33,7 +33,7 @@ Do **not** create a new directory for updates - keep everything in your original
 ### Required Fields
 
 - `name` - unique display name for your method
-- `authors` - at least one author. Each author needs a `name` and at least one link (`url`, `twitter`, `linkedin`, `scholar`, or `github`)
+- `authors` - at least one author. Each author needs a `name` and at least one link (`url`, `twitter`, `linkedin`, `scholar`, or `github`). Each author may optionally include an `affiliation` (your organization, university, or `"Independent"`).
 - `description` - brief explanation of your approach
 - `code_url` - link to a **public** repository
 - `versions` - at least one version entry with:
