@@ -14,7 +14,7 @@ description: >
   The solver does not allow Gemini to employ tool-use/code-execution.
 
 
-code_url: "https://github.com/noemon/arc-agi-noemon"
+code_url: "https://github.com/noemon/noemon-arc-agi"
 
 twitter_url: "https://x.com/noemon_ai/status/2029970169326379380"
 
