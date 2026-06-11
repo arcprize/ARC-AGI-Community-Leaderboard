@@ -1,0 +1,41 @@
+# ============================================================
+# a-evolve MAS Evolved — Evolved Multi-Agent System for ARC-AGI-3
+# ============================================================
+
+name: "a-evolve-mas-evolved"
+
+authors:
+  - name: "Zhan Shi"
+    affiliation: "Amazon"
+  - name: "Hanqing Lu"
+    affiliation: "Amazon"
+  - name: "Bing He"
+    affiliation: "Amazon"
+  - name: "Yisi Sang"
+    affiliation: "Amazon"
+  - name: "Minhua Lin"
+    affiliation: "The Pennsylvania State University"
+
+description: >
+  Evolved version of the a-evolve MAS agent. A retrospective log-analysis
+  engine analyzed 25 competition games to extract transferable strategies,
+  failure patterns, and orchestration insights, then used an LLM to create
+  9 learned skills (maze-navigation, pattern-recognition, budget-management,
+  etc.) and refine role prompts. Same multi-agent orchestrator architecture
+  (explorer → theorist → solver) with wiki-style append-only knowledge.
+  Each game starts with a fresh wiki — no memories or knowledge are reused
+  between games. Pure LLM approach — no RL, no CNN, no fine-tuning.
+
+code_url: "https://github.com/A-EVO-Lab/a-evolve"
+
+versions:
+  - version: "1.0"
+    date: 2026-04-09
+    changes: "Evolved from baseline — 9 learned skills, refined prompts from competition log analysis"
+    models:
+      - name: "Claude Opus 4.6 high reasoning effort"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/c7147b87-aac6-498d-8916-8b37cf78756f"
+        set: "public"
+        cost: 5300.00
