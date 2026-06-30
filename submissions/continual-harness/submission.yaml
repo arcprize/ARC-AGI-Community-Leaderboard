@@ -1,0 +1,85 @@
+# ============================================================
+# ARC Prize Community Leaderboard — Submission Template
+# ============================================================
+# Copy this directory into /submissions/<your-submission-id>/
+# and fill in the fields below. See CONTRIBUTING.md for details.
+# ============================================================
+
+# Display name for your method (must be unique across all submissions)
+name: "Continual Harness"
+
+# Authors — at least one is required
+# Each author must include at least one link (url, twitter, linkedin, scholar, or github)
+authors:
+  - name: "Ruirong Feng"
+    affiliation: "Princeton University"
+  - name: "Seth Karten"
+    affiliation: "Princeton University"
+  - name: "Wenzhe Li"
+    affiliation: "Princeton University"
+  - name: "Chengshuai Shi"
+    affiliation: "Princeton University"
+  - name: "Joel Zhang"
+    affiliation: "ARISE Foundation"
+  - name: "Tersoo Upaa Jr"
+    affiliation: "Princeton University"
+  - name: "Kiran Vodrahalli"
+    affiliation: "Google DeepMind"
+  - name: "Chi Jin"
+    affiliation: "Princeton University"
+
+# Citation (optional) — how to reference this work
+citation: >
+  @article{karten2026continual,
+  title={Continual Harness: Online Adaptation for Self-Improving Foundation Agents},
+  author={Karten, Seth and Zhang, Joel and Upaa Jr, Tersoo and Feng, Ruirong and Li, Wenzhe and Shi, Chengshuai and Jin, Chi and Vodrahalli, Kiran},
+  journal={arXiv preprint arXiv:2605.09998},
+  year={2026}
+
+
+# Brief description of the method (1-3 sentences)
+description: >
+  This submission adapts the Continual Harness architecture from arXiv:2605.09998 to ARC-AGI-3. 
+  The implementation preserves the four editable harness components (system prompt, memory, 
+  skills, and subagents) plus an automated Refiner that rewrites these components from 
+  trajectory analysis, while adding changes for prompt rebuilding, refinement triggers, 
+  and confidence-scored memory entries.
+
+# Link to a public repository with the source code (required)
+code_url: "https://github.com/feng-rrRay/Continual-Harness-ARC-AGI-3"
+
+# Links (optional — but if provided, they must resolve)
+paper_url: "https://continual-harness.github.io/"
+twitter_url: "https://x.com/sethkarten/status/2072034978112889328"
+
+# Version history — at least one version is required
+# Add new versions to the bottom of the list when you update your method
+#
+# scores — a list of score objects
+#   valid benchmarks: arc-agi-1, arc-agi-2, arc-agi-3
+#
+#   arc-agi-1 / arc-agi-2 entries require:
+#     benchmark (required)    — "arc-agi-1" or "arc-agi-2"
+#     score     (required)    — number 0-100
+#     set       (required)    — e.g. "public", "semi-private", "private"
+#     cost      (optional)    — USD cost to achieve score
+#     NOTE: scorecard_url is NOT valid for arc-agi-1/arc-agi-2
+#
+#   arc-agi-3 entries require:
+#     benchmark     (required) — "arc-agi-3"
+#     scorecard_url (required) — link to your scorecard on arcprize.org
+#     set           (required) — e.g. "public", "preview"
+#     cost          (optional) — USD cost to achieve score
+#     NOTE: do NOT include a "score" field for arc-agi-3; scores are
+#           pulled automatically from your scorecard
+versions:
+  - version: "1.0"
+    date: 2026-06-18
+    changes: "Initial submission"
+    models:
+      - name: "Gemini 3.1 Pro (Preview)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/ac3eeaf5-6ace-4d2d-bf29-9469fd00a57b"
+        set: "public"
+        cost: 774.00
