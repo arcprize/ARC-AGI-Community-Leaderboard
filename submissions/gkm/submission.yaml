@@ -1,0 +1,31 @@
+name: "GKM: Auditable Self-Improvement (free-energy leg library)"
+
+authors:
+  - name: "Alexander Kolpakov"
+    affiliation: "University of Austin"
+    github: "https://github.com/sashakolpakov"
+
+description: >
+  A verifier-driven self-improvement loop: a coding proposer grows a solver from the
+  raw interface (frame, levels_completed, clone), the simulator verifies improvement
+  by fresh replay, and marginal description length (F = R + lambda*C) decides which
+  new structure is kept in a growing leg library. Discovery ran locally against the
+  public preview games; the linked scorecard replays the promoted, replay-validated
+  artifact paths (wa30 9/9, ls20 7/7) through the official API. Full audit trail
+  (WIP snapshots, marginal-complexity ledger, charged literals) in the repo.
+
+code_url: "https://github.com/sashakolpakov/gkm"
+
+paper_url: "https://sashakolpakov.github.io/gkm/"
+
+versions:
+  - version: "1.0"
+    date: 2026-07-09
+    changes: "Initial submission"
+    models:
+      - name: "Claude Opus (Claude Code as proposer)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/da76c4e2-40f9-4434-a414-ec756896503c"
+        set: "public"
+        cost: 1639.14
