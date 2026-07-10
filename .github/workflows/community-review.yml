@@ -1,0 +1,57 @@
+name: Community Submission Review
+
+# Maintainer-triggered: add the `arc-review` label to a submission PR to run an
+# automated, advisory summary. This is documentation only — it posts a short
+# description of what the submission does and never approves/merges/closes anything.
+
+on:
+  pull_request_target:
+    types: [labeled]
+
+# pull_request_target runs in the BASE repo context. We deliberately check out the
+# base repo (not the PR head) and never execute submission code — we only read the
+# PR and the linked external repo via the GitHub API.
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: community-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  summarize:
+    if: github.event.label.name == 'arc-review'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout base repo (skill + scripts only)
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Generate advisory summary
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REVIEW_MODEL: claude-opus-4-8
+        run: |
+          bash .github/scripts/generate_review.sh \
+            "${{ github.event.pull_request.number }}" \
+            "${{ github.repository }}" > review-comment.md
+          echo "----- generated comment -----"
+          cat review-comment.md
+
+      - name: Post / update single PR comment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          bash .github/scripts/upsert_comment.sh \
+            "${{ github.event.pull_request.number }}" \
+            "${{ github.repository }}" \
+            review-comment.md

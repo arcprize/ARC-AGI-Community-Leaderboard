@@ -1,0 +1,33 @@
+name: "TELL"
+
+authors:
+  - name: "Hesai"
+    affiliation: "Xiaohongshu"
+    url: "https://rednote-hilab.github.io/TELL/"
+  - name: "Waci"
+    affiliation: "Xiaohongshu"
+    url: "https://rednote-hilab.github.io/TELL/"
+
+description: >
+  TELL (Test-time Experiential Lifelong Learning) runs a single LLM conversation per game
+  with three tools: screenshot, bash, and write_file. The agent observes, hypothesizes about
+  hidden rules, tests through action, and writes confirmed knowledge to MEMORY.md.
+  That memory compounds across levels — each level solved makes the next one faster.
+  No fine-tuning, no training, no task-specific engineering.
+
+code_url: "https://github.com/rednote-hilab/TELL"
+
+paper_url: ""
+twitter_url: ""
+
+versions:
+  - version: "1.0"
+    date: 2026-04-09
+    changes: "Initial submission"
+    models:
+      - name: "Claude Opus 4.6"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/745891d9-7efa-414f-8ec4-ec62cbffc316"
+        set: "public"
+        cost: 1406.00

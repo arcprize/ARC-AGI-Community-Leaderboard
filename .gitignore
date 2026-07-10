@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 .DS_Store
 .env
+.env.*
+!.env.example
+.claude/
+review-comment.md

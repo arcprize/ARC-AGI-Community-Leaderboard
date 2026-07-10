@@ -6,28 +6,33 @@
 # ============================================================
 
 # Display name for your method (must be unique across all submissions)
-name: "Your Method Name"
+name: "Vision - Continual Learning v1"
 
 # Authors — at least one is required
-# Each author must include at least one link (url, twitter, linkedin, scholar, or github)
 authors:
-  - name: "Your Name"
-    affiliation: "Your Organization" # optional — organization, university, or "Independent"
-    url: "https://your-website.com" # personal site or homepage
-    twitter: "" # optional
-    linkedin: "" # optional
-    scholar: "" # optional — Google Scholar profile
-    github: "" # optional
+  - name: "Vansh"
+    affiliation: "Aivoco"
+    url: "https://vansh.one"
+    twitter: "https://x.com/vansh_one"
 
-# Citation (optional) — how to reference this work
-citation: ""
 
 # Brief description of the method (1-3 sentences)
 description: >
-  A brief description of what your method does and how it works.
+  An autonomous ARC-AGI-3 agent driven by Vispark's Vision Large multimodal
+  model with Continual Learning weights carried across every game and level.
+  The harness exposes a small tool surface (single action, action sequence,
+  sandboxed python analysis, level reset, concede) and renders each game
+  frame to Vision as both compact single-char ASCII and a labelled PNG with
+  legend. Vision's per-call learning blob is persisted to disk between
+  games, so the agent that enters competition mode has accumulated skill
+  from an exploration phase over the public 25-game set. The exploration
+  phase stops as soon as any of three criteria fire — every game reaches
+  the per-game target score, weights size saturates across a window of
+  passes, or the Vision API reports insufficient tokens for the CL blob.
+  Competition is run in OperationMode.COMPETITION with a single scorecard.
 
 # Link to a public repository with the source code (required)
-code_url: "https://github.com/your-org/your-repo"
+code_url: "https://github.com/vansh-one/arc-agi-3_Vision-CLv1"
 
 # Links (optional — but if provided, they must resolve)
 paper_url: ""
@@ -55,16 +60,12 @@ twitter_url: ""
 #           pulled automatically from your scorecard
 versions:
   - version: "1.0"
-    date: 2026-01-01
+    date: 2026-05-18
     changes: "Initial submission"
     models:
-      - name: "Model Name"
+      - name: "Vision-CLv1"
     scores:
-      - benchmark: "arc-agi-2"
-        score: 0.0
-        set: "private"
-        cost: 0.00
       - benchmark: "arc-agi-3"
-        scorecard_url: "https://arcprize.org/scorecards/your-scorecard-id"
+        scorecard_url: "https://arcprize.org/scorecards/73aaed94-060a-44c6-b851-9997366eb89d"
         set: "public"
-        cost: 0.00
+        cost: 4788.00
