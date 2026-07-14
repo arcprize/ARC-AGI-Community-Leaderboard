@@ -1,4 +1,4 @@
-name: "GKM: Auditable Self-Improvement (free-energy leg library)"
+name: "GKM: Replay-Gated Program Growth"
 
 authors:
   - name: "Alexander Kolpakov"
@@ -6,13 +6,16 @@ authors:
     github: "https://github.com/sashakolpakov"
 
 description: >
-  A verifier-driven self-improvement loop: a coding proposer grows a solver from the
-  raw interface (frame, levels_completed, clone), the simulator verifies improvement
-  by fresh replay, and marginal description length (F = R + lambda*C) decides which
-  new structure is kept in a growing leg library. Discovery ran locally against the
-  public preview games; the linked scorecard replays the promoted, replay-validated
-  artifact paths (wa30 9/9, ls20 7/7) through the official API. Full audit trail
-  (WIP snapshots, marginal-complexity ledger, charged literals) in the repo.
+  GKM is a replay-gated program-growth loop: a coding proposer extends a reusable leg
+  library, fresh simulator replay decides promotion, and a source-growth ledger records
+  retained changes; the linked scorecard replays the promoted wa30 9/9 and ls20 7/7
+  paths through the official API. The complete ls20 trace is sawtoothed
+  (43, 2, 45, 3, 72, 130, 67): source inspection and replay tie the two sharp drops to
+  reuse of unchanged search legs, whereas new mechanics require larger increments.
+  This empirical admission loop follows Schmidhuber's Goedel-machine and PowerPlay
+  ideas--verified self-modification with retained skills--and treats compression
+  progress as an auditable learning signal, not as a claim to measure Kolmogorov
+  complexity directly.
 
 code_url: "https://github.com/sashakolpakov/gkm"
 
