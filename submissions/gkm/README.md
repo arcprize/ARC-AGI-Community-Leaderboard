@@ -8,6 +8,12 @@ level. The public scorecard replays the final promoted paths for `wa30` (9/9) an
 interface with `clone()` lookahead, so the work does not claim official-interface
 sample efficiency.
 
+Using the unchanged harness and promotion protocol, a bounded follow-on campaign also
+reached replay-validated L4 endpoints on `ft09`, `g50t`, `r11l`, `sp80`, and `tr87`.
+These partial endpoints are not additions to the linked scorecard, but they leave
+additional proposer compute as the remaining operational requirement for broader game
+coverage rather than another game-specific solver architecture.
+
 ## Complexity drop under reuse
 
 For each promotion, the historical `marginal_C` field records positive net retained

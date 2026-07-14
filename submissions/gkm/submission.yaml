@@ -12,10 +12,12 @@ description: >
   paths through the official API. The complete ls20 trace is sawtoothed
   (43, 2, 45, 3, 72, 130, 67): source inspection and replay tie the two sharp drops to
   reuse of unchanged search legs, whereas new mechanics require larger increments.
-  This empirical admission loop follows Schmidhuber's Goedel-machine and PowerPlay
-  ideas--verified self-modification with retained skills--and treats compression
-  progress as an auditable learning signal, not as a claim to measure Kolmogorov
-  complexity directly.
+  The unchanged harness subsequently reached L4 on five more games (ft09, g50t, r11l,
+  sp80, tr87), leaving additional proposer compute as the remaining operational
+  requirement for broader coverage rather than new per-game architecture; this
+  replay-gated admission loop follows Schmidhuber's Goedel-machine and PowerPlay ideas
+  and treats compression progress as an auditable signal, not direct Kolmogorov
+  complexity.
 
 code_url: "https://github.com/sashakolpakov/gkm"
 
