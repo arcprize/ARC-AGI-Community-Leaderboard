@@ -14,11 +14,11 @@ description: >
   reuse of unchanged search legs, whereas new mechanics require larger increments.
   One unchanged game-agnostic architecture solved two games completely and, in short
   bounded follow-on runs, reached L4 on five more (ft09, g50t, r11l, sp80, tr87); a
-  fresh official online-API replay confirms all seven endpoints, so going past L4 now
-  appears to require more proposer compute, not an architectural change; the
-  replay-gated admission loop follows Schmidhuber's Goedel-machine and PowerPlay ideas
-  and treats compression progress as an auditable signal, not direct Kolmogorov
-  complexity.
+  Competition-Mode replay confirms all seven endpoints and scores 17.14% across all 25
+  games, so going past L4 now appears to require more proposer compute, not an
+  architectural change. The replay-gated admission loop follows Schmidhuber's
+  Goedel-machine and PowerPlay ideas and treats compression progress as an auditable
+  signal, not direct Kolmogorov complexity.
 
 code_url: "https://github.com/sashakolpakov/gkm"
 
@@ -26,12 +26,11 @@ paper_url: "https://sashakolpakov.github.io/gkm/"
 
 versions:
   - version: "1.0"
-    date: 2026-07-09
-    changes: "Initial submission"
+    date: 2026-07-15
+    changes: "Initial submission: two complete games and five additional L4 endpoints"
     models:
       - name: "Claude Opus (Claude Code as proposer)"
     scores:
       - benchmark: "arc-agi-3"
-        scorecard_url: "https://arcprize.org/scorecards/da76c4e2-40f9-4434-a414-ec756896503c"
+        scorecard_url: "https://arcprize.org/scorecards/9e166671-0953-42f3-89de-a0fd57d7b147"
         set: "public"
-        cost: 1639.14

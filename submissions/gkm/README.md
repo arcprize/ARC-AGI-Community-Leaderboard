@@ -10,11 +10,11 @@ sample efficiency.
 
 One unchanged game-agnostic architecture produced both complete solves and, under short
 bounded follow-on runs, replay-validated L4 endpoints on `ft09`, `g50t`, `r11l`,
-`sp80`, and `tr87`. A fresh [official online-API replay](https://arcprize.org/scorecards/8852e733-026f-4c85-aa35-e262ad1d654e)
-confirms all seven endpoints. These partial endpoints are not additions to the linked
-Competition-Mode scorecard, but they indicate that going past L4 is now primarily a
-matter of additional proposer compute, not an architecture change. No game-specific
-architecture was introduced.
+`sp80`, and `tr87`. The [official Competition-Mode scorecard](https://arcprize.org/scorecards/9e166671-0953-42f3-89de-a0fd57d7b147)
+confirms all seven endpoints and scores **17.1365% across all 25 public games**. The
+five bounded L4 endpoints indicate that going past L4 is now primarily a matter of
+additional proposer compute, not an architecture change. No game-specific architecture
+was introduced.
 
 ## Complexity drop under reuse
 
