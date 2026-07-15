@@ -8,11 +8,13 @@ level. The public scorecard replays the final promoted paths for `wa30` (9/9) an
 interface with `clone()` lookahead, so the work does not claim official-interface
 sample efficiency.
 
-Using the unchanged harness and promotion protocol, a bounded follow-on campaign also
-reached replay-validated L4 endpoints on `ft09`, `g50t`, `r11l`, `sp80`, and `tr87`.
-These partial endpoints are not additions to the linked scorecard, but they leave
-additional proposer compute as the remaining operational requirement for broader game
-coverage rather than another game-specific solver architecture.
+One unchanged game-agnostic architecture produced both complete solves and, under short
+bounded follow-on runs, replay-validated L4 endpoints on `ft09`, `g50t`, `r11l`,
+`sp80`, and `tr87`. A fresh [official online-API replay](https://arcprize.org/scorecards/8852e733-026f-4c85-aa35-e262ad1d654e)
+confirms all seven endpoints. These partial endpoints are not additions to the linked
+Competition-Mode scorecard, but they indicate that going past L4 is now primarily a
+matter of additional proposer compute, not an architecture change. No game-specific
+architecture was introduced.
 
 ## Complexity drop under reuse
 

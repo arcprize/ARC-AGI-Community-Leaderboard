@@ -12,9 +12,10 @@ description: >
   paths through the official API. The complete ls20 trace is sawtoothed
   (43, 2, 45, 3, 72, 130, 67): source inspection and replay tie the two sharp drops to
   reuse of unchanged search legs, whereas new mechanics require larger increments.
-  The unchanged harness subsequently reached L4 on five more games (ft09, g50t, r11l,
-  sp80, tr87), leaving additional proposer compute as the remaining operational
-  requirement for broader coverage rather than new per-game architecture; this
+  One unchanged game-agnostic architecture solved two games completely and, in short
+  bounded follow-on runs, reached L4 on five more (ft09, g50t, r11l, sp80, tr87); a
+  fresh official online-API replay confirms all seven endpoints, so going past L4 now
+  appears to require more proposer compute, not an architectural change; the
   replay-gated admission loop follows Schmidhuber's Goedel-machine and PowerPlay ideas
   and treats compression progress as an auditable signal, not direct Kolmogorov
   complexity.
