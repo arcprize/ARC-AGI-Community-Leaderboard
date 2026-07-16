@@ -1,0 +1,24 @@
+name: "Retrodict"
+
+authors:
+  - name: "Ryan Brown"
+    affiliation: "Independent"
+    github: "https://github.com/ryanbbrown"
+
+description: >
+  Agent that tests rule hypotheses against its own recorded frame history
+  before spending live actions.
+
+code_url: "https://github.com/ryanbbrown/Retrodict"
+
+versions:
+  - version: "1.0"
+    date: 2026-07-16
+    changes: "Initial submission"
+    models:
+      - name: "GPT-5.6 Sol"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/8d734689-3eb9-4dee-b0ce-d822d76e0689"
+        set: "public"
+        cost: 418.71
