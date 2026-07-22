@@ -1,0 +1,26 @@
+name: "Qwen3.6-27B (Local, CoT-Prompted)"
+
+authors:
+  - name: "Yuchao Xu"
+    affiliation: "Independent"
+    github: "https://github.com/xycjscs"
+
+description: >
+  Local deployment of Qwen3.6-27B evaluated on ARC-AGI-1 with detailed Chain-of-Thought prompting.
+  Achieves 51.13% on the semi-private evaluation set (397/400 tasks), significantly outperforming
+  the official Qwen3-235B-A22B entry (11%) despite having only 1/9th the parameters, demonstrating
+  that prompt engineering can substantially outscale parameter count for this benchmark.
+
+code_url: "https://github.com/xycjscs/qwen3-6-27b-arc-agi"
+
+versions:
+  - version: "1.0"
+    date: 2026-07-22
+    changes: "Initial submission"
+    models:
+      - name: "Qwen3.6-27B"
+    scores:
+      - benchmark: "arc-agi-1"
+        score: 51.13
+        set: "semi-private"
+        cost: 0
