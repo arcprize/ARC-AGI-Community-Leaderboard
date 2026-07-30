@@ -1,24 +1,22 @@
-name: "GKM: Replay-Gated Program Growth"
+name: "Gödel–Kolmogorov Machine (GKM)"
 
 authors:
   - name: "Alexander Kolpakov"
     affiliation: "University of Austin"
     github: "https://github.com/sashakolpakov"
+  - name: "OpenAI"
+    url: "https://openai.com/"
 
 description: >
-  GKM is a replay-gated program-growth loop: a coding proposer extends a reusable leg
-  library, fresh simulator replay decides promotion, and a source-growth ledger records
-  retained changes; the linked scorecard replays the promoted wa30 9/9 and ls20 7/7
-  paths through the official API. The complete ls20 trace is sawtoothed
-  (43, 2, 45, 3, 72, 130, 67): source inspection and replay tie the two sharp drops to
-  reuse of unchanged search legs, whereas new mechanics require larger increments.
-  One unchanged game-agnostic architecture solved two games completely and, in short
-  bounded follow-on runs, reached L4 on five more (ft09, g50t, r11l, sp80, tr87); a
-  Competition-Mode replay confirms all seven endpoints and scores 17.14% across all 25
-  games, so going past L4 now appears to require more proposer compute, not an
-  architectural change. The replay-gated admission loop follows Schmidhuber's
-  Goedel-machine and PowerPlay ideas and treats compression progress as an auditable
-  signal, not direct Kolmogorov complexity.
+  GKM is an open, compute-bounded self-improving meta-loop: through the same
+  game-independent interface and harness, a coding LLM grows a persistent
+  per-game library of executable solver legs and thin per-level bindings.
+  Model-proposed components are attached to the incumbent program and become
+  part of the monotone solver archive only after independent execution and fresh
+  replay; Competition Mode then replays the verified paths with no LLM.
+  Kolmogorov/free-energy selection and a retained-source growth ledger make
+  acquisition, cross-level reuse, and genuinely new program structure
+  inspectable.
 
 code_url: "https://github.com/sashakolpakov/gkm"
 
@@ -27,9 +25,9 @@ paper_url: "https://sashakolpakov.github.io/gkm/"
 versions:
   - version: "1.0"
     date: 2026-07-15
-    changes: "Initial submission: two complete games and five additional L4 endpoints"
+    changes: "Initial scored lineage; expanded architecture, program authorship, provenance, and verification documentation"
     models:
-      - name: "Claude Opus (Claude Code as proposer)"
+      - name: "Claude Code (legacy mixed Claude proposer lineage)"
     scores:
       - benchmark: "arc-agi-3"
         scorecard_url: "https://arcprize.org/scorecards/9e166671-0953-42f3-89de-a0fd57d7b147"
