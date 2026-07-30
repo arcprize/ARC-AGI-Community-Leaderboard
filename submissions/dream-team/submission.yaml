@@ -1,0 +1,51 @@
+name: "DreamTeam"
+
+authors:
+  - name: "Elad Sarafian"
+    affiliation: "NVIDIA"
+    scholar: "https://scholar.google.com/citations?user=nFMYuO4AAAAJ"
+  - name: "Gal Kaplun"
+    affiliation: "NVIDIA"
+    scholar: "https://scholar.google.com/citations?user=YeEmcwMAAAAJ"
+  - name: "Ron Banner"
+    affiliation: "NVIDIA"
+    scholar: "https://scholar.google.com/citations?user=LMzZLNoAAAAJ"
+  - name: "Daniel Soudry"
+    affiliation: "NVIDIA & Technion"
+    scholar: "https://scholar.google.com/citations?user=AEBWEm8AAAAJ"
+  - name: "Boris Ginsburg"
+    affiliation: "NVIDIA"
+    scholar: "https://scholar.google.com/citations?user=7BRYaGcAAAAJ"
+
+citation: >
+  Sarafian, E., Kaplun, G., Banner, R., Soudry, D., & Ginsburg, B. (2026).
+  Workspace Optimization: How to Train Your Agent. arXiv:2605.09650.
+
+description: >
+  DreamTeam is a multi-agent harness for interactive ARC-AGI-3 environments
+  that coordinates six specialized roles — an observer that encodes scenes, a
+  simulator that builds an executable world model, inductive and transductive
+  explorers that propose experiments and policies, a critic that evaluates
+  evidence, and a team leader that selects actions — around a shared
+  file-based workspace. It instantiates "workspace optimization": since
+  frontier-model agents cannot adapt their weights, the agent instead evolves
+  its structured external workspace, mirroring weight-space training with
+  artifacts in place of parameters, evidence in place of data, counterexamples
+  in place of losses, and textual feedback in place of gradients.
+
+code_url: "https://github.com/NVIDIA/dream-team"
+
+paper_url: "https://arxiv.org/abs/2605.09650"
+
+versions:
+  - version: "1.0"
+    date: 2026-05-04
+    changes: "Initial submission"
+    models:
+      - name: "Claude Opus 4.6"
+      - name: "GPT-5.5"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/831c83cf-b969-45fc-a6ce-27f9b3c4105c"
+        set: "public"
+        cost: 18000.00
