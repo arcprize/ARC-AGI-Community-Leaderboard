@@ -1,0 +1,50 @@
+name: "NOOA (NVIDIA-labs OO Agents)"
+
+authors:
+  - name: "Gal Kaplun"
+    affiliation: "NVIDIA"
+    scholar: "https://scholar.google.com/citations?user=YeEmcwMAAAAJ"
+  - name: "Elad Sarafian"
+    affiliation: "NVIDIA"
+    scholar: "https://scholar.google.com/citations?user=nFMYuO4AAAAJ"
+  - name: "Paul Furgale"
+    affiliation: "NVIDIA"
+    scholar: "https://scholar.google.com/citations?user=RNDtSG8AAAAJ"
+  - name: "Ricardo Silveira Cabral"
+    affiliation: "NVIDIA"
+    scholar: "https://scholar.google.com/citations?user=NB9xXQcAAAAJ"
+  - name: "Ron Banner"
+    affiliation: "NVIDIA"
+    scholar: "https://scholar.google.com/citations?user=LMzZLNoAAAAJ"
+
+citation: >
+  Furgale, P., Klingler, S., Nolan, J., Staats, M., Di Lorenzo, G.,
+  Martinez Abad, E., Schüller, C., Dinu, R., Devoto, A., Berard, P.,
+  Kaplun, G., Sarafian, E., Roveri, R., Derczynski, L., & Silveira Cabral, R.
+  (2026). NVIDIA-labs OO Agents: Native Python Object-Oriented Agents.
+  arXiv:2607.20709.
+
+description: >
+  NOOA (NVIDIA-labs OO Agents) is a Python framework in which an agent is a
+  Python object: its methods are the actions the model can take, its fields
+  are its state, its docstrings are its prompts, and its type annotations are
+  contracts. On ARC-AGI-3 it runs a guarded, cache-aware fleet of world-model
+  + memory agents — one agent per game under the competition two-hour cap —
+  each building an executable model of its environment and persisting what it
+  learns in object state.
+
+code_url: "https://github.com/NVIDIA-NeMo/labs-OO-Agents"
+
+paper_url: "https://arxiv.org/abs/2607.20709"
+
+versions:
+  - version: "1.0"
+    date: 2026-07-09
+    changes: "Initial submission"
+    models:
+      - name: "GPT-5.6-sol (xhigh)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/7a511ea0-dfa1-47ed-8a99-52a80f3cdbaa"
+        set: "public"
+        cost: 332.00
