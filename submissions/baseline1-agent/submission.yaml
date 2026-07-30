@@ -1,0 +1,76 @@
+# ============================================================
+# ARC Prize Community Leaderboard — Submission Template
+# ============================================================
+# Copy this directory into /submissions/<your-submission-id>/
+# and fill in the fields below. See CONTRIBUTING.md for details.
+# ============================================================
+
+# Display name for your method (must be unique across all submissions)
+name: "baseline1"
+
+# Authors — at least one is required
+authors:
+  - name: "Sergey Rodionov"
+    affiliation: "SingularityNET" # or "Independent"
+
+# Citation (optional) — how to reference this work
+citation: "Rodionov, Sergey. \"Executable World Models for ARC-AGI-3 in the Era of Coding Agents.\" arXiv:2605.05138, 2026. https://arxiv.org/abs/2605.05138"
+
+# Brief description of the method (1-3 sentences)
+description: >
+  An LLM-based coding agent that builds and verifies an executable Python world model from
+  observations, then plans through that model before acting. The agent contains no game-specific
+  code, prompts, heuristics, or hidden information, and is evaluated in a single playthrough per
+  game. It sees each game only once, starts from a fresh workspace, cannot return to solved levels,
+  and cannot restart the game to obtain a better trajectory. Full run artifacts, including generated
+  workspaces and world models, are released for inspection; links are available in the GitHub
+  repository together with the source code.
+
+# Link to a public repository with the source code (required)
+code_url: "https://github.com/astroseger/arc-3-agents-baseline1"
+
+# Links (optional — but if provided, they must resolve)
+paper_url: "https://arxiv.org/abs/2605.05138"
+
+# Version history — at least one version is required
+# Add new versions to the bottom of the list when you update your method
+#
+# scores — a list of score objects
+#   valid benchmarks: arc-agi-1, arc-agi-2, arc-agi-3
+#
+#   arc-agi-1 / arc-agi-2 entries require:
+#     benchmark (required)    — "arc-agi-1" or "arc-agi-2"
+#     score     (required)    — number 0-100
+#     set       (required)    — e.g. "public", "semi-private", "private"
+#     cost      (optional)    — USD cost to achieve score
+#     NOTE: scorecard_url is NOT valid for arc-agi-1/arc-agi-2
+#
+#   arc-agi-3 entries require:
+#     benchmark     (required) — "arc-agi-3"
+#     scorecard_url (required) — link to your scorecard on arcprize.org
+#     set           (required) — e.g. "public", "preview"
+#     cost          (optional) — USD cost to achieve score
+#     NOTE: do NOT include a "score" field for arc-agi-3; scores are
+#           pulled automatically from your scorecard
+versions:
+  - version: "1.6
+    date: 2026-07-15
+    changes: "ewma_sv_v1.6 GPT-5.6-sol xhigh run1. Renamed to align with the terminology used in the second article (secure_baseline → ewma_sv). Agent using an updated version of Codex that supports GPT-5.6 models. The run was conducted using eight ChatGPT Pro accounts and consumed less than 50% of their combined weekly usage limits."
+    models:
+      - name: "ewma_sv_v1.6_gpt-5.5_xhigh_run1"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/34ea0a31-21f8-4a34-b5ee-5e26fdfc9a5c"
+        set: "public"
+        cost: 400.0
+  - version: "1.5
+    date: 2026-07-10
+    changes: "secure_baseline1_v1.5 GPT-5.5 xhigh run1. Agent with simplified prompts. The run was conducted using eight ChatGPT Pro accounts and consumed approximately 50% of their combined weekly usage limits."
+    models:
+      - name: "secure_baseline1_gpt-5.5_xhigh_run1"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/dfec0119-cf2c-419f-87d5-47e4b4a8a4ac"
+        set: "public"
+        cost: 400.0
+
