@@ -1,0 +1,41 @@
+name: "Tycho"
+
+authors:
+  - name: "Jens Lehmann"
+    affiliation: "Dresden University of Technology; Amazon (work done outside of Amazon)"
+    url: "https://jens-lehmann.org/"
+  - name: "Andrei Aioanei"
+    affiliation: "TIB - Leibniz Information Centre for Science and Technology"
+    url: "https://nimi-ai.com/dr-andrei-aioanei/"
+  - name: "Sahar Vahdati"
+    affiliation: "Leibniz University Hannover; TIB - Leibniz Information Centre for Science and Technology"
+    url: "https://nimi-ai.com/sahar-vahdati/"
+
+citation: |
+  @article{lehmann2026tycho,
+    title = {Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3},
+    author = {Lehmann, Jens and Aioanei, Andrei and Vahdati, Sahar},
+    year = {2026}
+  }
+
+description: >
+  Tycho is a coding-agent harness that lets a multimodal actor delegate construction and repair
+  of an executable world model to a builder. The model is tested against observed transitions and
+  can support planning, while the actor may bypass it when direct reasoning is preferable.
+
+code_url: "https://github.com/NIMI-research/Tycho"
+
+paper_url: ""
+twitter_url: ""
+
+versions:
+  - version: "1.0"
+    date: 2026-07-29
+    changes: "Initial submission"
+    models:
+      - name: "Anthropic Claude Opus 5"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/08b98aa0-5df0-42c0-b501-856f553a21e9"
+        set: "public"
+        cost: 2986.04
