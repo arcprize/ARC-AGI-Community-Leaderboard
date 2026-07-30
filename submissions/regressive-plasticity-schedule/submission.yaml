@@ -48,5 +48,5 @@ versions:
       - benchmark: "arc-agi-1"
         score: 4.05727923627685
         set: "public"
-        cost: ""
+        cost: "$80"
      
