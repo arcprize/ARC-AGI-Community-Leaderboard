@@ -1,0 +1,52 @@
+name: "Regressive Plasticity Schedule"
+
+authors:
+  - name: "Jason Feng"
+    affiliation: "Independent"
+    url: "https://x.com/iamjasonfeng"
+    twitter: "https://x.com/iamjasonfeng"
+
+citation: ""
+
+description: >
+  This paper presents Regressive Plasticity Schedule (RPS), a two-stage
+  post-training schedule inspired by developmental plasticity. RPS combines two
+  familiar ideas, curriculum learning and learning-rate reduction, in a specific
+  way: the model is first trained on easier data at a higher learning rate, then
+  trained on harder data at a substantially lower learning rate. This differs
+  from ordinary learning-rate decay because the main intervention is not merely
+  reducing the optimizer step size over time within one training stage; instead,
+  RPS couples a discrete stage-level learning-rate drop to a curriculum boundary
+  between easier and harder data. The broader motivation for RPS is to improve
+  general reasoning: program synthesis is an important testbed here, but the
+  more important question is whether staged plasticity can help models preserve
+  foundational reasoning behaviors while adapting to harder domains. I tested
+  RPS on Qwen3-8B using Alibaba Model Studio managed DPO fine-tuning with LoRA.
+  The control condition, Equal Plasticity Schedule (EPS), used the same model,
+  same two-stage data structure, same within-stage cosine scheduler, and same
+  Stage 1 checkpoint, but did not reduce the Stage 2 learning rate. On ARC-AGI-1
+  public evaluation, RPS improved exact test-output accuracy from 10/419 to
+  17/419, which provides evidence of improved ARC-style general reasoning
+  because these tasks require inferring and applying latent transformation rules
+  from few examples. On ARC-AGI-2 public evaluation, neither RPS nor EPS solved
+  any test outputs, but RPS substantially improved program-synthesis reliability:
+  234/240 attempted programs executed without error for RPS, compared with
+  188/240 for EPS.
+
+code_url: "https://www.kaggle.com/code/iamjasonfeng/rps-arc-agi-1"
+
+paper_url: "https://github.com/iamjasonfeng/RPS-Paper"
+twitter_url: ""
+
+versions:
+  - version: "1.0"
+    date: 2026-05-21
+    changes: "Initial community leaderboard submission"
+    models:
+      - name: "Qwen3-8B RPS"
+    scores:
+      - benchmark: "arc-agi-1"
+        score: 4.05727923627685
+        set: "public"
+        cost: "$80"
+     
