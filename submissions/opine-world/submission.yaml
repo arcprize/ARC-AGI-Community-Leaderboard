@@ -1,0 +1,46 @@
+name: "OPINE-World"
+
+authors:
+  - name: "David Courtis"
+    affiliation: "University of Toronto"
+    github: "https://david-courtis.github.io/"
+  - name: "Wenhao Li"
+    affiliation: "University of Toronto"
+    url: "https://chris91219.github.io/"
+  - name: "Scott Sanner"
+    affiliation: "University of Toronto"
+    url: "https://scholar.google.com/citations?user=kB8UPNIAAAAJ&hl=en"
+  - name: "D3M Lab"
+    affiliation: "University of Toronto"
+    url: "https://d3m.mie.utoronto.ca/"
+
+citation: >
+  @misc{courtis2026opineworldprogrammaticworldmodeling,
+    title={OPINE-World: Programmatic World Modeling with Ontology-error-Prioritized Interactive Exploration}, 
+    author={David Courtis and Wenhao Li and Scott Sanner},
+    year={2026},
+    eprint={2607.01531},
+    archivePrefix={arXiv},
+    primaryClass={cs.AI},
+    url={https://arxiv.org/abs/2607.01531}, 
+  }
+
+description: "World models learned with deep networks are flexible but data-hungry and transfer poorly beyond their training. Program-synthesized world models, written as source code by LLMs and refined through counterexample-guided inductive synthesis (CEGIS), are instead data-efficient and reusable, yet they have been demonstrated mainly on structured-state worlds with a given object vocabulary, and a single program search does not scale to pixel-rendered environments whose object structure must be hypothesized flexibly under incomplete information. We introduce OPINE-World, an LLM agent that learns an object-centric programmatic world model online from interaction. OPINE-World couples two cooperating agents in a loop of hypothesis and test, one acting in the environment and one synthesizing the model in code, with CEGIS and model-based planning, and it steers exploration with a Bayesian measure of object-type adequacy we call ontology error."
+
+code_url: "https://github.com/david-courtis/opine-world"
+
+paper_url: "http://arxiv.org/abs/2607.01531"
+
+twitter_url: "https://x.com/DavidCourtis/status/2077552883663302843"
+
+versions:
+  - version: "1.0"
+    date: 2026-07-01
+    changes: "Initial submission"
+    models:
+      - name: "Claude Opus 4.8 (high)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/dfa3eb8a-2d61-4ed2-9fab-874872d7185f"
+        set: "public"
+        cost: 1040.00
