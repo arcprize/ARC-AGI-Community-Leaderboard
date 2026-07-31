@@ -11,7 +11,7 @@ description: >
   the official Qwen3-235B-A22B entry (11%) despite having only 1/9th the parameters, demonstrating
   that prompt engineering can substantially outscale parameter count for this benchmark.
 
-code_url: "https://github.com/xycjscs/qwen3-6-27b-arc-agi"
+code_url: "https://github.com/xycjscs/arc-agi-qwen3-6-eval"
 
 versions:
   - version: "1.0"
