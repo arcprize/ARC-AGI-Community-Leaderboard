@@ -4,7 +4,7 @@ authors:
   - name: "Alexander Kolpakov"
     affiliation: "University of Austin"
     github: "https://github.com/sashakolpakov"
-  - name: "OpenAI"
+  - name: "OpenAI GPT-5.6"
     url: "https://openai.com/"
 
 description: >
@@ -18,7 +18,7 @@ description: >
   acquisition, cross-level reuse, and genuinely new program structure
   inspectable.
 
-code_url: "https://github.com/sashakolpakov/gkm"
+code_url: "https://github.com/sashakolpakov/gkm/tree/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/releases/arc_agi3_gkm_v2_181"
 
 paper_url: "https://sashakolpakov.github.io/gkm/"
 
@@ -31,4 +31,14 @@ versions:
     scores:
       - benchmark: "arc-agi-3"
         scorecard_url: "https://arcprize.org/scorecards/9e166671-0953-42f3-89de-a0fd57d7b147"
+        set: "public"
+  - version: "2.0"
+    date: 2026-07-31
+    changes: "Major 25-game schema-v2 release: 181/183 verified levels, immutable acquisition source and normalized evidence, full ONLINE shakedown, and definitive Competition replay"
+    models:
+      - name: "OpenAI GPT-5.6-sol (expanded campaign)"
+      - name: "Claude Code (preserved legacy proposer lineages)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/cf75e14b-2c25-41cb-bc70-53bd57411edb"
         set: "public"
