@@ -1,0 +1,47 @@
+name: "Polyphony Agent - ARC"
+
+authors:
+  - name: "Ruiyang Yu"
+    affiliation: "MININGLAMP Technology"
+    url: "https://github.com/Mininglamp-AI"
+  - name: "Anyang Su"
+    affiliation: "MININGLAMP Technology"
+    url: "https://github.com/Mininglamp-AI"
+  - name: "Chenxu Zhao"
+    affiliation: "MININGLAMP Technology"
+    url: "https://github.com/Mininglamp-AI"
+  - name: "Tianyu Fu"
+    affiliation: "MININGLAMP Technology"
+    url: "https://github.com/Mininglamp-AI"
+  - name: "Shuo Wang"
+    affiliation: "MININGLAMP Technology"
+    url: "https://github.com/Mininglamp-AI"
+  - name: "Minghui Wu"
+    affiliation: "MININGLAMP Technology"
+    url: "https://github.com/Mininglamp-AI"
+
+description: >
+  Polyphony Agent - ARC turns each game into a small codebase the agent writes and
+  debugs. A coding agent grows a Heuristic System — a code policy made of state,
+  engine, planner, verifier, and memory — from the frames it observes, verifies it
+  against real transitions, then searches that Heuristic System for an action
+  sequence before spending real moves. Everything the agent learns stays as
+  readable, auditable code rather than model weights, and the whole loop runs on
+  small, self-hosted open-weight models via an OpenAI-compatible endpoint.
+
+code_url: "https://github.com/Mininglamp-AI/polyphony-arc-3"
+
+paper_url: ""
+twitter_url: ""
+
+versions:
+  - version: "1.0"
+    date: 2026-07-07
+    changes: "Initial submission"
+    models:
+      - name: "Qwen3.6"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/d0895597-2bb5-4191-9b7b-ec97917da1aa"
+        set: "public"
+        cost: 115.00

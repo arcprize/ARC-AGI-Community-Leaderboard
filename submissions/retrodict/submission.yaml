@@ -1,0 +1,34 @@
+name: "Retrodict"
+
+authors:
+  - name: "Ryan Brown"
+    affiliation: "Independent"
+    github: "https://github.com/ryanbbrown"
+
+description: >
+  Agent that tests rule hypotheses against its own recorded frame history
+  before spending live actions.
+
+code_url: "https://github.com/ryanbbrown/Retrodict"
+
+versions:
+  - version: "1.0"
+    date: 2026-07-16
+    changes: "Initial submission"
+    models:
+      - name: "GPT-5.6 Sol"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/8d734689-3eb9-4dee-b0ce-d822d76e0689"
+        set: "public"
+        cost: 418.71
+  - version: "2.0"
+    date: 2026-07-19
+    changes: "Max reasoning effort with a harness-enforced escalation ladder for stuck levels, undo-before-reset semantics, and playbook compaction rules. All 25 games fully solved."
+    models:
+      - name: "GPT-5.6 Sol (max effort)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/9c403765-db5b-40b1-beab-6fa3f40119b0"
+        set: "public"
+        cost: 654.34

@@ -1,0 +1,33 @@
+name: "ARM (Abstraction Reasoning Model)"
+
+authors:
+  - name: "Marcel Siegert"
+    affiliation: "Karlsruhe Institute of Technology (KIT)"
+    github: "https://github.com/MarcelxMensch"
+
+description: >
+  A Tiny Recursive Model variant that removes the per-puzzle identity embedding
+  table and replaces it with a demonstration encoder. The encoder reads each
+  task's support examples into a small set of latent tokens that condition
+  recursive refinement, so ARM generalizes from demonstrations with no per-task
+  lookup and no test-time training.
+
+code_url: "https://github.com/MarcelxMensch/arm-arc-agi"
+
+versions:
+  - version: "1.0"
+    date: 2026-06-23
+    changes: >
+      Initial submission. Cost is self-measured, inference-only, on a single
+      NVIDIA L40S over the 400-task ARC-AGI-1 public evaluation set (forward-pass
+      augmentation voting, no test-time training): 2.79 USD total, 0.0070 USD per
+      task at a 1.10 USD/h retail rate. In a controlled same-GPU, same-batch
+      comparison on the identical 400 tasks, ARM costs 1.82x less per task than
+      TRM-Opt, our TRM re-implementation optimized for single-GPU inference.
+    models:
+      - name: "ARM (8.28M params)"
+    scores:
+      - benchmark: "arc-agi-1"
+        score: 40.3
+        set: "public"
+        cost: 2.79
