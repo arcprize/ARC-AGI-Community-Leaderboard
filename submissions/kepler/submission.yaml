@@ -19,7 +19,7 @@ description: >
   re-execution), 98.86 audited / 96.38 replayed (v5, one disclosed engine-skew
   divergence), 93.97 (GPT-5.6 Sol v5, exact re-execution).
 
-code_url: "https://github.com/georno-geovanna/kepler"
+code_url: "https://github.com/Cveinnt/kepler"
 
 versions:
   - version: "1.0"
