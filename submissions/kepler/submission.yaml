@@ -1,0 +1,34 @@
+name: "Kepler"
+
+authors:
+  - name: "Wensen Wu"
+    affiliation: "Independent"
+    url: "https://wensenwu.com"
+    github: "Cveinnt"
+
+description: >
+  A 2,426-line open-source harness: the model builds and certifies an
+  executable world model per game, and the harness replays the certified
+  solution mechanically as the scored attempt. A full GPT-5.6 board costs
+  18.7M tokens (~35x fewer than the published cost-frontier harness), with
+  per-game token ledgers in the repo. Every run's append-only action ledger is
+  published (failures included), audit scripts re-derive each score from raw
+  data, and a CI gate enforces zero game-specific knowledge in agent-visible
+  files. Linked scorecard: best-run-per-game across published sweeps (attempt
+  pools disclosed); single-configuration cards: 97.77 (Claude Opus, exact
+  re-execution), 98.86 audited / 96.38 replayed (v5, one disclosed engine-skew
+  divergence), 93.97 (GPT-5.6 Sol v5, exact re-execution).
+
+code_url: "https://github.com/georno-geovanna/kepler"
+
+versions:
+  - version: "1.0"
+    date: 2026-08-25
+    changes: "Initial submission"
+    models:
+      - name: "Claude Opus"
+      - name: "GPT-5.6 Sol"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/a7d07431-e799-4779-926b-a44464a5cb59"
+        set: "public"
