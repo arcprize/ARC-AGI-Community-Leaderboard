@@ -7,28 +7,55 @@ authors:
     github: "Cveinnt"
 
 description: >
-  A 2,426-line open-source harness: the model builds and certifies an
-  executable world model per game, and the harness replays the certified
-  solution mechanically as the scored attempt. A full GPT-5.6 board costs
-  18.7M tokens (~35x fewer than the published cost-frontier harness), with
-  per-game token ledgers in the repo. Every run's append-only action ledger is
-  published (failures included), audit scripts re-derive each score from raw
-  data, and a CI gate enforces zero game-specific knowledge in agent-visible
-  files. Linked scorecard: best-run-per-game across published sweeps (attempt
-  pools disclosed); single-configuration cards: 97.77 (Claude Opus, exact
-  re-execution), 98.86 audited / 96.38 replayed (v5, one disclosed engine-skew
-  divergence), 93.97 (GPT-5.6 Sol v5, exact re-execution).
+  A 2,426-line open-source harness in which the model builds and certifies an
+  executable world model per game, and the harness — not the model — replays
+  the certified programs mechanically as the scored attempt. The same
+  commit-frozen harness produces full boards on two different labs' frontier
+  models (43 of 50 game-model cells at 100.0), and a complete GPT-5.6 board
+  costs 18.7M tokens. Every run ships as an append-only per-action ledger with
+  failures and superseded runs included, audit scripts re-derive every score
+  from raw data, and a CI gate enforces zero game-specific knowledge in
+  agent-visible files. Reported numbers are single-configuration only: one
+  model, one frozen harness, one pass over all 25 games, no score-conditioned
+  reruns. A best-run-per-game ceiling of 99.29 exists (card a7d07431, attempt
+  pools disclosed in the repo) and is deliberately not submitted as a headline.
 
 code_url: "https://github.com/Cveinnt/kepler"
 
 versions:
   - version: "1.0"
-    date: 2026-08-25
-    changes: "Initial submission"
+    date: 2026-08-08
+    changes: "Initial single-configuration board (harness v1): guarded prediction channel, executable world model per game."
     models:
-      - name: "Claude Opus"
-      - name: "GPT-5.6 Sol"
+      - name: "Claude Opus (Claude Code CLI `--model opus`, August 2026)"
     scores:
       - benchmark: "arc-agi-3"
-        scorecard_url: "https://arcprize.org/scorecards/a7d07431-e799-4779-926b-a44464a5cb59"
+        scorecard_url: "https://arcprize.org/scorecards/00c90840-2610-4402-88dc-b7d24257756e"
+        set: "public"
+
+  - version: "2.0"
+    date: 2026-08-26
+    changes: >
+      Harness v5 (frozen at commit eac9af2), "certify then replay": the agent's
+      job ends at writing a certified per-level action program, and a 176-line
+      mechanical executor replays it fail-closed as the scored attempt. Both
+      boards below run this identical frozen harness, one pass per game.
+      Local audited composites are 98.86 (Claude Opus) and 93.99 (GPT-5.6 Sol);
+      the Opus server replay scores 96.38 because one recorded ACTION6 in game
+      lf52 is rejected on the replay path (deterministic engine-version skew,
+      reproduced identically on two independent cards, disclosed in the repo).
+      The GPT board re-executed exactly on all 25 games. GPT cost is an upper
+      bound reconstructed from the CLI's own usage records at API list prices;
+      the Claude CLI emits no usage in the mode used, so that board is
+      unmeasured rather than estimated.
+    models:
+      - name: "Claude Opus (Claude Code CLI `--model opus`, August 2026)"
+      - name: "GPT-5.6 Sol (max reasoning effort)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/f5f64ae7-7445-4767-8498-ae2ca2b35b9a"
+        set: "public"
+        cost: 94.00
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/455e4374-e66b-479f-8ebc-94eadecd1629"
         set: "public"
