@@ -1,0 +1,58 @@
+# lmm-agent: Training-Free Equation-Based ARC-AGI-3 Agent
+
+name: "LMM Agent 🗿: Training-Free Equation-Based ARC-AGI-3 Solver"
+
+authors:
+  - name: "Mahmoud Harmouch"
+    affiliation: "Independent"
+    url: "https://wiseai.dev"
+    github: "wiseaidev"
+    twitter: "" # resurrect my twitter account?
+
+citation: >
+  @article{harmouch2026lmm,
+    author  = {Mahmoud Harmouch},
+    title   = {Mathematics Is All You Need: Training-Free Language Generation via
+               Symbolic Regression and Stochastic Determinism},
+    year    = {2026},
+    url     = {https://github.com/wiseaidotdev/lmm}
+  }
+
+description: >
+  LMM Agent is a pure-Rust, 100% training-free, zero-cost autonomous agent for ARC-AGI-3.
+  It uses no LLM, no GPU, no gradient descent, and no API key: only symbolic mathematics,
+  causal reasoning, and internally generated motivation signals. The agent embodies a novel
+  research thesis: intelligence and knowledge are mutually exclusive, and genuine fluid
+  intelligence must be architecturally separated from memorised pattern retrieval.
+  The agent is built on five intelligence primitives: calibrated Bayesian uncertainty
+  (Gaussian belief propagation), compositional axiomatic reasoning (auditable forward-chaining
+  proofs), causal counterfactual attribution (Pearl do-calculus interventions), hypothesis
+  formation ranked by explanatory power, and internalised motivational drives (Curiosity,
+  CoherenceSeeking, ContradictionResolution). An adaptive HELM (Hybrid Equation-based
+  Lifelong Memory) engine drives lifelong Q-learning without neural networks, and a
+  ThinkLoop PI controller iterates toward solutions via error-feedback rather than lookup.
+  Game interaction is handled via arc-agi-rs: a pure-Rust API client for the ARC-AGI-3
+  REST API (https://github.com/wiseaidotdev/arc-agi-rs).
+  ⚠️ This project is a work in progress, actively developed as a weekend hobby project
+  since development was paused on May 8, 2026. The ultimate goal is 100% score on all
+  ARC-AGI games at $0 cost.
+
+code_url: "https://github.com/wiseaidotdev/lmm"
+
+paper_url: "https://github.com/wiseaidotdev/lmm/blob/main/papers/lmm.pdf"
+
+versions:
+  - version: "0.2.8"
+    date: 2026-05-08
+    changes: >
+      Initial submission. arc-lmm-agent achieves 14.5505% on ARC-AGI-3 public set
+      (ls20 game, fog-of-war environment) with zero game-specific training, no neural
+      networks, and $0 API cost. Development paused May 8 2026; ongoing as weekend
+      hobby project toward 100% target.
+    models:
+      - name: "arc-lmm-agent (lmm v0.2.8)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/replay/69c86b04-c9ff-4ae2-98e8-eade2e4c2214"
+        set: "public"
+        cost: 0.00
