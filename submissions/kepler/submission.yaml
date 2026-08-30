@@ -7,18 +7,16 @@ authors:
     github: "Cveinnt"
 
 description: >
-  A 2,426-line open-source harness in which the model builds and certifies an
-  executable world model per game, and the harness — not the model — replays
-  the certified programs mechanically as the scored attempt. The same
-  commit-frozen harness produces full boards on two different labs' frontier
-  models (43 of 50 game-model cells at 100.0), and a complete GPT-5.6 board
-  costs 18.7M tokens. Every run ships as an append-only per-action ledger with
-  failures and superseded runs included, audit scripts re-derive every score
-  from raw data, and a CI gate enforces zero game-specific knowledge in
-  agent-visible files. Reported numbers are single-configuration only: one
-  model, one frozen harness, one pass over all 25 games, no score-conditioned
-  reruns. A best-run-per-game ceiling of 99.29 exists (card a7d07431, attempt
-  pools disclosed in the repo) and is deliberately not submitted as a headline.
+  A ~2,500-line open-source harness. Final boards: single-configuration
+  100.00 RHAE with Claude Opus 5 (v7, all 25 games, every level at the cap)
+  and 95.97 with GPT-5.6 Sol (v6) on 20.7M measured tokens — with per-game
+  token ledgers, append-only action ledgers for every run (failures and
+  regressions included), adversarial audit scripts that re-derive each score
+  from raw data, and a controlled modality ablation: the one game our
+  text-grid agents exhaustively "proved" unsolvable fell in a single session
+  when one flag switched the observation channel to rendered frames. Every
+  mechanism adopted from prior systems is credited (NOTICE); scorecard URLs
+  below verify server-side.
 
 code_url: "https://github.com/Cveinnt/kepler"
 
