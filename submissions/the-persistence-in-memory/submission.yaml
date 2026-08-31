@@ -25,3 +25,12 @@ versions:
       - benchmark: "arc-agi-3"
         scorecard_url: "https://arcprize.org/scorecards/fa62e88d-607e-402d-91d4-ca61ad597cab"
         set: "public"
+  - version: "1.1"
+    date: 2026-08-31
+    changes: "Click-first + warm silo after pmll#2 merge; second competition-mode public card"
+    models:
+      - name: "the persistence in memory (heuristic PMLL silo)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/6424f517-8080-4c22-8039-accb5bf5877e"
+        set: "public"
