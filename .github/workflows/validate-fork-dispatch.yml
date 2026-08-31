@@ -1,16 +1,17 @@
 name: Validate Submission (fork)
 
-# Fork-only dispatcher so we can run the official validator without
-# waiting on arcprize first-time-contributor approval. Does not change
-# the upstream PR branch.
+# Fork-only. Runs the official validator on our submission.yaml.
 on:
   workflow_dispatch:
     inputs:
       branch:
         description: Branch that contains submissions/the-persistence-in-memory/submission.yaml
-        required: true
+        required: false
         default: add-the-persistence-in-memory
-        type: string
+  push:
+    paths:
+      - '.github/workflows/validate-fork-dispatch.yml'
+      - 'submissions/**'
 
 jobs:
   validate:
@@ -19,7 +20,7 @@ jobs:
       - name: Checkout submission branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.branch }}
+          ref: ${{ github.event.inputs.branch || 'add-the-persistence-in-memory' }}
           fetch-depth: 0
 
       - name: Set up Python
@@ -31,6 +32,4 @@ jobs:
         run: pip install pyyaml requests
 
       - name: Validate submission.yaml
-        run: |
-          python .github/scripts/validate_submission.py \
-            submissions/the-persistence-in-memory/submission.yaml
+        run: python .github/scripts/validate_submission.py submissions/the-persistence-in-memory/submission.yaml
