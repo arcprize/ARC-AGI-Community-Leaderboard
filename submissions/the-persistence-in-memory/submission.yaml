@@ -5,6 +5,9 @@ authors:
     affiliation: "Independent"
     url: "https://github.com/drQedwards"
     github: "https://github.com/drQedwards"
+    twitter: "https://x.com/jk_drq"
+
+citation: "Edwards, J. K. (2026). the persistence in memory. https://github.com/drQedwards/pmll"
 
 description: >
   A competition-mode ARC-AGI-3 agent that keeps a PMLL-style short-term silo of
@@ -14,6 +17,8 @@ description: >
   play against three.arcprize.org with 429 backoff; no LLM.
 
 code_url: "https://github.com/drQedwards/pmll"
+
+twitter_url: "https://x.com/jk_drq"
 
 versions:
   - version: "1.0"
@@ -25,6 +30,7 @@ versions:
       - benchmark: "arc-agi-3"
         scorecard_url: "https://arcprize.org/scorecards/fa62e88d-607e-402d-91d4-ca61ad597cab"
         set: "public"
+        cost: 0.00
   - version: "1.1"
     date: 2026-08-31
     changes: "Click-first + warm silo after pmll#2 merge; second competition-mode public card"
@@ -34,3 +40,4 @@ versions:
       - benchmark: "arc-agi-3"
         scorecard_url: "https://arcprize.org/scorecards/6424f517-8080-4c22-8039-accb5bf5877e"
         set: "public"
+        cost: 0.00
