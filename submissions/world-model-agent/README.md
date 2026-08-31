@@ -20,6 +20,12 @@ Community Leaderboard entry for a **structured world-model** agent on ARC-AGI-3.
 Competition-mode scorecard:  
 https://arcprize.org/scorecards/a4618274-e508-43d9-92f8-0108dbae9e39
 
+## Related JSONL loop (same author, second method)
+
+[PR #51](https://github.com/arcprize/ARC-AGI-Community-Leaderboard/pull/51) is **the persistence in memory**, a $0 no-LLM PMLL silo agent. Compact level-up JSONL: https://github.com/drQedwards/pmll/blob/main/docs/arc-agi3-levelups.jsonl — write-up: https://github.com/drQedwards/pmll/blob/main/docs/ARC-AGI3-PERSISTENCE.md
+
+Strongest public competition-mode persistence card (v1.5): https://arcprize.org/scorecards/cfeeae13-dce8-457e-be23-a57725eeac91 (3/183 levels; LP85 L1 in 5 actions, VC33 L1 in 11, R11L L1 in 118).
+
 ## Run
 
 ```bash
