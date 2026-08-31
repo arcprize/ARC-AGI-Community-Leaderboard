@@ -1,0 +1,27 @@
+name: "the persistence in memory"
+
+authors:
+  - name: "Josef K. Edwards"
+    affiliation: "Independent"
+    url: "https://github.com/drQedwards"
+    github: "https://github.com/drQedwards"
+
+description: >
+  A competition-mode ARC-AGI-3 agent that keeps a PMLL-style short-term silo of
+  hashed frames and action outcomes. It prefers novel frame-changing moves,
+  clicks connected-component centroids, tracks a keyboard sprite by frame diff,
+  and replays action sequences that previously advanced a level. Sequential REST
+  play against three.arcprize.org with 429 backoff; no LLM.
+
+code_url: "https://github.com/drQedwards/pmll"
+
+versions:
+  - version: "1.0"
+    date: 2026-08-31
+    changes: "Initial public competition-mode scorecard (25/25 environments)"
+    models:
+      - name: "the persistence in memory (heuristic PMLL silo)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/fa62e88d-607e-402d-91d4-ca61ad597cab"
+        set: "public"
