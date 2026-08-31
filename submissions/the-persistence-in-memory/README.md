@@ -21,6 +21,6 @@ ARC-AGI-3 scores are pulled from the card. `submission.yaml` has `scorecard_url`
 | Version | Scorecard | Mode | Public set |
 |---|---|---|---|
 | 1.0 | https://arcprize.org/scorecards/fa62e88d-607e-402d-91d4-ca61ad597cab | `competition_mode: true` | 25/25 environments, 3/183 levels, 3887 actions (VC33 × 2, R11L × 1) |
-| 1.1 | https://arcprize.org/scorecards/6424f517-8080-4c22-8039-accb5bf5877e | `competition_mode: true` | Click-first + warm silo from 1.0 after pmll#2 |
+| 1.1 | https://arcprize.org/scorecards/6424f517-8080-4c22-8039-accb5bf5877e | `competition_mode: true` | 25/25 environments, 2/183 levels, 3482 actions (VC33 × 1, R11L × 1) |
 
-Both cards used `POST /api/scorecard/open` with `competition_mode: true` as required by the [Competition Mode docs](https://docs.arcprize.org/toolkit/competition_mode) for the unverified / community path.
+Both cards used `POST /api/scorecard/open` with `competition_mode: true` as required by the [Competition Mode docs](https://docs.arcprize.org/toolkit/competition_mode) for the unverified / community path. v1.0 is the stronger closed card; v1.1 is the post-merge click-first rerun.
