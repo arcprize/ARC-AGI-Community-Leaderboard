@@ -21,6 +21,24 @@ description: >
 code_url: "https://github.com/Cveinnt/kepler"
 
 versions:
+  - version: "2.0"
+    date: 2026-08-31
+    changes: >-
+      Final boards: v7 Claude Opus 5 single-config 100.00 (visual mode; audited,
+      all runs clean; server replay card below with a disclosed deterministic
+      engine skew on two traces, 23/25 exact) and v6 GPT-5.6 Sol 95.97
+      (server-verified exact). Adds the controlled modality ablation, full token
+      accounting for both boards, and per-game action/timing ledgers.
+    models:
+      - name: "Anthropic Claude Opus 5"
+      - name: "OpenAI GPT-5.6 Sol (max)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/c9f087f3-b9de-452d-9520-d4d0597b0685"
+        set: "public"
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/2779000b-35e8-4ca6-a776-19d37140005c"
+        set: "public"
   - version: "1.0"
     date: 2026-08-08
     changes: "Initial single-configuration board (harness v1): guarded prediction channel, executable world model per game."
