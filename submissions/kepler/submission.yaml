@@ -37,7 +37,7 @@ versions:
         scorecard_url: "https://arcprize.org/scorecards/c9f087f3-b9de-452d-9520-d4d0597b0685"
         set: "public"
       - benchmark: "arc-agi-3"
-        scorecard_url: "https://arcprize.org/scorecards/2779000b-35e8-4ca6-a776-19d37140005c"
+        scorecard_url: "https://arcprize.org/scorecards/91aa2f10-5dc3-4471-80e5-9e8895db5de1"
         set: "public"
   - version: "1.0"
     date: 2026-08-08
