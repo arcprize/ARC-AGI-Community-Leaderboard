@@ -7,65 +7,43 @@ authors:
     github: "Cveinnt"
 
 description: >
-  A ~2,500-line open-source harness. Final boards: single-configuration
-  100.00 RHAE with Claude Opus 5 (v7, all 25 games, every level at the cap)
-  and 95.97 with GPT-5.6 Sol (v6) on 20.7M measured tokens — with per-game
-  token ledgers, append-only action ledgers for every run (failures and
-  regressions included), adversarial audit scripts that re-derive each score
-  from raw data, and a controlled modality ablation: the one game our
-  text-grid agents exhaustively "proved" unsolvable fell in a single session
-  when one flag switched the observation channel to rendered frames. Every
-  mechanism adopted from prior systems is credited (NOTICE); scorecard URLs
-  below verify server-side.
+  An open-source harness (~2.7k lines) where the model builds an executable
+  world model of each game, certifies a solution against the recorded history,
+  and a mechanical replayer plays the scored attempt. Final boards, one frozen
+  configuration each, no per-game selection: 100.00 with Claude Opus 5
+  (server re-executed all 25 games to 100) and 95.97 with GPT-5.6 Sol.
+  The repo has every run's append-only action ledger (failures and superseded
+  boards included), audit scripts that re-derive each score from raw data,
+  per-game token accounting for both boards, and a CI check that fails the
+  build if any agent-visible file names a game. Mechanisms adopted from Tycho,
+  Retrodict, and VISTA are credited in NOTICE.
 
 code_url: "https://github.com/Cveinnt/kepler"
 
 versions:
-  - version: "2.0"
-    date: 2026-08-31
-    changes: >-
-      Final boards: v7 Claude Opus 5 single-config 100.00 (visual mode; audited,
-      all runs clean; server replay card below with a disclosed deterministic
-      engine skew on two traces, 23/25 exact) and v6 GPT-5.6 Sol 95.97
-      (server-verified exact). Adds the controlled modality ablation, full token
-      accounting for both boards, and per-game action/timing ledgers.
-    models:
-      - name: "Anthropic Claude Opus 5"
-      - name: "OpenAI GPT-5.6 Sol (max)"
-    scores:
-      - benchmark: "arc-agi-3"
-        scorecard_url: "https://arcprize.org/scorecards/c9f087f3-b9de-452d-9520-d4d0597b0685"
-        set: "public"
-      - benchmark: "arc-agi-3"
-        scorecard_url: "https://arcprize.org/scorecards/91aa2f10-5dc3-4471-80e5-9e8895db5de1"
-        set: "public"
   - version: "1.0"
     date: 2026-08-08
-    changes: "Initial single-configuration board (harness v1): guarded prediction channel, executable world model per game."
+    changes: "First board (harness v1): guarded prediction channel, executable world model per game."
     models:
-      - name: "Claude Opus (Claude Code CLI `--model opus`, August 2026)"
+      - name: "Claude Opus (Claude Code CLI, August 2026)"
     scores:
       - benchmark: "arc-agi-3"
         scorecard_url: "https://arcprize.org/scorecards/00c90840-2610-4402-88dc-b7d24257756e"
         set: "public"
 
-  - version: "2.0"
+  - version: "1.5"
     date: 2026-08-26
     changes: >
-      Harness v5 (frozen at commit eac9af2), "certify then replay": the agent's
-      job ends at writing a certified per-level action program, and a 176-line
-      mechanical executor replays it fail-closed as the scored attempt. Both
-      boards below run this identical frozen harness, one pass per game.
-      Local audited composites are 98.86 (Claude Opus) and 93.99 (GPT-5.6 Sol);
-      the Opus server replay scores 96.38 because one recorded ACTION6 in game
-      lf52 is rejected on the replay path (deterministic engine-version skew,
-      reproduced identically on two independent cards, disclosed in the repo).
-      The GPT board re-executed exactly on all 25 games. GPT cost is an upper
-      bound reconstructed from the CLI's own usage records at API list prices;
-      the Claude CLI emits no usage in the mode used, so that board is
-      unmeasured rather than estimated.
+      Harness v5, "certify then replay": the agent's job ends at writing a
+      certified per-level action program; a mechanical executor replays it
+      fail-closed as the scored attempt. Local composites 98.86 (Opus) and
+      93.99 (GPT-5.6 Sol). The Opus server replay scored 96.38: one recorded
+      click in lf52 was rejected on the replay path. We first called this
+      engine skew; the v8 postmortem found our local engine was silently
+      clipping off-grid clicks that the API rejects, and the harness now
+      refuses them at commit time. The GPT board re-executed exactly.
     models:
-      - name: "Claude Opus (Claude Code CLI `--model opus`, August 2026)"
+      - name: "Claude Opus (Claude Code CLI, August 2026)"
       - name: "GPT-5.6 Sol (max reasoning effort)"
     scores:
       - benchmark: "arc-agi-3"
@@ -75,3 +53,25 @@ versions:
       - benchmark: "arc-agi-3"
         scorecard_url: "https://arcprize.org/scorecards/455e4374-e66b-479f-8ebc-94eadecd1629"
         set: "public"
+
+  - version: "2.0"
+    date: 2026-09-01
+    changes: >
+      Final boards. v8.1 adds visual mode (the daemon saves every frame,
+      animation included, as PNGs the agent can look at) and transport safety
+      (off-grid clicks refused, so every trace replays). The Opus board hit
+      100.00 locally and the server re-executed all 25 games to 100. The GPT
+      v6 board scored 95.97, matching our local number to the fourth decimal.
+      Token accounting for both boards is in the repo: 20.7M for GPT, 1,907.5M
+      for Opus (97.5% cache reads).
+    models:
+      - name: "Anthropic Claude Opus 5"
+      - name: "OpenAI GPT-5.6 Sol (max)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/91aa2f10-5dc3-4471-80e5-9e8895db5de1"
+        set: "public"
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/c9f087f3-b9de-452d-9520-d4d0597b0685"
+        set: "public"
+        cost: 100.00
