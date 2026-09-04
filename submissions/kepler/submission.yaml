@@ -17,7 +17,7 @@ description: >
   reports for a source-reading win and a contaminated control.
 
 code_url: "https://github.com/Cveinnt/kepler"
-paper_url: "https://github.com/Cveinnt/kepler/blob/main/docs/paper/latex/main.pdf"
+paper_url: "https://github.com/Cveinnt/kepler/releases/download/v1.0.0/kepler-1.0-paper.pdf"
 
 versions:
   - version: "1.0.0"
