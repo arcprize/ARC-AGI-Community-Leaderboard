@@ -7,15 +7,18 @@ authors:
     github: "https://github.com/dastin359"
 
 description: >
-  CCARC drives a general coding agent (Claude Code) at ARC-AGI. It is built on
-  two mechanisms: code execution as the reasoning step, and required note
-  fields (hypothesis, verdict, a rule book of proven/refuted/untested game
-  mechanics) written to a real filesystem, so established knowledge is
-  addressable and survives context compaction. ARC-AGI-3 runs execute inside
-  mount and network namespaces whose egress proxy holds the ARC key and
-  withholds the human baselines the score is computed against, and every run is
-  recorded action-by-action in an append-only ledger, so the full logs behind
-  the result are auditable.
+  CCARC drives a general coding agent (Claude Code) at ARC-AGI, with one harness
+  behind two drivers. It is built on two mechanisms: code execution as the
+  reasoning step, and named memory files the harness requires the agent to write
+  before a run may continue -- on ARC-AGI-3 a rule book of proven, refuted and
+  untested mechanics recorded at every level boundary; on ARC-AGI-2 the rule
+  stated in prose before the gate will accept the code implementing it. Both
+  drivers run inside mount and network namespaces, and each solver is staged
+  only the modules its own driver reaches, so the module that reads the
+  ARC-AGI-2 dataset is absent from the ARC-AGI-2 solver's import path. On
+  ARC-AGI-3 an egress proxy holds the ARC key and withholds the human baselines
+  the score is computed against, and every run is recorded action-by-action in
+  an append-only ledger, so the full logs behind the result are auditable.
 
 code_url: "https://github.com/dastin359/CCARC"
 
