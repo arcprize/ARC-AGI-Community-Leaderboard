@@ -1,0 +1,37 @@
+# ============================================================
+# ARC Prize Community Leaderboard — Submission
+# ============================================================
+name: "Neural Splines"
+
+authors:
+  - name: "Robert Sitton"
+    affiliation: "Neural Splines"
+    github: "https://github.com/magneato"
+
+citation: |
+  @misc{sitton2026neuralsplines,
+    title = {Neural Splines: Autonomous Cognition, 64-Byte Cacheline SuperBlocks, and Single-Cycle Bit-DNA Phase Space Optimization for ARC-AGI},
+    author = {Sitton, Robert},
+    year = {2026},
+    howpublished = {\url{https://github.com/magneato/guanaco}}
+  }
+
+description: >
+  Neural Splines is an autonomous C++ cognitive architecture for ARC-AGI featuring
+  64-byte cacheline-aligned SuperBlock spatial memory (alignas(64)), single-cycle 4x4x4
+  Bit-DNA codon hypercube center-of-inversion reflections (codon ^ 0x3F), Go-inspired
+  liberty topology, and Iterated Prisoner's Dilemma arbitration (Pavlov Win-Stay Lose-Shift).
+
+code_url: "https://github.com/magneato/guanaco"
+
+versions:
+  - version: "1.0"
+    date: 2026-09-07
+    changes: "Initial submission: Sovereign C++ engine with zero Python overhead, Bit-DNA hypercube exploration, and verified 7/7 level clear on ARC-AGI-3."
+    models:
+      - name: "Neural Splines / Tsundoku Sovereign C++ Engine"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/b18fe27d-7280-442a-8127-486507461322"
+        set: "public"
+        cost: 0.00
