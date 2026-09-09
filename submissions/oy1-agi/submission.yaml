@@ -1,0 +1,27 @@
+# Organizational attribution follows the source release CITATION.cff.
+name: "OY1 AGI"
+authors:
+  - name: "Orca Labs sp. z o.o."
+    github: "https://github.com/OYLabsAI"
+description: >
+  An observation-driven ARC-AGI-3 controller preserves exact observed grids,
+  per-game memory and provider reasoning continuity, and executes bounded
+  action batches with prediction checks. It pairs the live API loop with
+  enforced cost reservations and independently checked run evidence.
+code_url: "https://github.com/OYLabsAI/arc-agi-3-api-harness"
+versions:
+  - version: "0.3.8+api9"
+    date: 2026-09-09
+    changes: >
+      One completed live Competition Mode run across all 25 public games.
+      Public games were used during development. Earlier stopped attempts
+      and campaign costs are disclosed separately; scores were not combined.
+      This identifies the evaluated manifest; preserved packaging metadata
+      retains the older 0.3.6+api7 label, as disclosed in the repository.
+    models:
+      - name: "OpenAI gpt-6-astra (high reasoning effort, Standard service)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/75d9c8e7-ade9-4a8f-a747-6acbea51bb1b"
+        set: "public"
+        cost: 415.367496
