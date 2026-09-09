@@ -4,10 +4,12 @@ authors:
   - name: "Orca Labs sp. z o.o."
     github: "https://github.com/OYLabsAI"
 description: >
-  An observation-driven ARC-AGI-3 controller preserves exact observed grids,
-  per-game memory and provider reasoning continuity, and executes bounded
-  action batches with prediction checks. It pairs the live API loop with
-  enforced cost reservations and independently checked run evidence.
+  An observation-driven controller combines the current screenshot with exact
+  pixel grids in retained history and evidence-linked per-game memory. It can
+  explore with single actions or execute up to eight actions with per-step
+  predictions, interrupting a batch on mismatch, lack of observable change or
+  a level transition. Provider reasoning continuity and a cached text prefix
+  support long games; earlier observations remain available through inspection.
 code_url: "https://github.com/OYLabsAI/arc-agi-3-api-harness"
 versions:
   - version: "0.3.8+api9"
