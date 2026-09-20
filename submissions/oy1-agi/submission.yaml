@@ -1,4 +1,3 @@
-# Organizational attribution follows the source release CITATION.cff.
 name: "OY1 AGI"
 authors:
   - name: "Orca Labs sp. z o.o."
@@ -16,8 +15,7 @@ versions:
     changes: >
       Completed live Competition Mode run across all 25 public games.
       Public games were used during development. The recorded cost covers
-      inference for this run. Source identity and packaging metadata are
-      documented in the public repository.
+      inference for this run.
     models:
       - name: "OpenAI gpt-6-astra (high reasoning effort, Standard service)"
     scores:

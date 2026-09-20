@@ -1,69 +1,52 @@
 # OY1 AGI
 
-OY1 lets a model revisit exact observations and check its predictions before
-continuing an action sequence. It uses the same prompt and tools for every
-ARC-AGI-3 game, with memory starting fresh each time.
+OY1 runs a language model on ARC-AGI-3 games. It stores each game's observations
+and gives the model tools to retrieve earlier frames, record notes and check
+the outcome of an action sequence. Every game uses the same prompt and tools,
+with a fresh history and memory store.
 
-[Source](https://github.com/OYLabsAI/arc-agi-3-api-harness) ·
+[Code](https://github.com/OYLabsAI/arc-agi-3-api-harness) ·
 [Scorecard](https://arcprize.org/scorecards/75d9c8e7-ade9-4a8f-a747-6acbea51bb1b) ·
 [Reproduction](https://github.com/OYLabsAI/arc-agi-3-api-harness/blob/main/docs/reproduction.md)
 
-## The idea
+## How it works
 
-A model can lose an earlier visual detail or continue acting after its
-expectation stops matching the game. OY1 gives it three tools for that problem:
+The model can retrieve an earlier observation as an exact pixel grid, including
+animation frames and crops. It can also save notes with references to recorded
+transitions. The store checks that those references exist; the model is still
+responsible for interpreting them.
 
-- **Retrieve the observation.** `inspect` returns exact pixel grids from earlier
-  observations, including animation frames and crops. `history` retrieves
-  transitions and notes.
-- **Keep claims tied to observations.** `remember` stores hypotheses and supported
-  or refuted notes. A supported note must cite existing transition indices;
-  this checks the references, not whether the claim is true.
-- **Check a sequence as it runs.** A batch can contain up to eight actions, each
-  with a prediction about selected pixels, game state or completed levels. The
-  runner checks after each action and stops on a mismatch, no observable change,
-  a level transition or a terminal state. Single actions can explore without
-  a prediction.
+For a batch of up to eight actions, the model predicts selected pixels, game
+state or completed levels after each step. The runner checks each result and
+stops the batch on a mismatch, no observable change, a level transition or a
+terminal state. For example, if the first of three moves ends at the wrong
+predicted position, the other two moves are cancelled. A single action can
+explore without a prediction.
 
-For example, suppose the model requests three moves and predicts the player's
-pixel position after each one. If the first move produces a different position,
-OY1 returns that observation without executing the other two moves. The model
-can inspect the history and revise its next action. This illustrates the control
-flow; it is not an excerpt from the benchmark run.
+The model receives screenshots and grids, but no shell, game source or stored
+solutions. The adapter preserves provider reasoning items and compacts context
+when needed. Full observations remain in the per-game store after compaction.
+The [method](https://github.com/OYLabsAI/arc-agi-3-api-harness/blob/main/docs/method.md)
+links these behaviors to the implementation and related work.
 
-The contribution proposed for review is this combination of exact visual recall,
-evidence-linked notes and interrupted action batches. History and hypothesis
-checking also appear in other agents; we do not claim those ideas individually
-as new. [Related methods and scope](https://github.com/OYLabsAI/arc-agi-3-api-harness/blob/main/docs/method.md#contribution-and-generality).
+## Result
 
-The provider adapter retains reasoning items and caches text history before the
-current screenshot. Compaction is lossy; full observations remain available in
-the per-game store. The model has no shell, game source or previous-run solutions.
-The harness enforces the budget. See the [runner](https://github.com/OYLabsAI/arc-agi-3-api-harness/blob/0c7848dafeb4d7969279b5f193af71112404309a/harness/arc_harness/runner.py),
-[store](https://github.com/OYLabsAI/arc-agi-3-api-harness/blob/0c7848dafeb4d7969279b5f193af71112404309a/harness/arc_harness/store.py) and
-[provider adapter](https://github.com/OYLabsAI/arc-agi-3-api-harness/blob/0c7848dafeb4d7969279b5f193af71112404309a/harness/arc_harness/api_provider.py).
+The completed run on 9 September 2026 solved **25/25 public games and all 183
+levels** using GPT-6 Astra at high reasoning, for **$415.37 in inference cost**.
 
-## Evidence and limits
+On the same game versions and model/reasoning setting, the published Provider
+Adapter replays contain **901,970,049 total tokens**. OY1 reports **153,058,391**,
+including compaction: **83.03% fewer total tokens**. Cached input is included,
+and both completed all 183 levels. The [comparison](https://github.com/OYLabsAI/arc-agi-3-api-harness/blob/main/docs/token-comparison.md)
+includes replay links, per-game totals, hashes and a reproduction script.
 
-One live Competition Mode run on 9 September 2026 solved **25/25 public games
-and 183/183 levels**, with a **100.0 raw public score** and **$415.37 inference
-cost**, using OpenAI gpt-6-astra, high reasoning effort and Standard service.
-This is the completed run's inference cost, not total development spending.
+Public games were used during development. This comparison does not establish
+performance on unfamiliar games or isolate the effect of individual components.
+Token savings also do not translate directly to dollar savings. The optional
+planner was not used. The [evaluation plan](https://github.com/OYLabsAI/arc-agi-3-api-harness/blob/main/docs/evaluation-plan.md)
+sets out the proposed matched comparisons and ablations.
 
-The public games were used during development. This is not an unseen-game result
-or ARC Prize verification, and no controlled comparison establishes a cost
-advantage or which component caused the result. The optional `plan` tool was
-never called in this run. The reproduction wrapper's 231 tests and synthetic
-fixture check software behavior, not unfamiliar-game performance.
+[Run accounting](https://github.com/OYLabsAI/arc-agi-3-api-harness/blob/main/docs/results.md) ·
+[Release status](https://github.com/OYLabsAI/arc-agi-3-api-harness/blob/main/docs/compliance.md)
 
-[Per-game results and accounting](https://github.com/OYLabsAI/arc-agi-3-api-harness/blob/main/docs/results.md) ·
-[Version discrepancy and release status](https://github.com/OYLabsAI/arc-agi-3-api-harness/blob/main/docs/compliance.md)
-
-## Proposed follow-up evaluation
-
-The [proposed evaluation protocol](https://github.com/OYLabsAI/arc-agi-3-api-harness/blob/main/docs/evaluation-plan.md)
-freezes the harness before selecting unfamiliar games, uses a matched baseline
-and declares repeat counts and budgets in advance. It has not been run; the
-dataset, baseline and budget remain to be chosen.
-
-Orca Labs sp. z o.o. / OYLabsAI. Apache-2.0 source with separate dependency notices.
+Orca Labs sp. z o.o. / OYLabsAI. Apache-2.0, with separate third-party notices.
