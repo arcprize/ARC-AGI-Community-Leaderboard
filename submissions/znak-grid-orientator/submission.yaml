@@ -1,0 +1,28 @@
+name: "ZNAK Grid Orientator"
+
+authors:
+  - name: "HumbleDrummer"
+    affiliation: "Independent"
+    github: "https://github.com/HumbleDrummer"
+
+description: >
+  General-purpose ARC grid reasoning harness combining deterministic structural
+  orientation, compositional mechanism memory, and a language-model solver.
+  The published scores are independently recomputed local public-evaluation
+  results and are not ARC Prize Verified scores.
+
+code_url: "https://github.com/HumbleDrummer/znak-orient/tree/main/arc/znak-grid-orientator"
+
+versions:
+  - version: "1.0"
+    date: 2026-09-23
+    changes: "Initial public release of the orientator, runners, audit harness, and evidence."
+    models:
+      - name: "GPT-5.6 Sol"
+    scores:
+      - benchmark: "arc-agi-1"
+        score: 97.25
+        set: "public"
+      - benchmark: "arc-agi-2"
+        score: 78.3333333333
+        set: "public"
