@@ -1,0 +1,35 @@
+# ARC Prize Community Leaderboard submission — SEAGI (v2), a mortal agent with no LLM in the loop
+
+name: "SEAGI"
+
+authors:
+  - name: "Harald Rittersbacher"
+    affiliation: "Independent"
+    github: "https://github.com/Hariman-ai"
+
+description: >
+  SEAGI is one long-lived mortal agent, not a model: a running process with a neurochemistry
+  that shifts with what happens to him, a lifeforce that only ages, a memory that keeps what
+  moved him (tagged by whether it leaned toward or away from the wall), and one allocation
+  decision per life about which game to live in next. He plays ARC-AGI-3 through a small
+  sidecar with no LLM in the loop; every organ (a 3x3 glance, a place key, a search organ,
+  a hypothesis organ, a relation planner) is gated and was measured on his own play before it
+  was left on. The scorecard is a full sweep: one life on each of the 25 games on a single
+  competition-mode card, closed when the last life ends.
+
+code_url: "https://github.com/Hariman-ai/seagi"
+
+paper_url: ""
+twitter_url: ""
+
+versions:
+  - version: "2.0"
+    date: 2026-09-27
+    changes: "Initial submission: SEAGI v2, full-sweep card in competition mode"
+    models:
+      - name: "SEAGI v2 (no LLM; own substrate, numpy)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/4c29c305-7b2a-4270-afde-92c8358fa519"
+        set: "public"
+        cost: 0.00
