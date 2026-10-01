@@ -1,0 +1,25 @@
+name: "OY1 AGI"
+authors:
+  - name: "Orca Labs sp. z o.o."
+    github: "https://github.com/OYLabsAI"
+description: >
+  OY1 lets a model retrieve exact earlier pixel grids, keep per-game notes tied
+  to observed transitions, and take up to eight actions with a prediction for
+  each step. The harness stops the remaining actions when an observation
+  contradicts a prediction. The same prompt and tools serve every game,
+  with fresh memory for each game.
+code_url: "https://github.com/OYLabsAI/arc-agi-3-api-harness"
+versions:
+  - version: "0.3.8+api9"
+    date: 2026-09-09
+    changes: >
+      Completed live Competition Mode run across all 25 public games.
+      Public games were used during development. The recorded cost covers
+      inference for this run.
+    models:
+      - name: "OpenAI gpt-6-astra (high reasoning effort, Standard service)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/75d9c8e7-ade9-4a8f-a747-6acbea51bb1b"
+        set: "public"
+        cost: 415.367496
