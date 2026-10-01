@@ -1,0 +1,31 @@
+name: "Strands Agents + Bedrock (PRO-LONG)"
+
+authors:
+  - name: "Chen Wu"
+    affiliation: "Amazon Web Services"
+    github: "https://github.com/chenwuperth"
+
+description: >
+  A Strands coding agent built on PRO-LONG (arXiv:2607.20064), which provides the game loop and
+  the append-only log. Compared to PRO-LONG, we removed the game priors from the system prompt,
+  wrote the Strands + Bedrock agent, put a sandbox around Strands tools, and added the recovery
+  paths for reliability. The agent starts each game knowing nothing about it,
+  and works out the controls, the objective and the rules by writing and running code against a
+  log of its own board states.
+
+code_url: "https://github.com/aws-samples/sample-strands-agents-bedrock-arc-agi-3"
+
+paper_url: ""
+twitter_url: ""
+
+versions:
+  - version: "1.0"
+    date: 2026-08-15
+    changes: "Initial submission"
+    models:
+      - name: "Anthropic Claude Opus 5 (high effort)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/8a10b024-3560-448f-ac31-becc48affe5b"
+        set: "public"
+        cost: 830.00
