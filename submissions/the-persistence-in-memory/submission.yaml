@@ -1,0 +1,73 @@
+name: "the persistence in memory"
+
+authors:
+  - name: "Josef K. Edwards"
+    affiliation: "Independent"
+    url: "https://github.com/drQedwards"
+    github: "https://github.com/drQedwards"
+    twitter: "https://x.com/jk_drq"
+
+citation: "Edwards, J. K. (2026). the persistence in memory. https://github.com/drQedwards/pmll"
+
+description: >
+  A competition-mode ARC-AGI-3 agent that keeps a PMLL-style short-term silo of
+  hashed frames and action outcomes. It prefers novel frame-changing moves,
+  clicks connected-component centroids, tracks a keyboard sprite by frame diff,
+  and replays JSONL level-up recipes from prior cards. Sequential REST play
+  against three.arcprize.org with 429 backoff; no LLM.
+
+code_url: "https://github.com/drQedwards/pmll"
+
+twitter_url: "https://x.com/jk_drq"
+
+versions:
+  - version: "1.0"
+    date: 2026-08-31
+    changes: "Initial public competition-mode scorecard (25/25 environments)"
+    models:
+      - name: "the persistence in memory (heuristic PMLL silo)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/fa62e88d-607e-402d-91d4-ca61ad597cab"
+        set: "public"
+        cost: 0.00
+  - version: "1.1"
+    date: 2026-08-31
+    changes: "Click-first + warm silo after pmll#2 merge; second competition-mode public card"
+    models:
+      - name: "the persistence in memory (heuristic PMLL silo)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/6424f517-8080-4c22-8039-accb5bf5877e"
+        set: "public"
+        cost: 0.00
+  - version: "1.3"
+    date: 2026-08-31
+    changes: "JSONL action log + shuffle restored; first loop persistence card (LP85, R11L)"
+    models:
+      - name: "the persistence in memory (heuristic PMLL silo)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/f7501944-7f70-4050-89af-936a040a65e2"
+        set: "public"
+        cost: 0.00
+  - version: "1.4"
+    date: 2026-08-31
+    changes: "Replay JSONL recipes; LP85 level 1 in 5 actions"
+    models:
+      - name: "the persistence in memory (heuristic PMLL silo)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/660fa699-0f88-4c5d-9e5e-55d132e715d7"
+        set: "public"
+        cost: 0.00
+  - version: "1.5"
+    date: 2026-08-31
+    changes: "Per-life silo, bounded recipe tries, shuffled interior clicks; strongest card (VC33+LP85+R11L)"
+    models:
+      - name: "the persistence in memory (heuristic PMLL silo)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/cfeeae13-dce8-457e-be23-a57725eeac91"
+        set: "public"
+        cost: 0.00
