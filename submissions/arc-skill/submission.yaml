@@ -1,0 +1,39 @@
+name: "arc-skill"
+
+authors:
+  - name: "Poobesh Gowtham"
+    affiliation: "Independent"
+    url: "https://poobesh.com"
+    twitter: "https://x.com/pbshgthm"
+    github: "https://github.com/pbshgthm"
+
+description: >
+  arc-skill is an agent skill, a 129 line instruction file plus a command line tool, that lets
+  an unmodified Claude Code play ARC-AGI-3 with no game-specific code anywhere in it. The one
+  rule is that every action must be submitted together with a written prediction of the next
+  frame, cell by cell. The tool refuses an unpredicted action and grades the prediction against
+  the frame the game returns, so a wrong belief costs no extra action and is named on the
+  record. The measured miss rates then set the policy: the agent probes one action at a time
+  until a mechanic holds, then commits to long predicted sequences that halt at the first miss.
+  The scorecard was produced by replaying the recorded runs against the live API on a competition
+  card, one attempt per game, with every step checked against the local run for game state,
+  levels completed, frame count, and a sha256 over every frame. All 25 games reproduced and none
+  diverged. The replay script, the run logs, the skill, and all 25 Claude Code sessions in full
+  are published at the write-up below.
+
+code_url: "https://github.com/pbshgthm/arc-skill"
+
+paper_url: "https://arc-skill.vercel.app/"
+twitter_url: ""
+
+versions:
+  - version: "1.0"
+    date: 2026-08-13
+    changes: "Initial submission. All 25 public games and all 183 levels finished."
+    models:
+      - name: "Anthropic Claude Opus 5"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/24ddb219-987e-464f-9050-6398a29cf5ac"
+        set: "public"
+        cost: 728.17
