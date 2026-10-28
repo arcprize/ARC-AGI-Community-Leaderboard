@@ -1,0 +1,41 @@
+name: "Kepler"
+
+authors:
+  - name: "Wensen Wu"
+    affiliation: "Independent"
+    github: "https://github.com/Cveinnt"
+
+description: >
+  Kepler is an open-source ARC-AGI-3 harness that turns hypotheses into
+  executable world models, retrodicts them against append-only histories, and
+  mechanically replays certified action programs. One frozen Claude Opus 5
+  configuration scored 100.00 across all 25 public games, with every game
+  re-executed to 100 by ARC Prize's server; a second frozen GPT-5.6 Sol board
+  scored 95.97. Kepler publishes its selection policy, resource accounting,
+  final-board ledgers, captured CLI output, and standalone verification tools at
+  https://huggingface.co/datasets/cveinnt/kepler-arc-agi-3-traces, plus incident
+  reports for a source-reading win and a contaminated control.
+
+code_url: "https://github.com/Cveinnt/kepler"
+paper_url: "https://github.com/Cveinnt/kepler/releases/download/v1.0.0/kepler-1.0-paper.pdf"
+
+versions:
+  - version: "1.0.0"
+    date: 2026-09-01
+    changes: >-
+      Initial public release. One single-configuration Claude Opus 5 board at
+      100.00 and one GPT-5.6 Sol board at 95.97, both server-verified exact.
+      Includes source, audits, incident reports, resource accounting, and the
+      observation-channel case study.
+    models:
+      - name: "Anthropic Claude Opus 5"
+      - name: "OpenAI GPT-5.6 Sol (max)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/91aa2f10-5dc3-4471-80e5-9e8895db5de1"
+        set: "public"
+        cost: 777.72
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/c9f087f3-b9de-452d-9520-d4d0597b0685"
+        set: "public"
+        cost: 1312.14
