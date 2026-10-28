@@ -11,7 +11,7 @@ description: >
   arc-skill is an agent skill, a 129 line instruction file plus a command line tool, that lets
   an unmodified Claude Code play ARC-AGI-3 with no game-specific code anywhere in it. The one
   rule is that every action must be submitted together with a written prediction of the next
-  frame, cell by cell. The tool refuses an unpredicted action and grades the prediction against
+  frame. The tool refuses an unpredicted action and grades the prediction against
   the frame the game returns, so a wrong belief costs no extra action and is named on the
   record. The measured miss rates then set the policy: the agent probes one action at a time
   until a mechanic holds, then commits to long predicted sequences that halt at the first miss.
