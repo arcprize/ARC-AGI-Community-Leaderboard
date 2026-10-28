@@ -1,0 +1,49 @@
+# Display name for your method (must be unique across all submissions)
+name: "Prime Agent"
+
+# Authors — at least one is required
+authors:
+  - name: "Seth Karten"
+    affiliation: "Prime Intellect"
+    url: "https://sethkarten.ai/"
+  - name: "Alex L. Zhang"
+    affiliation: "Prime Intellect"
+    github: "https://github.com/alexzhang13"
+  - name: "Kevin Thomas"
+    affiliation: "Prime Intellect"
+    github: "https://github.com/kevinjosethomas"
+  - name: "Sebastian Müller"
+    affiliation: "Prime Intellect"
+    github: "https://github.com/snimu"
+  - name: "Prime Intellect Team"
+    affiliation: "Prime Intellect"
+    url: "https://www.primeintellect.ai/"
+
+# Brief description of the method (1-3 sentences)
+description: >
+  Prime Agent is a general-purpose coding agent — a recursive language model runtime with a
+  persistent IPython kernel, subagents, compaction, and continual harness refinement — driving
+  ARC-AGI-3 unmodified. Each game runs as an independent agent session in its own sandbox and
+  reaches the engine only through a capability-scoped local broker exposing observe, status, and
+  act, so the agent never imports the ARC SDK, never sees a provider credential, and receives no
+  game-specific knowledge. The only ARC-specific artifact is a game-agnostic behavioral prompt
+  that tells the agent to analyze frames programmatically and build a world model.
+
+# Link to a public repository with the source code (required)
+code_url: "https://github.com/PrimeIntellect-ai/arc-agi-3-prime-agent"
+
+# Link to the writeup
+paper_url: "https://www.primeintellect.ai/blog/prime-agent"
+
+# Version history
+versions:
+  - version: "1.0"
+    date: 2026-08-05
+    changes: "Initial submission"
+    models:
+      - name: "Claude Opus 5 (xhigh)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/2af780b4-f2a1-43e9-a794-b23da3cd3f9f"
+        set: "public"
+        cost: 1059.35
