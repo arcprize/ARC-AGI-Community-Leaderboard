@@ -1,0 +1,36 @@
+name: "ARC-AGI-3 Evolution"
+
+authors:
+  - name: "yzhkali"
+    affiliation: "Independent"
+    github: "https://github.com/yzhkali"
+
+description: >
+  An auditable, source-guided Evolution harness for interactive ARC-AGI-3. It
+  keeps competing hypotheses, information-seeking probes, rejected candidates,
+  and failure constraints in an external archive, then promotes only plans
+  that pass a fresh official replay. The public repository includes reusable
+  runner/search primitives and source-guided adapters for the 25 public
+  environments.
+
+code_url: "https://github.com/yzhkali/arc-agi3-evolution"
+
+versions:
+  - version: "1.0"
+    date: 2026-08-30
+    changes: "Initial standalone Evolution Competition Mode run."
+    models:
+      - name: "OpenAI Codex (GPT-5)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/35f39892-87a9-4a15-b549-393228bfee5a"
+        set: "public"
+  - version: "2.0"
+    date: 2026-08-30
+    changes: "Independent second run with the standalone task-management variant and reduced action count."
+    models:
+      - name: "OpenAI Codex (GPT-5)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/691be743-8d21-4abc-8ad7-f53161baf7e9"
+        set: "public"
