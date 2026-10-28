@@ -1,0 +1,54 @@
+# CCARC — ARC-AGI Community Leaderboard submission
+# Target path in the fork: submissions/ccarc/submission.yaml
+name: "CCARC"
+
+authors:
+  - name: "Dastin"
+    github: "https://github.com/dastin359"
+
+description: >
+  CCARC drives a general coding agent (Claude Code) at ARC-AGI, with one harness
+  behind two drivers. It is built on two mechanisms: code execution as the
+  reasoning step, and named memory files the harness requires the agent to write
+  before a run may continue -- on ARC-AGI-3 a rule book of proven, refuted and
+  untested mechanics recorded at every level boundary; on ARC-AGI-2 the rule
+  stated in prose before the gate will accept the code implementing it. Both
+  drivers run inside mount and network namespaces, and each solver is staged
+  only the modules its own driver reaches, so the module that reads the
+  ARC-AGI-2 dataset is absent from the ARC-AGI-2 solver's import path. On
+  ARC-AGI-3 an egress proxy holds the ARC key and withholds the human baselines
+  the score is computed against, and every run is recorded action-by-action in
+  an append-only ledger, so the full logs behind the result are auditable.
+
+code_url: "https://github.com/dastin359/CCARC"
+
+versions:
+  - version: "0.1.0"
+    date: "2026-09-01"
+    models:
+      # The schema validates only `name`, and the board has no column for
+      # reasoning effort, so submitters put it here — the convention the
+      # existing entries follow. Every one of the 25 runs behind this
+      # scorecard was launched at effort `high`.
+      - name: "Claude Opus 5 (high effort)"
+    scores:
+      - benchmark: "arc-agi-3"
+        # Competition mode, 25/25 environments, 183/183 levels, 7,809 actions,
+        # score 100. Built by replaying each banked run's recorded actions onto
+        # one card, then closed. The earlier 2f5c3ebe carried the same 25 games
+        # but was opened BEFORE competition mode existed, and competition mode
+        # is required.
+        scorecard_url: "https://arcprize.org/scorecards/7fb310c1-3801-4b9b-a215-3f84a8b035ff"
+        set: "public"
+        # The 25 winning runs, from the CLI's own accounting. It is an
+        # API-list-price equivalent: the runs executed on a subscription, so
+        # the outlay was lower. Runs that did not win are excluded and are in
+        # the published logs.
+        cost: 614.65
+      # Optional second entry — same method on ARC-AGI-2 (self-reported per the
+      # schema; scorecards exist only for arc-agi-3). Delete if you want the
+      # submission to be ARC-AGI-3 only.
+      - benchmark: "arc-agi-2"
+        score: 96.81
+        set: "public"
+        cost: 570.49
