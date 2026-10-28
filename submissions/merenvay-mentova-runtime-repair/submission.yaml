@@ -1,0 +1,30 @@
+name: "MERENVAY"
+
+authors:
+  - name: "Mohammed Mazen Al Nasser"
+    affiliation: "MERENVAY"
+    linkedin: "https://www.linkedin.com/in/mohammed-al-nasser-4706a37b/"
+    github: "https://github.com/alnasserlegalservices"
+
+citation: "Al Nasser, M. M. (2026). MERENVAY: Answer-Isolated ARC-AGI-2 Verification Harness and Runtime Dispatch Repair."
+
+description: >
+  An open symbolic ARC-AGI-2 verification harness built around a pinned Mentova
+  solver. The MERENVAY layer converts challenge-only data into an answer-isolated
+  prediction path, selects one strategy per task from training demonstrations only,
+  freezes predictions before scoring, and adds six bounded structural prefilters to
+  prioritize existing transformation rules. The upstream rule library was developed
+  against the public ARC corpus, so unseen-task generalisation is not claimed.
+
+code_url: "https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction"
+
+versions:
+  - version: "1.0"
+    date: 2026-10-11
+    changes: "Corrected full multi-test answer-isolated public regression; task-average community score"
+    models:
+      - name: "Mentova symbolic solver d117c699 + MERENVAY answer-isolated harness and dispatch repair"
+    scores:
+      - benchmark: "arc-agi-2"
+        score: 94.027778
+        set: "public"
