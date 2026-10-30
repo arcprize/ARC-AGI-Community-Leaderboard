@@ -14,9 +14,10 @@ description: >
   Model-proposed components are attached to the incumbent program and become
   part of the monotone solver archive only after independent execution and fresh
   replay; Competition Mode then replays the verified paths with no LLM.
-  Kolmogorov/free-energy selection and a retained-source growth ledger make
-  acquisition, cross-level reuse, and genuinely new program structure
-  inspectable.
+  The submitted release promotes the first candidate that reaches the exact
+  next boundary and passes independent replay, taint, and provenance checks.
+  Retained-source complexity and free energy are recorded afterward as
+  diagnostics; they did not rank candidates or determine admission.
 
 code_url: "https://github.com/sashakolpakov/gkm/tree/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/releases/arc_agi3_gkm_v2_181"
 
@@ -25,7 +26,7 @@ paper_url: "https://sashakolpakov.github.io/gkm/"
 versions:
   - version: "1.0"
     date: 2026-07-15
-    changes: "Initial scored lineage; expanded architecture, program authorship, provenance, and verification documentation"
+    changes: "Historical initial scored lineage. Its wa30 artifact used legacy source-derived carry/relay guidance and is excluded from the source-free observation-only mechanic-discovery claim."
     models:
       - name: "Claude Code (legacy mixed Claude proposer lineage)"
     scores:
@@ -34,7 +35,7 @@ versions:
         set: "public"
   - version: "2.0"
     date: 2026-07-31
-    changes: "Major 25-game schema-v2 release: 181/183 verified levels, immutable acquisition source and normalized evidence, full ONLINE shakedown, and definitive Competition replay"
+    changes: "Canonical 25-game schema-v2 release: 181/183 verified levels, immutable acquisition source and normalized evidence, full ONLINE shakedown, definitive Competition replay, and a fresh separately rooted source-free frame/clone reacquisition replacing the legacy wa30 lineage."
     models:
       - name: "OpenAI GPT-5.6-sol (expanded campaign)"
       - name: "Claude Code (preserved legacy proposer lineages)"

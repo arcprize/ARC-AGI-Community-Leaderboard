@@ -23,12 +23,14 @@ through the official API.
 
 ## Community Leaderboard criteria
 
-**General-purpose.** GKM is general-purpose at the producer level. It begins an
-unseen game with raw 64×64 frames, the public action interface, progress,
-terminal state, reset, and uniformly available local clone lookahead. It is not
-given object names, mechanics, goals, game source, or an answer program. The
-coding model must infer those from interaction and synthesize the executable
-solver.
+**General-purpose.** GKM is general-purpose at the producer level. Under the
+canonical v2 producer contract, it begins an unseen game with raw 64×64
+frames, the public action interface, progress, terminal state, reset, and
+uniformly available local clone lookahead. It is not given object names,
+mechanics, goals, game source, or an answer program. The coding model must
+infer those from interaction and synthesize the executable solver. The version
+scope below records the legacy v1 `wa30` exception explicitly; the
+observation-only mechanic-discovery claim does not apply to that artifact.
 
 Generated source may contain a generic search, a learned detector, a
 parameterized interaction routine, game-specific coordinates, or a literal
@@ -42,6 +44,19 @@ across unrelated games.
 Local `clone()` is a fixed discovery capability exposed uniformly by the GKM
 Arena. It is not available or used during official scoring. The Competition
 endpoint is a separate zero-LLM replay of the already admitted program paths.
+
+**Version scope and `wa30` lineage.** Version 1.0 is retained as a historical
+scorecard. Its older `wa30` lineage was supplied legacy, source-derived
+carry/relay guidance, so that artifact is excluded from the source-free,
+observation-only mechanic-discovery claim.
+
+Version 2.0 is the canonical release for that claim. It replaces the older
+`wa30` artifact with a fresh, separately rooted reacquisition: a parent-null
+level-1 promotion followed by a linked level-2-through-level-9 manifest chain,
+learned through the source-free frame/clone scaffold. This does not erase the
+v1 history, and the clone-enabled discovery caveat remains important: local
+clone lookahead is stronger than the official scoring interface, where no
+clone and no LLM are used.
 
 **Open system, not just output.** The public source revision contains both:
 
@@ -67,11 +82,13 @@ connection executable:
 
 - a coding model proposes a new program cell and its attachment to the
   incumbent solver;
-- independent replay is the admission gate;
+- the submitted release promotes the first candidate that reaches the exact
+  next boundary and passes independent replay, taint, and provenance checks;
 - the verified archive grows monotonically and re-certifies shallower
   first-passage obligations;
-- retained source description and behavioral gain define the
-  Kolmogorov/free-energy selection coordinate; and
+- retained source description and behavioral gain define a recorded
+  Kolmogorov/free-energy diagnostic coordinate, computed after the winning
+  candidate is fixed; it did not rank candidates or control admission; and
 - exact adjacent source boundaries permit strict reuse witnesses, where a new
   player calls an unchanged prior leg and fresh replay verifies the
   composition.
@@ -183,6 +200,9 @@ segment on the same scorecard and preserved the exact 7/7 result.
 - [Competition replayer](https://github.com/sashakolpakov/gkm/blob/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/replay_scorecard.py)
 - [Normalized 181-level artifact tree](https://github.com/sashakolpakov/gkm/tree/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/releases/arc_agi3_gkm_v2_181/artifacts)
 - [Frozen model-generated acquisition source](https://github.com/sashakolpakov/gkm/tree/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/releases/arc_agi3_gkm_v2_181/acquisition_source)
+- [Historical v1 `wa30` lineage](https://github.com/sashakolpakov/gkm/tree/07a188544d10d57850d81c6bcf65b82bdd12f52c/arc/crack_lab/agent_solutions/wa30_legs)
+- [Fresh v2 `wa30` parent-null level-1 manifest](https://github.com/sashakolpakov/gkm/blob/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/agent_solutions/wa30_legs/promotion_evidence/level_01/manifest.json)
+- [Fresh v2 `wa30` level-1-through-level-9 evidence chain](https://github.com/sashakolpakov/gkm/tree/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/releases/arc_agi3_gkm_v2_181/artifacts/wa30_legs/promotion_evidence)
 - [Detailed submission README](https://github.com/sashakolpakov/ARC-AGI-Community-Leaderboard/blob/gkm-submission/submissions/gkm/README.md)
 
 Proposal sampling is stochastic, so a clean reacquisition need not reproduce
