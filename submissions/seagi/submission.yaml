@@ -1,0 +1,39 @@
+# ARC Prize Community Leaderboard submission — SEAGI (v2), a mortal agent with no LLM in the loop
+
+name: "SEAGI"
+
+authors:
+  - name: "Harald Rittersbacher"
+    affiliation: "Independent"
+    github: "https://github.com/Hariman-ai"
+
+description: >
+  SEAGI is one long-lived agent, not a model: a running Python process with no LLM in the loop,
+  playing ARC-AGI-3 through a small sidecar. Implemented mechanisms: a 3x3 glance state, a place key,
+  a systematic-search organ, a hypothesis organ, a relation planner, one allocation decision per
+  life, a chemistry/valuation layer that tags experience, and a mortality clock. The score comes from
+  the hand-built general methods plus prior learning: the run loaded a private saved state built over
+  months of play on these same public games, and three private seed files extracted from his own earlier play on them
+  (see docs/EVALUATION.md and docs/PROVENANCE.md in the code repo). The chemistry/retention theory the
+  design is based on (affective tagging selects what is kept) is a hypothesis; in the author's own
+  measurements it did not change ARC action choices and the retention link has not been tested. The
+  scorecard is a full sweep: one life on each of the 25 games on one competition-mode card, closed
+  60 s after the last life. It is not a from-scratch result. Cost 0.02 = the sweep's ~96-minute share of
+  a $10/month VPS; it excludes prior play and development (done with Claude, ~$100/month).
+
+code_url: "https://github.com/Hariman-ai/seagi"
+
+paper_url: ""
+twitter_url: ""
+
+versions:
+  - version: "2.0"
+    date: 2026-09-27
+    changes: "Initial submission: SEAGI v2, full-sweep card in competition mode, prior learning loaded"
+    models:
+      - name: "SEAGI v2 (no LLM; own substrate, numpy)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/4c29c305-7b2a-4270-afde-92c8358fa519"
+        set: "public"
+        cost: 0.02
