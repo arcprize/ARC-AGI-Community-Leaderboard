@@ -1,0 +1,36 @@
+name: "Strands Agents + Bedrock (PRO-LONG)"
+
+authors:
+  - name: "Chen Wu"
+    affiliation: "Amazon Web Services"
+    github: "https://github.com/chenwuperth"
+
+description: >
+  A Strands coding agent built on PRO-LONG (arXiv:2607.20064), which provides the game loop and
+  the append-only log. Compared to PRO-LONG, we stripped the human-derived labels from the system
+  prompt: actions are shown only as bare identifiers (ACTION1-ACTION7, with no "Up", "Down",
+  "Left", "Right", "Interact", "Click" or "Undo" meanings), the color maps naming each cell value
+  were removed, and "grid-based puzzle game" became "unknown environment". We also wrote the
+  Strands + Bedrock agent, put a sandbox around Strands tools, and added the recovery paths for
+  reliability. The prompt keeps generic, game-agnostic guidance: solve all levels while minimizing
+  total actions, a score increase means a level was cleared, ACTION6 takes (x,y) coordinates in
+  0-63, RESET counts as an action, and parse the boards programmatically to test hypotheses. The
+  agent gets no game-specific information about controls, objectives or rules, and works these
+  out by writing and running code against a log of its own board states.
+
+code_url: "https://github.com/aws-samples/sample-strands-agents-bedrock-arc-agi-3"
+
+paper_url: ""
+twitter_url: ""
+
+versions:
+  - version: "1.0"
+    date: 2026-08-15
+    changes: "Initial submission"
+    models:
+      - name: "Anthropic Claude Opus 5 (high effort)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/8a10b024-3560-448f-ac31-becc48affe5b"
+        set: "public"
+        cost: 830.00
