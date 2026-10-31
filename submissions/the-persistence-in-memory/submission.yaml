@@ -11,14 +11,18 @@ citation: "Edwards, J. K. (2026). the persistence in memory. https://github.com/
 
 description: >
   A competition-mode ARC-AGI-3 agent that keeps a PMLL-style short-term silo of
-  hashed frames and action outcomes. It prefers novel frame-changing moves,
-  clicks connected-component centroids, tracks a keyboard sprite by frame diff,
-  and replays JSONL level-up recipes from prior cards. Sequential REST play
+  hashed frames and action outcomes. It prefers novel frame-changing moves and
+  clicks connected-component centroids. v1.3 and later are warm-start: they
+  replay ACTION6 level-up clicks ingested from earlier runs' local JSONL logs
+  plus hardcoded SEED_RECIPES for LP85, R11L and VC33 (v1.5 code). A
+  frame-diff sprite tracker exists in the code but, due to a bug
+  (moved_centroid compares identical coordinate lists), it never learns a
+  direction, so directed keyboard navigation never activated in any submitted
+  version; keyboard games used only fallback moves. Sequential REST play
   against three.arcprize.org with 429 backoff; no LLM.
 
 code_url: "https://github.com/drQedwards/pmll"
 
-twitter_url: "https://x.com/jk_drq"
 
 versions:
   - version: "1.0"
@@ -33,7 +37,7 @@ versions:
         cost: 0.00
   - version: "1.1"
     date: 2026-08-31
-    changes: "Click-first + warm silo after pmll#2 merge; second competition-mode public card"
+    changes: "Click-first + warm silo after pmll#2 merge; second competition-mode public card. Exact code not committed separately; see README."
     models:
       - name: "the persistence in memory (heuristic PMLL silo)"
     scores:
@@ -43,7 +47,7 @@ versions:
         cost: 0.00
   - version: "1.3"
     date: 2026-08-31
-    changes: "JSONL action log + shuffle restored; first loop persistence card (LP85, R11L)"
+    changes: "JSONL action log + shuffle restored; first loop persistence card (LP85, R11L). Card is tagged v1.1 in ARC metadata; see README."
     models:
       - name: "the persistence in memory (heuristic PMLL silo)"
     scores:
@@ -53,7 +57,7 @@ versions:
         cost: 0.00
   - version: "1.4"
     date: 2026-08-31
-    changes: "Replay JSONL recipes; LP85 level 1 in 5 actions"
+    changes: "Warm-start: replays JSONL level-up clicks from the v1.3 run; LP85 level 1 in 5 actions"
     models:
       - name: "the persistence in memory (heuristic PMLL silo)"
     scores:
@@ -63,7 +67,7 @@ versions:
         cost: 0.00
   - version: "1.5"
     date: 2026-08-31
-    changes: "Per-life silo, bounded recipe tries, shuffled interior clicks; strongest card (VC33+LP85+R11L)"
+    changes: "Warm-start: JSONL recipes + SEED_RECIPES (LP85, R11L, VC33); per-life silo, bounded recipe tries, shuffled interior clicks (VC33+LP85+R11L level 1)"
     models:
       - name: "the persistence in memory (heuristic PMLL silo)"
     scores:
