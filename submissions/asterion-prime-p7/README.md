@@ -26,12 +26,13 @@ This result concerns the 25 public games. It does not demonstrate fresh-model un
 
 ## Run the producing system
 
-Use the [pinned reproduction guide](https://github.com/uukuguy/asterion/blob/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/docs/guides/prime-p7-community-reproduction.md) with the published `P7-2026-10-07` tag (source/documentation commit `bb005c5b`). Framework inspection needs Python 3.10+ and `uv`, without model credentials:
+Use the [pinned reproduction guide](https://github.com/uukuguy/asterion/blob/60ef66e6/docs/guides/prime-p7-community-reproduction.md) with the published `P7-2026-10-07` tag (source/documentation commit `bb005c5b`). Framework inspection needs Python 3.10+, `uv`, and Node.js 22.x with npm on `PATH` (the extension requires Node >=20), without model credentials. Source installation invokes npm to type-check and bundle the extension. Install the locked development dependencies, including TypeScript and esbuild, before `uv sync`:
 
 ```bash
 git clone https://github.com/uukuguy/asterion.git
 cd asterion
 git checkout P7-2026-10-07
+npm ci --include=dev --prefix packages/typescript/asterion-prime-extension
 uv sync --frozen
 uv run asterion list
 uv run asterion describe --provider dci-agent-lite
