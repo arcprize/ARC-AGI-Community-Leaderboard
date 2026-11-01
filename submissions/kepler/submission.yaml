@@ -8,8 +8,11 @@ authors:
 description: >
   Kepler is an open-source ARC-AGI-3 harness that turns hypotheses into
   executable world models, retrodicts them against append-only histories, and
-  mechanically replays certified action programs. One frozen Claude Opus 5
-  configuration scored 100.00 across all 25 public games, with every game
+  mechanically replays action programs with conditional prediction checks.
+  During commits, actions can still execute after prediction exceptions or
+  predictions covering no grid cells; clean-run model-based certification runs
+  only when the generated model provides the required interface. One frozen
+  Claude Opus 5 configuration scored 100.00 across all 25 public games, with every game
   re-executed to 100 by ARC Prize's server; a second frozen GPT-5.6 Sol board
   scored 95.97. Kepler publishes its selection policy, resource accounting,
   final-board ledgers, captured CLI output, and standalone verification tools at
