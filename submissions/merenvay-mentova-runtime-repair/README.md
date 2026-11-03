@@ -69,3 +69,18 @@ This is a **self-reported public-evaluation result** submitted for transparent c
 The underlying Mentova solver was developed task-by-task against the public evaluation corpus and its published report discloses human solution walkthroughs and official-answer confirmation for difficult public tasks. Accordingly, this entry should be interpreted as a reproducible symbolic public-benchmark implementation and runtime-repair record—not as uncontaminated evidence of fluid intelligence on unseen tasks.
 
 The original upstream evaluation procedure used test outputs inside rule search. The earlier answer-isolated first-candidate diagnostic did not pass the expected test output into prediction, but it covered only one selected test input per task ID. The newer generic answer-isolated path covers every current public test input and scores **94.027778% on the community-style task-average metric**, with **152/167 = 91.017964% output-weighted**, after predictions are frozen. This addresses the measurement leak and the earlier incomplete multi-test accounting, but **not** benchmark exposure or rule-set overfitting. All outcomes are described for transparency, not as proof of hidden-set generalisation or ARC Prize verification.
+
+
+## ARC Community maintainer follow-up — generic training-derived alternative (3 November 2026)
+
+Responding to [mattm's request in PR #62](https://github.com/arcprize/ARC-AGI-Community-Leaderboard/pull/62#issuecomment-6525573193), the author implemented an **independently testable training-derived baseline** that does not use the upstream Mentova's known-puzzle recipes:
+
+- [Generic solver — immutable source commit](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/b93a42ce5693bce189faeaa39c67f27efa872b8e/research/arc62_training_derived/generic_solver.py)
+- [15 synthetic source/tests](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/b93a42ce5693bce189faeaa39c67f27efa872b8e/research/arc62_training_derived/tests/test_solver.py)
+- [Reproduction and scope notes](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/b93a42ce5693bce189faeaa39c67f27efa872b8e/research/arc62_training_derived/README.md)
+
+The new standalone procedure induces a rule from **only the current task's training examples**: a task-agnostic finite grammar of D4 geometry, cropping, scaling, tiling, limited composition and training-fitted color remapping. It rejects test-answer fields. Local synthetic software tests passed **15/15**. These controls are **not** independently scored ARC-AGI-2 generalization, nor is this a complete E-RNA/Decision-DNA learning implementation.
+
+**Important unresolved limitation:** the current PR entry **still points at the pinned Mentova solver**. This new branch is a separate experimental alternative; it has **not** replaced the PR's solver, does not inherit the 94.027778% / 152-of-167 task-exposed public results and has no official Kaggle score. We expressly do **not** mark the maintainer's rule-specificity concern resolved. The maintainer may consider whether a separately scored general baseline or a wholesale replacement is the appropriate route. Both would require a correctly matched method, submission descriptor and independently reproduced metrics.
+
+This follow-up was placed in the existing PR branch documentation because the GitHub integration currently returned **403** when attempting a direct PR conversation reply. No new code submission, paper writeup, licence change or public-score reattribution was made.
