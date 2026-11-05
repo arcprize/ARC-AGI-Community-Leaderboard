@@ -1,4 +1,4 @@
-name: "MERENVAY"
+name: "MERENVAY Training-Derived Symbolic Baseline"
 
 authors:
   - name: "Mohammed Mazen Al Nasser"
@@ -6,25 +6,25 @@ authors:
     linkedin: "https://www.linkedin.com/in/mohammed-al-nasser-4706a37b/"
     github: "https://github.com/alnasserlegalservices"
 
-citation: "Al Nasser, M. M. (2026). MERENVAY: Answer-Isolated ARC-AGI-2 Verification Harness and Runtime Dispatch Repair."
+citation: "Al Nasser, M. M. (2026). MERENVAY Training-Derived Symbolic Baseline: Bounded Program Search with Task-Level Strategy Freezing."
 
 description: >
-  An open symbolic ARC-AGI-2 verification harness built around a pinned Mentova
-  solver. The MERENVAY layer converts challenge-only data into an answer-isolated
-  prediction path, selects one strategy per task from training demonstrations only,
-  freezes predictions before scoring, and adds six bounded structural prefilters to
-  prioritize existing transformation rules. The upstream rule library was developed
-  against the public ARC corpus, so unseen-task generalisation is not claimed.
+  A self-contained Python symbolic baseline that fits a bounded, task-independent
+  grammar to all visible training examples, with optional training-fitted color
+  remapping. It freezes up to two programs across every test grid of a task,
+  deduplicates their complete prediction sequences, and uses whole-task identity
+  fallback when no fitted program applies. The open implementation, original
+  synthetic controls, and separate frozen-prediction evaluator form the contribution.
 
-code_url: "https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction"
+code_url: "https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/tree/7a89d10f82cb5d6767a35c8db9017437cd0b3081/research/arc62_training_derived"
 
 versions:
-  - version: "1.0"
-    date: 2026-10-11
-    changes: "Corrected full multi-test answer-isolated public regression; task-average community score"
+  - version: "2.0"
+    date: 2026-11-05
+    changes: "Replace the prior unmerged runtime-repair entry with the standalone training-derived baseline; report its own two-attempt public evaluation."
     models:
-      - name: "Mentova symbolic solver d117c699 + MERENVAY answer-isolated harness and dispatch repair"
+      - name: "MERENVAY bounded symbolic program search (local Python; no model weights or hosted API)"
     scores:
       - benchmark: "arc-agi-2"
-        score: 94.027778
+        score: 0.0
         set: "public"

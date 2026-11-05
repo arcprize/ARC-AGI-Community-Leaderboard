@@ -1,86 +1,57 @@
-# MERENVAY–Mentova Runtime Repair
+# MERENVAY Training-Derived Symbolic Baseline
 
-> **Methodology update — 11 October 2026.** The pinned upstream Mentova scorer contains an answer-conditioned search path: `Computed = TestOut` is checked before it accepts a candidate rule. Its archived **120/120** therefore remains a reproducible legacy result over **one selected test input per each of 120 public task IDs**, not the full ARC-AGI-2 multi-test metric. MERENVAY subsequently built a generic answer-isolated submission path that never receives expected test outputs. On the current official ARC-AGI-2 public evaluation data, that frozen pipeline produced a **94.027778% community-style task-average score** (mean of each task's fraction of solved test outputs), alongside **152/167 exact test outputs = 91.017964%** on an output-weighted/Kaggle-style calculation, with **105/120 task IDs** having all of their test outputs correct, in a GitHub-hosted regression run. A separate earlier first-candidate diagnostic also logged **120/120** first test inputs, zero failures, 20,026 ms. The underlying Mentova rule library was developed against these publicly known ARC tasks, so **none of these results measures genuine unseen-task generalisation or ARC Prize verification**. See the [public review discussion](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/issues/1).
+This entry submits a standalone Python baseline that scored **0.0%** on the complete ARC-AGI-2 public evaluation set: **0/167 exact test outputs**, with **0/120 tasks** having all test outputs correct, using at most two attempts per test input. This is the actual negative result for its limited grammar.
 
-## Result reported
+It replaces the earlier unmerged Mentova runtime-repair submission in PR #62, following [Matt's follow-up](https://github.com/arcprize/ARC-AGI-Community-Leaderboard/pull/62#issuecomment-6664282449). The submitted method imports neither Mentova nor its task-specific rule library. No earlier method's result is attributed to this baseline. The original submission directory is retained for update continuity.
 
-The current answer-isolated generic submission path, evaluated **after prediction artifacts were frozen**, produced:
+## Method and contribution
 
-- **94.027778% community-style task-average public score** — the comparator metric used by Noemon's published scorer
-- **152/167 exact public test outputs = 91.017964%** — output-weighted/Kaggle-style
-- **105/120 task IDs** with every public test output correct
-- **120 task IDs / 167 test inputs** processed
-- GitHub-hosted generation elapsed: **46.115 s** in run `38120350359` and **24.716 s** in independent rescore run `38124392038`; timing is environment/run dependent, not a speed record
-- Submission SHA-256: `a9e169517a419a1ff9bb7613f2d44803a00825dc5820aa3058dcf4b331cf9199`
+For each task, the solver enumerates a fixed grammar of D4 rotations/reflections, nonzero-foreground cropping, 2x/3x nearest-neighbor scaling, 2x2 tiling, shape/D4 compositions in either order, and compositions of two different shape operators. It optionally infers a color mapping from all visible training examples; unseen colors remain unchanged. Candidates are accepted only if they match every training input/output pair within the fixed search budget. Task IDs serve only as output record keys.
 
-The earlier native runner remains preserved as a **legacy first-test-per-task reproduction**, not the full multi-test score:
+Accepted programs rank by operation cost and name. A candidate must run on every test input of the task; candidates that cannot are excluded for the whole task. The first two distinct complete prediction sequences are selected, and those same programs supply the two attempts for every test grid. If only one sequence remains it is duplicated; if none remains the solver emits identity outputs for the whole task as an explicitly unverified fallback. Prediction accepts training examples and unlabeled test inputs only; test-output fields are rejected.
 
-- Windows x64 / SWI-Prolog 10.0.2 — run 1: **120/120 first test inputs**, 78.185 s, failures `[]`
-- Windows x64 / SWI-Prolog 10.0.2 — run 2: **120/120 first test inputs**, 78.442 s, failures `[]`
-- GitHub-hosted Ubuntu 24.04.5 / SWI-Prolog 9.0.4: **120/120 first test inputs**, 40.412 s, failures `[]`
+The concrete contribution is the independently implemented, inspectable baseline with task-level strategy freezing, complete-sequence deduplication, synthetic regression controls, and a separate scorer for frozen predictions. Its elementary operators and program-enumeration approach are established techniques; no new class of program synthesis or broad ARC-solving breakthrough is claimed. The system runs locally with Python, without learned weights, a hosted model, or an external solver.
 
-## Contribution
+## Self-reported ARC-AGI-2 public result
 
-The pinned upstream Mentova source is commit `d117c699416692cac7ceb951b09f2cdb484a89a6`.
+| Item | Frozen evaluation record |
+| --- | --- |
+| Dataset | [Official ARC-AGI-2](https://github.com/arcprize/ARC-AGI-2/tree/f3283f727488ad98fe575ea6a5ac981e4a188e49), commit `f3283f727488ad98fe575ea6a5ac981e4a188e49` |
+| Scope | All 120 tasks in `data/evaluation/`, matched to `data/evaluation.txt`; all 167 test inputs |
+| Attempt limit | At most two grid attempts per test input; the same two selected programs across all test inputs of each task |
+| Metric submitted in YAML | **0.0%**: `100 * mean(correct test outputs / test outputs for each task)`; either attempt may match |
+| Output-weighted diagnostic | **0/167** exact test outputs (**0.0%**) |
+| All-tests-correct diagnostic | **0/120** tasks |
+| Process/schema failures | None; every task and test input produced valid predictions |
+| Search defaults | At most 256 candidates and 512 validation demonstration checks per task; color-map fitting scans are outside that check counter |
+| Published source/evidence | Commit `7a89d10f82cb5d6767a35c8db9017437cd0b3081` |
+| Unchanged solver source | Based on `be73bc4917f2877abae0dfd36736b1a6e8117049`; SHA-256 `37084696d0040d26ce08fc3d18e0cea20f78436152abb4ba59b9a24add01e769` |
+| Prediction freeze | SHA-256 `d3bb5745077d6c638b626ad1220e7eab31d25c89e771dc1256c6b0fbada2de83` |
+| Score artifact | SHA-256 `aff5edcc9d287b4234b128a3763e47b59c2fb44750a7440bfd226ebd8f251072` |
+| Reproduction record | [Pinned evaluation receipt](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/7a89d10f82cb5d6767a35c8db9017437cd0b3081/research/arc62_training_derived/results/20261105_public_evaluation/README.md) |
 
-The upstream dispatcher could reach correct, already-existing rules too late under its 10-second per-task limit. The MERENVAY patch moves six verified rules earlier using narrow O(cells) structural prefilters:
+Predictions and their manifest were frozen before a separate scorer process read expected test outputs. The inference subprocess received only the projected training pairs and unlabeled test inputs. This is process/data-flow separation; labeled public source data remained on the same host. No solver change or score-driven tuning followed this trial.
 
-- `mirror_patch`
-- `template_expand`
-- `constellation`
-- `mosaic_heal`
-- `hole_color`
-- `frame_compass`
+This is a self-reported public-set measurement, without ARC Prize verification. Public-set performance does not establish hidden-set generalization. Cost is omitted because no audited monetary cost was measured.
 
-The patch does **not** add answer keys, alter task data, or change transformation semantics. The contribution is a bounded runtime-stability and dispatch-order repair plus publicly recorded reproducibility runs. It is not a separate general-purpose ARC-solving system.
+## Public code and reproduction
 
-## Public evidence
+- [Method directory and instructions](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/tree/7a89d10f82cb5d6767a35c8db9017437cd0b3081/research/arc62_training_derived)
+- [Standalone solver](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/7a89d10f82cb5d6767a35c8db9017437cd0b3081/research/arc62_training_derived/generic_solver.py)
+- [Synthetic solver and evaluator controls](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/tree/7a89d10f82cb5d6767a35c8db9017437cd0b3081/research/arc62_training_derived/tests)
+- [Frozen evaluation procedure](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/7a89d10f82cb5d6767a35c8db9017437cd0b3081/research/arc62_training_derived/evaluate_public.py)
+- [Evaluation receipt](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/7a89d10f82cb5d6767a35c8db9017437cd0b3081/research/arc62_training_derived/results/20261105_public_evaluation/README.md), [score](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/7a89d10f82cb5d6767a35c8db9017437cd0b3081/research/arc62_training_derived/results/20261105_public_evaluation/score.json), [predictions](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/7a89d10f82cb5d6767a35c8db9017437cd0b3081/research/arc62_training_derived/results/20261105_public_evaluation/predictions.json), and [frozen manifest](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/7a89d10f82cb5d6767a35c8db9017437cd0b3081/research/arc62_training_derived/results/20261105_public_evaluation/frozen_manifest.json)
 
-- Code and reproduction instructions: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction
-- Full multi-test answer-isolated regression: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/actions/runs/38120350359
-- Independent rescore confirming both aggregate metrics: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/actions/runs/38124392038
-- Stable GitHub Actions run: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/actions/runs/37769412232
-- Evidence artifact: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/actions/runs/37769412232/artifacts/11547158323
-- GitHub SLSA/Sigstore attestation: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/attestations/53909570
-- Rekor transparency-log entry: https://search.sigstore.dev?logIndex=3147098838
-- Detailed stable receipt: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/main/STABLE_VERIFICATION_RECEIPT.md
+From a clean checkout of the published method commit, with an official dataset clone at the recorded revision:
 
-The preserved **legacy first-test-per-task** GitHub-hosted workflow performs a clean checkout, pins the upstream commit, applies the public patch, executes one selected test input for each of the 120 public task IDs, asserts `RESULT score=120 total=120`, asserts `FAILS []`, uploads the evidence artifact and generates signed build provenance. This evidence supports only the legacy diagnostic, not the full multi-test score reported above.
+```sh
+python -B research/arc62_training_derived/evaluate_public.py run \
+  --dataset /path/to/ARC-AGI-2 --output /path/to/a/new/result-directory
+python -B -m unittest discover -s research/arc62_training_derived/tests -v
+```
 
-## Evidence fingerprints
+The runner refuses to overwrite an existing result directory. It projects challenge-only input, generates and freezes predictions, and launches a separate scorer. The receipt retains exact commands, process times, return codes, denominators, hashes and the aggregate calculation. All **25 software tests passed**: 18 synthetic solver controls and seven scorer/projection controls. These tests establish specific mechanics, not public benchmark accuracy.
 
-- GitHub artifact service digest: `sha256:da6a5d98a745c6f5fcad6d5a7a01b54f2b4e97f3c27279e8c873281ba7ead37b`
-- Inner GitHub evidence ZIP SHA-256: `b79224b93df193dc9454be4b74eb5d3f1e752624c93291fbd8855cb1ee6f0bd1`
-- GitHub run-log SHA-256: `cd4f2feb3b4a13584d2d8e482c4fb2b12d476e0920266e890d38369b7874e516`
-- GitHub artifact patch SHA-256: `11a330022288ce124851d70488c0f7a1efe1351d109ea39d21c2e81d9aaa065c`
-- Runner SHA-256: `46516f5efd776bb19eaec1f9004a412d85104ede657a3fe5b25a4d5fec35373e`
+## Limits
 
-A final local stable evidence package was also timestamped through DigiCert RFC 3161:
-
-- Evidence ZIP SHA-256: `5aab73ee0d7bc5c53430ebfa0565b75c29206815c394792d9c4b31925c46b59f`
-- Timestamp: `2026-10-08 11:24:23 GMT`
-- Status: `Granted`
-- Local cryptographic verification: `Verification: OK`
-
-## Important limitations
-
-This is a **self-reported public-evaluation result** submitted for transparent community review. It is not an ARC Prize Verified semi-private or private score, does not establish hidden-set generalisation, and is not a certificate of general intelligence.
-
-The underlying Mentova solver was developed task-by-task against the public evaluation corpus and its published report discloses human solution walkthroughs and official-answer confirmation for difficult public tasks. Accordingly, this entry should be interpreted as a reproducible symbolic public-benchmark implementation and runtime-repair record—not as uncontaminated evidence of fluid intelligence on unseen tasks.
-
-The original upstream evaluation procedure used test outputs inside rule search. The earlier answer-isolated first-candidate diagnostic did not pass the expected test output into prediction, but it covered only one selected test input per task ID. The newer generic answer-isolated path covers every current public test input and scores **94.027778% on the community-style task-average metric**, with **152/167 = 91.017964% output-weighted**, after predictions are frozen. This addresses the measurement leak and the earlier incomplete multi-test accounting, but **not** benchmark exposure or rule-set overfitting. All outcomes are described for transparency, not as proof of hidden-set generalisation or ARC Prize verification.
-
-
-## ARC Community maintainer follow-up — generic training-derived alternative (3 November 2026)
-
-Responding to [mattm's request in PR #62](https://github.com/arcprize/ARC-AGI-Community-Leaderboard/pull/62#issuecomment-6525573193), the author implemented an **independently testable training-derived baseline** that does not use the upstream Mentova's known-puzzle recipes:
-
-- [Generic solver — immutable source commit](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/b93a42ce5693bce189faeaa39c67f27efa872b8e/research/arc62_training_derived/generic_solver.py)
-- [15 synthetic source/tests](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/b93a42ce5693bce189faeaa39c67f27efa872b8e/research/arc62_training_derived/tests/test_solver.py)
-- [Reproduction and scope notes](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/b93a42ce5693bce189faeaa39c67f27efa872b8e/research/arc62_training_derived/README.md)
-
-The new standalone procedure induces a rule from **only the current task's training examples**: a task-agnostic finite grammar of D4 geometry, cropping, scaling, tiling, limited composition and training-fitted color remapping. It rejects test-answer fields. Local synthetic software tests passed **15/15**. These controls are **not** independently scored ARC-AGI-2 generalization, nor is this a complete E-RNA/Decision-DNA learning implementation.
-
-**Important unresolved limitation:** the current PR entry **still points at the pinned Mentova solver**. This new branch is a separate experimental alternative; it has **not** replaced the PR's solver, does not inherit the 94.027778% / 152-of-167 task-exposed public results and has no official Kaggle score. We expressly do **not** mark the maintainer's rule-specificity concern resolved. The maintainer may consider whether a separately scored general baseline or a wholesale replacement is the appropriate route. Both would require a correctly matched method, submission descriptor and independently reproduced metrics.
-
-This follow-up was placed in the existing PR branch documentation because the GitHub integration currently returned **403** when attempting a direct PR conversation reply. No new code submission, paper writeup, licence change or public-score reattribution was made.
+The grammar has no general object decomposition, counting, advanced relational rules, or recursive program invention. Matching all demonstrations can leave several hypotheses; the fixed ranking may select the wrong one, and identity fallback can be wrong. Search limits can exclude a fitting program. The zero public score demonstrates the limited coverage of this frozen version. The public evaluation is descriptive and does not show that development was free from all public-benchmark exposure.
