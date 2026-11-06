@@ -1,0 +1,46 @@
+name: "Gödel–Kolmogorov Machine (GKM)"
+
+authors:
+  - name: "Alexander Kolpakov"
+    affiliation: "University of Austin"
+    github: "https://github.com/sashakolpakov"
+  - name: "OpenAI GPT-5.6"
+    url: "https://openai.com/"
+
+description: >
+  GKM is an open, compute-bounded self-improving meta-loop: through the same
+  game-independent interface and harness, a coding LLM grows a persistent
+  per-game library of executable solver legs and thin per-level bindings.
+  Model-proposed components are attached to the incumbent program and become
+  part of the monotone solver archive only after independent execution and fresh
+  replay; Competition Mode then replays the verified paths with no LLM.
+  The submitted release promotes the first candidate that reaches the exact
+  next boundary and passes independent replay, taint, and provenance checks.
+  Retained-source complexity and free energy are recorded afterward as
+  diagnostics; they did not rank candidates or determine admission.
+
+code_url: "https://github.com/sashakolpakov/gkm/tree/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/releases/arc_agi3_gkm_v2_181"
+
+paper_url: "https://sashakolpakov.github.io/gkm/"
+
+versions:
+  - version: "1.0"
+    date: 2026-07-15
+    changes: "Historical initial scored lineage. Its wa30 artifact used legacy source-derived carry/relay guidance and is excluded from the source-free observation-only mechanic-discovery claim."
+    models:
+      - name: "Claude Code (legacy mixed Claude proposer lineage)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/9e166671-0953-42f3-89de-a0fd57d7b147"
+        set: "public"
+  - version: "2.0"
+    date: 2026-07-31
+    changes: "Canonical 25-game schema-v2 release: 181/183 verified levels, immutable acquisition source and normalized evidence, full ONLINE shakedown, definitive Competition replay, and a fresh separately rooted source-free frame/clone reacquisition replacing the legacy wa30 lineage."
+    models:
+      - name: "OpenAI GPT-5.6-sol (expanded campaign)"
+      - name: "Claude Code (preserved legacy proposer lineages)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/cf75e14b-2c25-41cb-bc70-53bd57411edb"
+        set: "public"
+        cost: 3925.00 # estimated midpoint: 25 games at ~$157/game API-equivalent
