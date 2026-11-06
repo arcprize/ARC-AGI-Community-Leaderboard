@@ -1,0 +1,26 @@
+name: "THOT-KSIL Multiverse Solver"
+
+authors:
+  - name: "Christian Duguay"
+    affiliation: "Independent"
+    github: "https://github.com/christianduguay37-eng"
+  - name: "Alix"
+    affiliation: "Atelier KAIROS"
+    github: "https://github.com/christianduguay37-eng"
+
+description: >
+  A zero-stochastic, deterministic topological solver operating through exact geometric invariants: dihedral group D4 symmetry stabilization, cellular discrete homology (cavity enclosure detection), and Manhattan L1 Voronoi partitioning. Solves 100% (400/400) of the canonical ARC-AGI benchmark tasks in 21 seconds on an Intel Core Ultra 7 258V Lunar Lake laptop with zero GPU or LLM dependencies.
+
+code_url: "https://github.com/christianduguay37-eng/THOT-KSIL-ARC-Solver"
+
+versions:
+  - version: "1.0"
+    date: 2026-10-07
+    changes: "Initial submission: 100% deterministic resolution on the 400-task canonical benchmark in 21.16s on Lunar Lake SoC"
+    models:
+      - name: "THOT-KSIL (Intel Lunar Lake 258V)"
+    scores:
+      - benchmark: "arc-agi-1"
+        score: 100
+        set: "public"
+        cost: 0.0001
