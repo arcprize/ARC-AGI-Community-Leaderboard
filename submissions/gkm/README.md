@@ -201,7 +201,7 @@ segment on the same scorecard and preserved the exact 7/7 result.
 - [Normalized 181-level artifact tree](https://github.com/sashakolpakov/gkm/tree/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/releases/arc_agi3_gkm_v2_181/artifacts)
 - [Frozen model-generated acquisition source](https://github.com/sashakolpakov/gkm/tree/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/releases/arc_agi3_gkm_v2_181/acquisition_source)
 - [Historical v1 `wa30` lineage](https://github.com/sashakolpakov/gkm/tree/07a188544d10d57850d81c6bcf65b82bdd12f52c/arc/crack_lab/agent_solutions/wa30_legs)
-- [Fresh v2 `wa30` parent-null level-1 manifest](https://github.com/sashakolpakov/gkm/blob/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/agent_solutions/wa30_legs/promotion_evidence/level_01/manifest.json)
+- [Fresh v2 `wa30` parent-null level-1 manifest](https://github.com/sashakolpakov/gkm/blob/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/releases/arc_agi3_gkm_v2_181/artifacts/wa30_legs/promotion_evidence/level_01/manifest.json)
 - [Fresh v2 `wa30` level-1-through-level-9 evidence chain](https://github.com/sashakolpakov/gkm/tree/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/releases/arc_agi3_gkm_v2_181/artifacts/wa30_legs/promotion_evidence)
 - [Detailed submission README](https://github.com/sashakolpakov/ARC-AGI-Community-Leaderboard/blob/gkm-submission/submissions/gkm/README.md)
 
