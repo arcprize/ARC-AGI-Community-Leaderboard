@@ -1,0 +1,19 @@
+name: "MERENVAY E-RNA"
+authors:
+  - name: "Mohammed Al Nasser"
+    affiliation: "MERENVAY"
+    github: "https://github.com/alnasserlegalservices"
+description: >
+  A symbolic ARC-AGI-2 solver that uses mismatches on the task's training pairs
+  to propose revisions to candidate grid programs. The reported 2/40 result
+  is a development experiment on a fixed slice of public training tasks.
+code_url: "https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/tree/32f309c2b4acf7cf6b4dd2a12c7b5edb0c0e73ca"
+versions:
+  - version: "0.1"
+    date: "2026-11-10"
+    models:
+      - name: "MERENVAY E-RNA symbolic solver (no model at inference)"
+    scores:
+      - benchmark: "arc-agi-2"
+        score: 5.0
+        set: "public-training-slice-40"
