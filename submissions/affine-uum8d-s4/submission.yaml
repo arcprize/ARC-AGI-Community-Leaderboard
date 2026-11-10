@@ -1,0 +1,29 @@
+name: "Affine.Earth Sovereign S4xC4 (affine-uum8d-s4)"
+
+authors:
+  - name: "Richard Gillespie"
+    affiliation: "Affine.Earth"
+    url: "https://affine.earth"
+    github: "https://github.com/gaiaftcl-sudo"
+
+description: >
+  Deterministic integer state machine (M8 = S4 x C4, y - tau == Ax) executing exact dihedral D4
+  and 4D Morton grid invariance in Swift 6.4 with zero neural weights and zero IEEE-754 floats.
+
+code_url: "https://github.com/gaiaftcl-sudo/uum8dSolarResearch"
+
+versions:
+  - version: "1.0"
+    date: "2026-11-09"
+    changes: "Initial ARC-AGI-2 (120/120) and ARC-AGI-1 (400/400) public evaluation submission (Seal d9d148fdaf50)"
+    models:
+      - name: "affine-uum8d-s4"
+    scores:
+      - benchmark: "arc-agi-2"
+        score: 100.0
+        set: "public"
+        cost: 0.00
+      - benchmark: "arc-agi-1"
+        score: 100.0
+        set: "public"
+        cost: 0.00
