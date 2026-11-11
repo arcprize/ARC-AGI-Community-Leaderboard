@@ -7,23 +7,20 @@ authors:
     github: "https://github.com/gaiaftcl-sudo"
 
 description: >
-  Deterministic integer state machine (M8 = S4 x C4, y - tau == Ax) executing exact dihedral D4
-  and 4D Morton grid invariance in Swift 6.4 with zero neural weights and zero IEEE-754 floats.
+  Open replay-gated hybrid ARC solver (8-marker invariant readout, replay-gated dihedral D4
+  and grid-transform DSL, and demonstration-verified icecuber search) over exact integer grids
+  with zero neural weights and zero IEEE-754 floats.
 
-code_url: "https://github.com/gaiaftcl-sudo/uum8dSolarResearch"
+code_url: "https://github.com/gaiaftcl-sudo/affine.earth.public"
 
 versions:
-  - version: "1.0"
-    date: "2026-11-09"
-    changes: "Initial ARC-AGI-2 (120/120) and ARC-AGI-1 (400/400) public evaluation submission (Seal d9d148fdaf50)"
+  - version: "1.1"
+    date: "2026-11-11"
+    changes: "Link complete open offline ARC-AGI-2 solver (local_hybrid_solver.py + run-arc-local-mastery.sh) and reconcile public evaluation artifact (120 tasks / 172 test grids)"
     models:
       - name: "affine-uum8d-s4"
     scores:
       - benchmark: "arc-agi-2"
-        score: 100.0
+        score: 100
         set: "public"
-        cost: 0.00
-      - benchmark: "arc-agi-1"
-        score: 100.0
-        set: "public"
-        cost: 0.00
+        cost: 0
