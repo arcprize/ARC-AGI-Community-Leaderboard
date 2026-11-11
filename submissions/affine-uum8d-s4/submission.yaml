@@ -7,7 +7,7 @@ authors:
     github: "https://github.com/gaiaftcl-sudo"
 
 description: >
-  Open replay-gated hybrid ARC solver (8-marker invariant readout, replay-gated dihedral D4
+  Source-available replay-gated hybrid ARC solver (LicenseRef-Affine-Earth-Sovereign-1.0) (8-marker invariant readout, replay-gated dihedral D4
   and grid-transform DSL, and demonstration-verified icecuber search) over exact integer grids
   with zero neural weights and zero IEEE-754 floats.
 
@@ -16,7 +16,7 @@ code_url: "https://github.com/gaiaftcl-sudo/affine.earth.public"
 versions:
   - version: "1.1"
     date: "2026-11-11"
-    changes: "Link complete open offline ARC-AGI-2 solver (local_hybrid_solver.py + run-arc-local-mastery.sh) and reconcile public evaluation artifact (120 tasks / 172 test grids)"
+    changes: "Link source-available offline ARC-AGI-2 solver (local_hybrid_solver.py + run-arc-local-mastery.sh) and reconcile public evaluation artifact (120 tasks / 172 test grids)"
     models:
       - name: "affine-uum8d-s4"
     scores:

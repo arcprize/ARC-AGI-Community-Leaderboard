@@ -1,6 +1,6 @@
 # Affine.Earth (`affine-uum8d-s4`) — ARC Prize Community Leaderboard Submission
 
-## Open Solver Implementation & Reproducible Run Configuration
+## Source-Available Solver Implementation & Reproducible Run Configuration
 
 Unlike thin API client wrappers, the complete offline ARC-AGI-2 solver that turns an unseen ARC task JSON (`train` demonstration pairs + `test` input grids) into validated `attempt_1` / `attempt_2` grid predictions is published in [`gaiaftcl-sudo/affine.earth.public`](https://github.com/gaiaftcl-sudo/affine.earth.public):
 
@@ -23,3 +23,7 @@ ARC_ICECUBER_DEPTH=2 ARC_LOCAL_PYTHON=python3.12 ARC_LOCAL_PARQUET_PYTHON=python
 - **Scope Qualification:** Self-reported community evaluation on the labeled **ARC-AGI-2 public evaluation set** (`arc-agi_evaluation_challenges.json`: **120 task IDs / 172 test grids**), not an ARC Prize Semi-Private Kaggle verification score. The earlier `arc-agi-1` entry and synthetic 2-row `arc-agi-3-lattice` sample have been removed/replaced so every reported entry maps 1-to-1 to the published 120-task / 172-grid output artifact:
   1. **Canonical Kaggle-Schema JSON (`120` task keys, `172` test grids):** [`reports/arc_local_20260721T172649Z/agi2/submission.json`](https://github.com/gaiaftcl-sudo/affine.earth.public/blob/main/reports/arc_local_20260721T172649Z/agi2/submission.json) (schema-checked via `scripts/validate_arc_prize_submission.py`).
   2. **Per-Task JSONL Mirror (`120` rows):** [`uum8dSolarResearch/submissions/arc_agi_3_community/predictions.jsonl`](https://github.com/gaiaftcl-sudo/uum8dSolarResearch/blob/main/submissions/arc_agi_3_community/predictions.jsonl) and Hugging Face [`rpg67/Affine.Earth-Benchmarks` (`arc_agi_2` split)](https://huggingface.co/datasets/rpg67/Affine.Earth-Benchmarks).
+
+## License
+
+Source-Available under [`LICENSE`](https://github.com/gaiaftcl-sudo/affine.earth.public/blob/main/LICENSE) (`THE AFFINE.EARTH SOVEREIGN HUMANITARIAN, COMMONS & COMMERCIAL SETTLEMENT LICENSE (v1.0)`, `LicenseRef-Affine-Earth-Sovereign-1.0` — all patent and commercial production rights reserved).
