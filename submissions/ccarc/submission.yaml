@@ -1,0 +1,59 @@
+# CCARC — ARC-AGI Community Leaderboard submission
+# Target path in the fork: submissions/ccarc/submission.yaml
+name: "CCARC"
+
+authors:
+  - name: "Dastin"
+    github: "https://github.com/dastin359"
+
+description: >
+  CCARC drives a general coding agent (Claude Code) at ARC-AGI, with one harness
+  behind two drivers. It is built on two mechanisms: code execution as the
+  reasoning step, and named memory files the harness requires the agent to write
+  before a run may continue -- on ARC-AGI-3 a rule book of proven, refuted and
+  untested mechanics recorded at every level boundary; on ARC-AGI-2 the rule
+  stated in prose before the gate will accept the code implementing it. Both
+  drivers run inside mount and network namespaces, and each solver is staged
+  only the modules its own driver reaches, so the module that reads the
+  ARC-AGI-2 dataset is absent from the ARC-AGI-2 solver's import path. On
+  ARC-AGI-3 an egress proxy holds the ARC key and withholds the human baselines
+  the score is computed against, and every run is recorded action-by-action in
+  an append-only ledger.
+
+code_url: "https://github.com/dastin359/CCARC"
+
+versions:
+  - version: "0.2.0"
+    date: "2026-09-04"
+    models:
+      # The schema validates only `name`, and the board has no column for
+      # reasoning effort, so submitters put it here — the convention the
+      # existing entries follow. Every one of the 25 ARC-AGI-3 runs behind
+      # this scorecard was launched at effort `high`.
+      - name: "Claude Opus 5 (high effort)"
+    scores:
+      - benchmark: "arc-agi-3"
+        # Competition mode, 25/25 environments, 183/183 levels, 7,809 actions,
+        # score 100. Each game was played live on its own competition-mode
+        # card (2026-08-30/31) while the orchestrator logged every action; the
+        # orchestrator then replayed the 25 logged runs, in order, onto this
+        # one consolidated card (2026-09-01) and closed it. 21 actions missing
+        # from the logs were restored from the proxy log and 8 could not be
+        # recovered, so the card holds 7,809 of the 7,817 actions played live.
+        # The earlier 2f5c3ebe carried the same 25 games but was opened BEFORE
+        # competition mode existed. Code: the runs were played on the
+        # development tree that version 0.2.0 (commit ca9b96e) was cut from;
+        # see README.md in this directory.
+        scorecard_url: "https://arcprize.org/scorecards/7fb310c1-3801-4b9b-a215-3f84a8b035ff"
+        set: "public"
+        # The CLI's total_cost_usd over the 25 runs on this scorecard, an
+        # API-list-price equivalent: the runs executed on a subscription, so
+        # the outlay was lower. Every action behind the score is in the
+        # scorecard's per-game recordings.
+        cost: 614.65
+      - benchmark: "arc-agi-2"
+        # Self-reported per the schema; scorecards exist only for arc-agi-3.
+        # Run on the same development tree before version 0.2.0 was cut.
+        score: 96.81
+        set: "public"
+        cost: 570.49
