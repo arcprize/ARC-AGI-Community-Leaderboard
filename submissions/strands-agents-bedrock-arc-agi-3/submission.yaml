@@ -20,7 +20,7 @@ description: >
 
 code_url: "https://github.com/aws-samples/sample-strands-agents-bedrock-arc-agi-3"
 
-paper_url: ""
+paper_url: "https://arxiv.org/abs/2610.11450"
 twitter_url: ""
 
 versions:
