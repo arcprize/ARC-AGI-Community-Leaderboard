@@ -1,0 +1,31 @@
+name: "Nex 1.0 (Verobots)"
+
+authors:
+  - name: "Verobots"
+    affiliation: "Verobots"
+    url: "https://verobots.net"
+    github: "https://github.com/verobots"
+
+description: >
+  Nex 1.0 is a small routing harness over frontier models. It routes each benchmark's task
+  category to the model with the strongest public score on that kind of test, at maximum
+  reasoning effort, and adds a short per-benchmark "skill" written only from the benchmark's
+  public description and public training set. Every result is measured in three arms on the
+  same tasks (plain prompt, general working rules, rules + skill) with paired 95% confidence
+  intervals, so the contribution of each layer is visible. For ARC-AGI-2 the route is
+  GPT-6.2 Astra (max effort) through the Codex CLI, with no web, no tools used and two attempts
+  per test input. The score below is on the public evaluation set, which may be in the model's
+  training data; the skill's gain over the plain prompt (+0.8 points, 95% CI +-2.8) is within noise.
+
+code_url: "https://github.com/verobots/nex-1.0"
+
+versions:
+  - version: "1.0"
+    date: 2026-11-18
+    changes: "Initial submission. ARC-AGI-2 public evaluation set, 120 tasks, pass@2, skill arm."
+    models:
+      - name: "OpenAI GPT-6.2 Astra (max reasoning effort)"
+    scores:
+      - benchmark: "arc-agi-2"
+        score: 98.8
+        set: "public"
