@@ -1,0 +1,29 @@
+name: "CAEL: non-neural program search with a self-checking swarm"
+
+authors:
+  - name: "Vovala14"
+    affiliation: "Independent"
+    github: "https://github.com/Vovala14"
+    url: "https://github.com/Vovala14/CAEL"
+
+description: >
+  CAEL solves ARC tasks with no neural network: 53 general solver families (drawing, picking, cropping,
+  pattern repair, counting) must each reproduce every demonstration before predicting. Candidates are ranked by
+  description length, voted across the 8 grid symmetries, and the leaders are re-checked by leave-one-out over the
+  demonstrations; a union swarm lets different specialists explain different colours. CPU only, 10 s per task.
+
+code_url: "https://github.com/Vovala14/CAEL"
+
+versions:
+  - version: "0.4.4"
+    date: 2026-11-20
+    changes: "Initial submission"
+    models:
+      - name: "None (non-neural program search, CPU)"
+    scores:
+      - benchmark: "arc-agi-1"
+        score: 15.5
+        set: "public"
+      - benchmark: "arc-agi-2"
+        score: 0.0
+        set: "public"
