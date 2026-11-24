@@ -3,18 +3,26 @@ authors:
   - name: "Chimdi Walter Ndubuisi"
     github: "https://github.com/ChimdiWalter"
 description: >
-  CORA scored 0.83% on the 2026 Kaggle ARC-AGI-2 public leaderboard using
-  a CPU and no pretrained weights. A guarded transformation search and a
-  rule-language search check proposed rules against each puzzle’s examples
-  and can abstain. The competition wrapper fills unused answer slots with
-  a copy of the input grid.
+  CORA (Constructive Operator Reasoning Architecture) asks what a solver
+  should change when its rule fails. The research goal is to use a failure
+  to build a missing operation or a new way to describe the input, then
+  keep the change if it helps on fresh problems. The scored puzzle entry
+  used two symbolic searches on CPU without pretrained weights. A checked
+  rule had to fit every example and predict each example among two answers
+  when that example was set aside during fitting. If no rule passed, the
+  solver withheld its answer and the competition wrapper copied the input.
+  It scored 0.83% on the Kaggle 2026 public leaderboard of 120 hidden puzzles.
+  Later experiments ran the same engine on grids and Boolean circuits.
+  A separate biology study used the same reasoning procedure to reconstruct
+  rules for when genes turn on or off.
 code_url: "https://github.com/ChimdiWalter/Symbolic_Reasoning_LLM_ARC-AGI/tree/cora-arc2026-public-2026-11-16/kaggle_entries"
+paper_url: "https://github.com/ChimdiWalter/Symbolic_Reasoning_LLM_ARC-AGI/blob/arc2026-paper-20261109/paper/final_20261108/CORA_ARC_PAPER.pdf"
 versions:
   - version: "CPU-only symbolic entry (2 November 2026)"
     date: 2026-11-02
     changes: >
-      On the separate public evaluation set, the solver matched 3 of 172
-      test outputs across 120 puzzles, allowing two attempts per output.
+      On a separate set of 120 published puzzles with 172 test outputs, our
+      evaluation matched 3 outputs, allowing two attempts per output (1.744186%).
       Two of the three matches came from one public puzzle that shaped the
       solver’s design. ARC Prize has not independently verified this entry.
     models:
