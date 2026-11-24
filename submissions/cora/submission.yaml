@@ -1,0 +1,55 @@
+name: "CORA"
+authors:
+  - name: "Chimdi Walter Ndubuisi"
+    github: "https://github.com/ChimdiWalter"
+description: >
+  CORA (Constructive Operator Reasoning Architecture) asks what a solver
+  should change when its rule fails. The research goal is to use a failure
+  to build a missing operation or a new way to describe the input, then
+  keep the change if it helps on fresh problems. The CPU-only puzzle entry
+  used two symbolic searches on CPU without pretrained weights. A checked
+  rule had to fit every example and predict each example among two answers
+  when that example was set aside during fitting. If no rule passed, the
+  solver withheld its answer and the competition wrapper copied the input.
+  It scored 0.83% on the Kaggle 2026 public leaderboard of 120 hidden puzzles.
+  Later experiments ran the same engine on grids and Boolean circuits.
+  A separate biology study used the same reasoning procedure to reconstruct
+  rules for when genes turn on or off.
+code_url: "https://github.com/ChimdiWalter/Symbolic_Reasoning_LLM_ARC-AGI/tree/cora-arc2026-public-2026-11-16/kaggle_entries"
+paper_url: "https://github.com/ChimdiWalter/Symbolic_Reasoning_LLM_ARC-AGI/blob/arc2026-paper-20261109/paper/final_20261108/CORA_ARC_PAPER.pdf"
+versions:
+  - version: "CPU-only symbolic entry (2 November 2026)"
+    date: 2026-11-02
+    changes: >
+      On a separate set of 120 published puzzles with 172 test outputs, our
+      evaluation matched 3 outputs, allowing two attempts per output (1.744186%).
+      Two of the three matches came from one public puzzle that shaped the
+      solver’s design. ARC Prize has not independently verified this entry.
+    models:
+      - name: "Guarded transformation search and rule-language search"
+    scores:
+      - benchmark: "arc-agi-2"
+        score: 0.83
+        set: "Kaggle 2026 public leaderboard"
+      - benchmark: "arc-agi-2"
+        score: 1.744186
+        set: "public"
+  - version: "Neural method with a checked symbolic second attempt (1 November 2026)"
+    date: 2026-11-01
+    changes: >
+      Our version of NVARC (the ARC Prize 2025 solution by Ivan Sorokin and
+      Jean-François Puget) uses their Qwen3-4B grid model. It uses test-time
+      training, adapting the model to the current puzzle with its examples.
+      It scored 24.03% on the Kaggle public leaderboard. The neural model
+      supplies the first answer. CORA may replace the second when a symbolic
+      rule passes the checks. It made zero replacements in the public rehearsal.
+      Its effect on hidden puzzles is unknown. The neural model was selected
+      using the published evaluation puzzles. ARC Prize has not independently
+      verified this community entry. The released hybrid code is at
+      https://github.com/ChimdiWalter/Symbolic_Reasoning_LLM_ARC-AGI/tree/cora-arc2026-public-2026-11-16/kaggle_entries/H_sf-h-c4-cast-arc-agi-2_v1
+    models:
+      - name: "NVARC Qwen3-4B grid checkpoint with guarded symbolic search"
+    scores:
+      - benchmark: "arc-agi-2"
+        score: 24.03
+        set: "Kaggle 2026 public leaderboard"
