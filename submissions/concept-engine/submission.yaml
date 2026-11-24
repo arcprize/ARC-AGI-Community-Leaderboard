@@ -1,0 +1,35 @@
+name: "Concept Engine"
+authors:
+  - name: "iSephix"
+    github: "https://github.com/iSephix"
+description: >
+  The engine learns composite spatial projections and sparse threshold color readouts
+  from grid demonstrations. A learned search order selects projections, and a memory
+  of validated training compositions supports reuse on new tasks.
+code_url: "https://github.com/iSephix/cnn"
+versions:
+  - version: "1.0.0-rc.1"
+    date: 2026-11-24
+    changes: "First public-split evaluation of numerical grid cards and learned search order."
+    models:
+      - name: "Concept Engine ARC RC1, 51-route budget"
+    scores:
+      - benchmark: "arc-agi-1"
+        set: "public"
+        score: 3.25
+      - benchmark: "arc-agi-2"
+        set: "public"
+        score: 0.0
+
+  - version: "1.0.0-rc.2"
+    date: 2026-11-24
+    changes: "Learned reusable two-stage grid cards and tested frozen-card transfer."
+    models:
+      - name: "Concept Engine ARC RC2, 512 composition trials with retrieval"
+    scores:
+      - benchmark: "arc-agi-1"
+        set: "public"
+        score: 3.5
+      - benchmark: "arc-agi-2"
+        set: "public"
+        score: 0.0
