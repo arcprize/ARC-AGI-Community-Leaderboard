@@ -1,0 +1,28 @@
+name: "CORA"
+authors:
+  - name: "Chimdi Walter Ndubuisi"
+    github: "https://github.com/ChimdiWalter"
+description: >
+  CORA scored 0.83% on the 2026 Kaggle ARC-AGI-2 public leaderboard using
+  a CPU and no pretrained weights. A guarded transformation search and a
+  rule-language search check proposed rules against each puzzle’s examples
+  and can abstain. The competition wrapper fills unused answer slots with
+  a copy of the input grid.
+code_url: "https://github.com/ChimdiWalter/Symbolic_Reasoning_LLM_ARC-AGI/tree/cora-arc2026-public-2026-11-16/kaggle_entries"
+versions:
+  - version: "CPU-only symbolic entry (2 November 2026)"
+    date: 2026-11-02
+    changes: >
+      On the separate public evaluation set, the solver matched 3 of 172
+      test outputs across 120 puzzles, allowing two attempts per output.
+      Two of the three matches came from one public puzzle that shaped the
+      solver’s design. ARC Prize has not independently verified this entry.
+    models:
+      - name: "Guarded transformation search and rule-language search"
+    scores:
+      - benchmark: "arc-agi-2"
+        score: 0.83
+        set: "Kaggle 2026 public leaderboard"
+      - benchmark: "arc-agi-2"
+        score: 1.744186
+        set: "public"
