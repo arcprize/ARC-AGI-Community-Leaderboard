@@ -6,20 +6,20 @@ authors:
     github: "https://github.com/sashakolpakov"
   - name: "OpenAI GPT-5.6"
     url: "https://openai.com/"
+  - name: "OpenAI GPT-6.1"
+    url: "https://openai.com/"
 
 description: >
-  GKM is an open, compute-bounded self-improving meta-loop: through the same
-  game-independent interface and harness, a coding LLM grows a persistent
-  per-game library of executable solver legs and thin per-level bindings.
-  Model-proposed components are attached to the incumbent program and become
-  part of the monotone solver archive only after independent execution and fresh
-  replay; Competition Mode then replays the verified paths with no LLM.
-  The submitted release promotes the first candidate that reaches the exact
-  next boundary and passes independent replay, taint, and provenance checks.
-  Retained-source complexity and free energy are recorded afterward as
-  diagnostics; they did not rank candidates or determine admission.
-
-code_url: "https://github.com/sashakolpakov/gkm/tree/9235ed26627140460efa1f6ca5e4041470cddc14/arc/crack_lab/releases/arc_agi3_gkm_v2_181"
+  GKM uses a coding-model proposer to grow a per-game library of executable
+  solver components through a common frame/action/reward and clone interface.
+  The new GPT-6.1-sol zero-seed campaign admits 182/183 public levels under the
+  fixed 600-action full-game rule. The supervisor only orchestrates, replays,
+  audits and admits; it supplies no game-specific solution guidance. Admission
+  accepts the first candidate passing exact progress, independent replay, taint
+  and provenance checks. Complexity and free energy are recorded afterward as
+  diagnostics, rather than ranking candidates or determining admission.
+  Competition Mode replays the frozen verified paths without model inference.
+code_url: "https://github.com/sashakolpakov/gkm/tree/58d6038bdf8d57475a714bcbe81485c805197d3b/arc/crack_lab/releases/arc_agi3_gkm_v3_182"
 
 paper_url: "https://sashakolpakov.github.io/gkm/"
 
@@ -44,3 +44,12 @@ versions:
         scorecard_url: "https://arcprize.org/scorecards/cf75e14b-2c25-41cb-bc70-53bd57411edb"
         set: "public"
         cost: 3925.00 # estimated midpoint: 25 games at ~$157/game API-equivalent
+  - version: "3.0"
+    date: 2026-11-25
+    changes: "New GPT-6.1-sol zero-seed acquisition: 182/183 public levels across all 25 games, 24 complete games, source execution and independent replay at all 182 boundaries, original acquisition chains, exact producer source, and recorded-token API-cost scenarios. Retrospective retry-n125 reporting cutoff; later plateau work remains accounted for."
+    models:
+      - name: "OpenAI GPT-6.1-sol (Codex; medium/high/xhigh/max retry ladder)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/fb027490-5351-4a77-85f2-41959e3e6b64"
+        set: "public"
