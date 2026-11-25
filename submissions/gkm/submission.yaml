@@ -46,10 +46,11 @@ versions:
         cost: 3925.00 # estimated midpoint: 25 games at ~$157/game API-equivalent
   - version: "3.0"
     date: 2026-11-25
-    changes: "New GPT-6.1-sol zero-seed acquisition: 182/183 public levels across all 25 games, 24 complete games, source execution and independent replay at all 182 boundaries, original acquisition chains, exact producer source, and recorded-token API-cost scenarios. Retrospective retry-n125 reporting cutoff; later plateau work remains accounted for."
+    changes: "New GPT-6.1-sol zero-seed acquisition: 182/183 public levels across all 25 games, 24 complete games, source execution and independent replay at all 182 boundaries, original acquisition chains, exact producer source, and token accounting through retrospective retry-n125 cutoff (execution 454), with standard API-equivalent pricing."
     models:
       - name: "OpenAI GPT-6.1-sol (Codex; medium/high/xhigh/max retry ladder)"
     scores:
       - benchmark: "arc-agi-3"
         scorecard_url: "https://arcprize.org/scorecards/fb027490-5351-4a77-85f2-41959e3e6b64"
         set: "public"
+        cost: 482.16 # standard API-equivalent, reported tokens through retry n125

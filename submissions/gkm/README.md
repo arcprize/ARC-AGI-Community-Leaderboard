@@ -56,23 +56,33 @@ separate validations; the [scorecard note](https://github.com/sashakolpakov/gkm/
 The Competition action replayer itself is pinned to `a5b301d328d04d4b771bd36dd299b79939a93c36`;
 the later publication adds evidence and accounting labels.
 
-## Plateau and token accounting
+## Reporting cutoff and token accounting
 
-The reporting cutoff is retrospective: retry n125 at the final clean frontier,
-execution 454 overall, closed on November 24, 2026. All retained promotions predate
-it. An over-budget diagnostic path completes all ten lf52 levels in 641 actions,
-41 beyond the fixed limit; it is excluded from the claimed result. Later attempts
-plateaued and remain accounted for rather than being erased from the history.
+This submission reports acquisition through retrospective retry n125 at the final
+clean frontier: execution 454, closed on November 24, 2026. All retained promotions
+predate that cutoff. An over-budget diagnostic path completes all ten lf52 levels
+in 641 actions, 41 beyond the fixed limit; it is excluded from the claimed result.
 
-[The token ledger, capture hashes and per-game cost report](https://github.com/sashakolpakov/gkm/tree/58d6038bdf8d57475a714bcbe81485c805197d3b/arc/crack_lab/releases/arc_agi3_gkm_v3_182/accounting/README.md)
-include failed, discarded and infrastructure attempts. Through the reporting cutoff,
-recorded usage converts to **$482.16** at standard API rates with the reported cache
-discount, or **$849.88** in the all-long-context pricing scenario. Later work adds
-$77.10 or $135.49 respectively; all recorded work totals $559.25 or $985.38 before
-unreported usage. Three interrupted captures lack terminal usage reports. These are
-API-equivalent valuations, not an invoice; the optional single-number YAML cost is
-omitted because the captures do not establish the exact billed cost. Reasoning is
-already included in output, and cached input is already included in input.
+Only usage through this cutoff is included below and in the version-3 YAML cost.
+The counters include failed, discarded and infrastructure attempts within that
+window. Terminal usage is available for 451 of 454 proposer turns; three
+interrupted turns have unknown usage and remain unpriced.
+
+| Recorded tokens through cutoff | Count |
+| --- | ---: |
+| Input, including cached input | 1,797,570,821 |
+| Cached input (included above) | 1,758,867,584 |
+| Uncached input | 38,703,237 |
+| Output, including reasoning | 22,886,441 |
+| Reasoning output (included above) | 16,049,437 |
+
+At [standard GPT-6.1-sol API rates](https://developers.openai.com/api/docs/models/gpt-6.1-sol)
+($2 per million uncached input tokens, $0.10 per million cached input tokens and
+$10 per million output tokens), the recorded-token API-equivalent cost through
+the cutoff is **$482.16**. Cached input and reasoning output are subsets of their
+respective totals and are not counted twice. This is a standard-rate valuation of
+reported tokens, not a billing invoice. Host orchestration, local compute and
+subsequent scorecard replay are outside proposer-token accounting.
 
 Public solution replay measures neither the full discovery process nor held-out
 generalization. Model-token accounting and game-action accounting are published
