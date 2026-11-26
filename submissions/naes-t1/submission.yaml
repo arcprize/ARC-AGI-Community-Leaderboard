@@ -1,0 +1,41 @@
+name: "NAES-T1"
+
+authors:
+  - name: "STARGA, Inc."
+    affiliation: "STARGA, Inc."
+    url: "https://star.ga"
+    github: "https://github.com/star-ga"
+
+description: >
+  NAES-T1 is a 324,096-weight ternary policy network that plays ARC-AGI-3 games from the rendered 64 x 64 frame,
+  one forward pass per move, with integer-only inference written in MIND, a public deterministic compiler.
+  Determinism: one decision stream (SHA-256 4d2d98f711a1209eace8f3841952e39d4d75870d48079c3175b361bba9746396,
+  MATCH 5499/5499) on every substrate measured: the x86-64 CPU build, the NVIDIA RTX PRO 6000 Blackwell Server Edition and the Google Cloud TPU v5e.
+  It also introduces MMAE (Machine-Minimum Action Efficiency), which scores each level against its floor, the
+  proven machine minimum. All 183 level floors are proven; 2 of them (wa30 levels 8 and 9) by empirical proof.
+  NAES-T1 plays every level at its floor: MMAE 1.000.
+  Public demo set: 100.00%, 183/183 levels, 25/25 games, 5,499 actions. Measured by STARGA,
+  not yet verified by ARC Prize.
+  NAES-T1 was trained on the mechanics of these 25 games, so the score is not a result on games with unseen
+  mechanics.
+  The open CPU path is the complete system and reproduces every result; GPU inference is OPTIONAL through
+  STARGA's commercial, protected MIND backend and NOT REQUIRED for any result.
+  The GPU and TPU binaries are protected: their kernel technology is part of STARGA's commercial MIND
+  backends. The GPU and TPU builds are optional. The CPU build of the MIND program is the open-source release.
+  Anyone who runs a GPU or TPU binary can check its decisions against the CPU build.
+
+code_url: "https://github.com/star-ga/naes-t1"
+
+twitter_url: ""
+
+versions:
+  - version: "1.0"
+    date: 2026-11-19
+    changes: "Initial submission. Scorecard recorded live in Competition Mode through the ARC Prize API on 2026-11-19 (UTC)."
+    models:
+      - name: "NAES-T1 (324,096 ternary weights, integer-only inference in MIND)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/46dc8e53-0718-4182-84a9-88ffe31e282e"
+        set: "public"
+        cost: 0.01
