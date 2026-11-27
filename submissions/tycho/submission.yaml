@@ -39,3 +39,20 @@ versions:
         scorecard_url: "https://arcprize.org/scorecards/08b98aa0-5df0-42c0-b501-856f553a21e9"
         set: "public"
         cost: 2986.04
+
+  - version: "2.0"
+    date: 2026-11-18
+    changes: >
+      Updated harness (release 0.2.0 of the code repository, tag v0.2.0): guarded multi-action
+      commitments and a planner that runs automatically after a world-model edit. Single-actor
+      policy, in which the actor writes and uses the world model itself, with GPT-6.2 Sol at
+      maximum reasoning effort. One live run of all 25 public games: 100.00 RHAE, 183 levels,
+      6,626 actions. The scorecard is a competition-mode replay of the recorded action trace of
+      that run.
+    models:
+      - name: "OpenAI GPT-6.2 Sol (max reasoning effort)"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/3363ff30-d956-4932-a6e5-ee01fe33b063"
+        set: "public"
+        cost: 31.33
