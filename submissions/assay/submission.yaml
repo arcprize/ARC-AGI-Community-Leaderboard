@@ -1,0 +1,42 @@
+name: "ASSAY"
+
+authors:
+  - name: "Mohsen Arjmandi"
+    affiliation: "Independent"
+    url: "https://freddiespirit.com"
+    github: "https://github.com/arjmandi"
+
+description: >
+  ASSAY is an open-source harness for ARC-AGI-3 with frozen model weights. The agent
+  describes the environment as addressable world states, stores what it learns at those
+  addresses, and reads it back by address instead of carrying a long reasoning history.
+  Before each action it writes a prediction, and the harness grades that prediction
+  against what the environment actually does.
+
+code_url: "https://github.com/arjmandi/assay"
+
+versions:
+  - version: "1.0-rc1"
+    date: 2026-08-24
+    changes: >
+      Original run on 2026-08-24: Claude Opus 5, one run per game on the 25 public games,
+      with every journal entry, the model's reasoning and every action recorded, and the
+      result posted on the ARC Prize Discord at the time. The scorecard sends those
+      recorded actions to the ARC API in one session; see README.md.
+    models:
+      - name: "Claude Opus 5"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/702ccd4f-df1f-4118-bc8b-d79d3f4a1a32"
+        set: "public"
+  - version: "1.5.1"
+    date: 2026-11-27
+    changes: >
+      ASSAY 1.5.1 as released, Claude Sonnet 5.5. A fresh live run in Competition Mode:
+      all 25 public games played by the agent on one scorecard; see README.md.
+    models:
+      - name: "Claude Sonnet 5.5"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/3e659b9a-7957-49db-b164-93a76e27134a"
+        set: "public"
